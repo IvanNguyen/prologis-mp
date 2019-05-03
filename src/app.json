@@ -1,31 +1,20 @@
 {
   "pages": [
-    "pages/index/main"
+    "pages/homePage/main",
+    "pages/map/main",
+    "pages/library/main",
+    "pages/centerInfo/main"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "Your location information will be used to show the effect of the applet location interface"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#999",
-    "backgroundColor": "#fafafa",
-    "selectedColor": "#333",
-    "borderStyle": "white",
-
-    "list": [{
-      "text": "首页",
-      "pagePath": "pages/index/main",
-      "iconPath": "static/tabs/home.png",
-      "selectedIconPath": "static/tabs/home-active.png"
-    },
-    {
-      "text": "首页",
-      "pagePath": "pages/index/main",
-      "iconPath": "static/tabs/home.png",
-      "selectedIconPath": "static/tabs/home-active.png"
-    }
-    ]
+    "navigationBarTitleText": "HomePage",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
   }
 }

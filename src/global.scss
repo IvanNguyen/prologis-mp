@@ -1,0 +1,25 @@
+$theme-bg: #E5DBD4;
+$theme-color: #92281D;
+
+$z-top: 10000;
+$z-middle: 1000;
+$z-low: 100;
+$z-negative: -100;
+
+$border: 1px solid #BEA593;
+
+@mixin selection-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: $border;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  height: 40px;
+}
+
+@mixin icon {
+  width: 16px;
+  height: 16px;
+}

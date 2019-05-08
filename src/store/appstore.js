@@ -7,6 +7,7 @@ const store = new Vuex.Store({
   state: {
     currentLatitude: '',
     currentLongitude: '',
+    isGeneralIntroduction: false,
     markers: [
       {
         id: 1,
@@ -89,6 +90,12 @@ const store = new Vuex.Store({
     ],
   },
   mutations: {
+    showFakeLocation(state, coordinates) {
+      // eslint-disable-next-line prefer-destructuring
+      state.currentLatitude = coordinates[0];
+      // eslint-disable-next-line prefer-destructuring
+      state.currentLongitude = coordinates[1];
+    },
     showCurrentLocation(state) {
       wx.getLocation({
         type: 'wgs84',
@@ -100,10 +107,13 @@ const store = new Vuex.Store({
         },
       });
     },
-    showCenter(state, centerID) {
+    centerTheCentre(state, centerID) {
       const centerTapped = state.markers.find(marker => marker.id === +centerID);
       state.currentLatitude = centerTapped.latitude;
       state.currentLongitude = centerTapped.longitude;
+    },
+    showGeneralIntroduction(state) {
+      state.isGeneralIntroduction = true;
     },
   },
   getters: {

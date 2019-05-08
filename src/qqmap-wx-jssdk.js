@@ -1121,5 +1121,6 @@ class QQMapWX {
   }
 };
 
-module.exports = QQMapWX;
+// module.exports = QQMapWX;
+export default QQMapWX;
 /* eslint-enable */

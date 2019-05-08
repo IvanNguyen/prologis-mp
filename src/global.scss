@@ -1,10 +1,7 @@
-$theme-bg: #E5DBD4;
-$theme-color: #92281D;
+$theme-bg: white;
+$theme-color: #23B2A9;
 
-$z-top: 10000;
-$z-middle: 1000;
-$z-low: 100;
-$z-negative: -100;
+$text-color: white;
 
 $border: 1px solid #BEA593;
 
@@ -22,4 +19,18 @@ $border: 1px solid #BEA593;
 @mixin icon {
   width: 16px;
   height: 16px;
+}
+
+.position__smallLogo {
+  height: 18px;
+  width: 14px;
+}
+
+button:after {
+  border: none;
+}
+
+.button-hover {
+  color: $theme-color !important;
+  background-color: whitesmoke !important;
 }

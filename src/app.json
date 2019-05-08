@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/homePage/main",
-    "pages/map/main",
-    "pages/library/main",
-    "pages/centerInfo/main"
+    "pages/listPage/main",
+    "pages/detailPage/main",
+    "pages/routePage/main"
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "Your location information will be used to show the effect of the applet location interface"
+      "desc": "Message is limited 30 words"
     }
   },
   "window": {

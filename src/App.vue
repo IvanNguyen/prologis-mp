@@ -4,6 +4,10 @@ export default {
 </script>
 
 <style>
+* {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
 .container {
   height: 100%;
   display: flex;

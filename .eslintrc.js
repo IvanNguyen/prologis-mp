@@ -2,50 +2,48 @@
 
 module.exports = {
   root: true,
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   parserOptions: {
-    sourceType: "module"
+    sourceType: 'module',
   },
   env: {
     browser: false,
     node: true,
-    es6: true
+    es6: true,
   },
-  extends: [
-    "prettier",
-    "airbnb-base"
-  ],
+  extends: ['prettier', 'airbnb-base'],
   // required to lint *.vue files
-  plugins: [
-    "prettier",
-    "html"
-  ],
+  plugins: ['prettier', 'html'],
   // check if imports actually resolve
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       webpack: {
-        config: "build/webpack.base.conf.js"
-      }
-    }
+        config: 'build/webpack.base.conf.js',
+      },
+    },
   },
   // add your custom rules here
   rules: {
-    "import/extensions": [
-      "error",
-      "always",
+    'import/extensions': [
+      'error',
+      'always',
       {
-        js: "never",
-        vue: "never",
-        json: "never"
-      }
+        js: 'never',
+        vue: 'never',
+        json: 'never',
+      },
     ],
     // allow paren-less arrow functions
-    "arrow-parens": 0,
+    'arrow-parens': 0,
     // allow async-await
-    "generator-star-spacing": 0,
+    'generator-star-spacing': 0,
     // allow debugger during development
-    "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,
-    "import/prefer-default-export": 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'import/prefer-default-export': 0,
+    'no-plusplus': 'off',
+    'linebreak-style': 0,
+    'no-console': 'off',
+    'no-param-reassign': 0,
   },
   globals: {
     App: true,
@@ -58,6 +56,6 @@ module.exports = {
     getPage: true,
     requirePlugin: true,
     mpvue: true,
-    mpvuePlatform: true
-  }
+    mpvuePlatform: true,
+  },
 };

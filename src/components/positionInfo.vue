@@ -1,16 +1,25 @@
 <template>
-  <div class="position-info">
-     <img class="position__logo" src="../../static/images/circleLogo.png" alt="Logo">
-     <div class="position__detail">
-       <p>你目前的所在区域:<span>{{currentRegion}}</span></p>
-       <p>离你最近的物业<span>{{closestCenter}}</span>
-       <span>{{distance}}km</span>
-       <span>
-         <img class="position__smallLogo" src="../../static/images/smallLocation.png" alt="smallLocation">
-       </span>
-       </p>
-     </div>
-  </div>
+  <cover-view class="position-info">
+    <cover-view>
+      <cover-image class="position__logo" src="../../static/images/circleLogo.png" alt="Logo"/>
+    </cover-view>
+    <cover-view class="position__detail">
+      <cover-view>
+        <cover-view class="text">
+          你目前的所在区域:
+          <cover-view class="position__content">{{currentRegion}}</cover-view>
+        </cover-view>
+      </cover-view>
+      
+        <cover-view class="text">
+          <cover-view class="position__content">离你最近的物业:</cover-view>
+          <cover-view class="position__content address">{{closestCenter}}</cover-view>
+          <cover-view class="position__content far">{{distance}}km</cover-view>
+          <!-- <cover-image class="position__smallLogo" src="../../static/images/smallLocation.png" alt="smallLocation"/>  -->
+        </cover-view>
+      
+    </cover-view>
+  </cover-view>
 </template>
 
 <script>
@@ -29,26 +38,34 @@ export default {
 @import '../global.scss';
 .position-info {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   height: 80px;
   width: 100%;
   background-color: $theme-color;
-  border-top: 1px solid white;
 }
 .position__logo {
   height: 46px;
   width: 46px;
-  padding: 0 15px;
+  padding: 17px 15px;
 }
 .position__detail {
   font-size: 13px;
   line-height: 23px;
   color: $text-color;
+}
+.position__content {
   display: inline-block;
-  span {
-    font-weight: 500;
-    padding-left: 5px;
-  }
+  font-weight: 500;
+  padding-left: 5px;
+}
+.address {
+  width: 50px;
+  white-space: normal;
+}
+.far {
+  // display: inline !important;
+}
+.text {
+  white-space: normal;
 }
 </style>

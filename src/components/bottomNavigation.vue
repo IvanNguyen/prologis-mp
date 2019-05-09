@@ -1,13 +1,13 @@
 <template>
   <cover-view class="group-button">
-    <button class="map-button" hover-class="button-hover" :disabled="disabled" >
+    <cover-view class="button map-button" hover-class="button-hover" :disabled="disabled" >
       <cover-image src="../../static/images/map-icon.png" alt="map-icon"/>
-      <span>地图模式</span>
-    </button>
-    <button @click="toListpage" class="list-button" hover-class="button-hover">
+      <cover-view class="text disabled">地图模式</cover-view>
+    </cover-view>
+    <cover-view @click="toListpage" class="button list-button" hover-class="button-hover">
       <cover-image src="../../static/images/list-icon.png" alt="list-icon"/>
-      <span>列表模式</span>
-    </button>
+      <cover-view class="text">列表模式</cover-view>
+    </cover-view>
   </cover-view>
 </template>
 
@@ -33,12 +33,13 @@ export default {
 <style scoped lang="scss">
 @import '../global.scss';
 .group-button {
-    button {
+    .button {
         display: inline-block;
         height: 45px;
         width: 50%;
         background-color: $theme-color;
         color: $text-color;
+        text-align: center;
         font-size: 13px;
         font-weight: 400;
         line-height: 45px;
@@ -46,13 +47,14 @@ export default {
     }
 }
 .map-button {
-    border-radius: 50px 0 0 50px;
+    border-radius: 50PX 0PX 0PX 50PX;
     cover-image {
       width: 18px;
       height: 16px;
       vertical-align: sub;
     }
-    span {
+    .disabled {
+      display: inline;
       opacity: 0.3;
     }
     &:after {
@@ -60,22 +62,11 @@ export default {
       background-color: whitesmoke;
       position: absolute;
       width: 2px;
-      height: 45px;
-      top: 10px;
-      left: 99.5%;
+      height: 30px;
+      top: 7.5px;
+      left: 49.5%;
       opacity: 0.3;
       display: block;
-    }
-}
-.vertical-line {
-    border-radius: 0;
-    width: 10%;
-    padding: 0;
-    cover-image {
-      width: 0.5px;
-      height: 25px;
-      padding-right: 0.5px;
-      margin-top: 10px;
     }
 }
 .list-button {
@@ -85,8 +76,10 @@ export default {
       height: 12px;
     }
 }
+.text {
+  display: inline;
+}
 cover-image {
-  display: inline-block;
   padding-right: 13px;
 }
 </style>

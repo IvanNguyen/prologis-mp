@@ -3,10 +3,6 @@
   <view class="page-body">
     <div>
       <topNavigation></topNavigation>
-      <positionInfo></positionInfo>
-    </div>
-    <div>
-      <generalIntroduction v-if="isGeneralIntroduction"></generalIntroduction>
     </div>
     <view class="map-section">
       <map
@@ -23,12 +19,17 @@
         enable-scroll
         enable-rotate
         :include-points="includePoints"
-
-      ></map>
+        @tap="mapTap"
+      >     
+        <positionInfo></positionInfo>
+        <cover-view v-if="isGeneralIntroduction" class="generalIntroductionBar">
+          <generalIntroduction></generalIntroduction>
+        </cover-view>
+        <cover-view class="bottomBar">           
+          <bottomNavigation></bottomNavigation>
+        </cover-view>
+      </map>
     </view>
-    <div class="bottomBar">           
-      <bottomNavigation></bottomNavigation>
-    </div>
     <!-- <form @submit="formSubmit">
       <label>
         Input your location to find the closest center:
@@ -82,16 +83,20 @@ const qqmapsdk = new QQMapWX({
 
 export default {
   created() {
+    console.log('created');
     // this.findClosestCenter();
   },
   onShow() {
+    console.log('show');
     // store.commit('showCurrentLocation');
   },
   onReady() {
+    console.log('ready');
     this.mapCtx = wx.createMapContext('myMap');
     // this.showFakeLocation([31.132947630231154, 113.72277433984377]);
   },
   mounted() {
+    console.log('mounted');
     this.getCurrentRegion();
   },
   data() {
@@ -153,6 +158,9 @@ export default {
   methods: {
     showFakeLocation(coordinates) {
       store.commit('showFakeLocation', coordinates);
+    },
+    mapTap() {
+      store.commit('hideGeneralIntroduction');
     },
     findClosestCenter() {
       const that = this;
@@ -333,9 +341,18 @@ export default {
 </script>
 
 <style scoped>
-/* .page-body-button {
-  margin-top: 10px;
-} */
+.generalIntroductionBar {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 215px;
+  /* height: 0; */
+  background: rgba(255,255,255,1);
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.20);
+  overflow: hidden;
+}
 .bottomBar {
   position: fixed;
   z-index: 10;
@@ -343,8 +360,9 @@ export default {
   left: 15px;
   right: 15px;
 }
-map {
+#myMap {
+  position: relative;
   width: 100%;
-  height: calc(100vh - 62PX - 80px);
+  height: calc(100vh - 82PX);
 }
 </style>

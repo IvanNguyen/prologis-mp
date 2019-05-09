@@ -1,40 +1,43 @@
 <template>
-  <div class="general-introduction">
-    <div class="content-row">
-      <img class="company-picture" src="../../static/images/company.png" alt="company">
-      <div class="center-info">
-        <p class="headline">安博苏州金阊物流中心</p>
-        <p>
+  <cover-view class="general-introduction">
+    <cover-view class="content-row">
+      <cover-image class="company-picture" src="../../static/images/company.png" alt="company"/>
+      <cover-view class="center-info">
+        <cover-view class="headline text">安博苏州金阊物流中心</cover-view>
+        <cover-view class="text">
           地址
-          <span>江苏省苏州市姑苏区金阊新城</span>
-        </p>
-        <p>
+          <cover-view class="center-info__content">江苏省苏州市姑苏区金阊新城</cover-view>
+        </cover-view>
+        <cover-view class="text">
           电话
-          <span>(021) 6482-9472</span>
-        </p>
-        <p>
+          <cover-view class="center-info__content">(021) 6482-9472</cover-view>
+        </cover-view>
+        <cover-view class="text">
           概况
-          <span>108,000平方米</span>
-        </p>
-        <p>
+          <cover-view class="center-info__content">108,000平方米</cover-view>
+        </cover-view>
+        <cover-view class="text">
           距离你
-          <span>37km</span>
-          <img
+          <cover-view class="center-info__content">37km
+            <cover-image
             class="position__smallLogo"
             src="../../static/images/smallLocation.png"
             alt="smallLocation"
-          >
-        </p>
-      </div>
-    </div>
-    <div class="button-row">
-      <button @click="toRoutePage" class="direction-button" hover-class="button-hover">
-        <img src="../../static/images/direction-icon.png" alt="direction-icon">
-        路线
-      </button>
-      <button @click="toDetailPage" class="detail-button" hover-class="button-hover">详细介绍</button>
-    </div>
-  </div>
+          />
+          </cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+    <cover-view class="button-row">
+      <cover-view @click="toRoutePage" class="button direction-button" hover-class="button-hover">
+        <cover-image src="../../static/images/direction-icon.png" alt="direction-icon"/>
+        <cover-view class="text">路线</cover-view>
+      </cover-view>
+      <cover-view @click="toDetailPage" class="button detail-button" hover-class="button-hover">
+        <cover-view class="text">详细介绍</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
 </template>
 
 <script>
@@ -52,17 +55,6 @@ export default {
 
 <style scoped lang="scss">
 @import "../global.scss";
-.general-introduction {
-  position: fixed;
-  z-index: 1;
-  top: 82PX;
-  left: 0;
-  width: 100%;
-  height: 215px;
-  // height: 0;
-  background-color: #ffffff;
-  overflow: hidden;
-}
 .company-picture {
   width: 109px;
   height: 119px;
@@ -79,12 +71,13 @@ export default {
 .headline {
   font-weight: 500;
 }
-p {
+.text {
   // padding-bottom: 5px;
   line-height: 23px;
-  span {
-    padding-left: 7px;
-  }
+}
+.center-info__content {
+  display: inline;
+  padding-left: 7px;
 }
 .position__smallLogo {
   padding-left: 5px;
@@ -93,7 +86,7 @@ p {
   display: flex;
   margin-left: 15px;
 }
-button {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,7 +99,7 @@ button {
   background-color: $theme-color;
   border-radius: 50px;
   margin: 0;
-  img {
+  cover-image {
     width: 24px;
     height: 24px;
     padding-right: 10px;

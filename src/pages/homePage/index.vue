@@ -1,4 +1,3 @@
-<!-- wx8921afb763fc2235 -->
 <template>
   <view class="page-body">
     <div>
@@ -23,7 +22,12 @@
       >     
         <positionInfo></positionInfo>
         <cover-view v-if="isGeneralIntroduction" class="generalIntroductionBar">
-          <generalIntroduction></generalIntroduction>
+          <cover-view>
+            <generalIntroduction></generalIntroduction>
+          </cover-view>
+          <cover-view>
+            <navigateToDetailPage></navigateToDetailPage>
+          </cover-view>
         </cover-view>
         <cover-view class="bottomBar">           
           <bottomNavigation></bottomNavigation>
@@ -74,6 +78,7 @@ import topNavigation from '../../components/topNavigation';
 import bottomNavigation from '../../components/bottomNavigation';
 import positionInfo from '../../components/positionInfo';
 import generalIntroduction from '../../components/generalIntroduction';
+import navigateToDetailPage from '../../components/navigateToDetailPage';
 import store from '../../store/appstore';
 import QQMapWX from '../../qqmap-wx-jssdk';
 
@@ -140,6 +145,7 @@ export default {
     positionInfo,
     bottomNavigation,
     generalIntroduction,
+    navigateToDetailPage,
   },
   computed: {
     markers() {

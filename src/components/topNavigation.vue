@@ -33,7 +33,6 @@ export default {
 @import '../global.scss';
 .top-bar-placeholder {
   height: 40PX;
-  // height: 20px;
   width: 100%;
   background-color: $theme-color;
 }
@@ -43,7 +42,6 @@ export default {
   justify-content: center;
   align-items: center;
   height: 42PX;
-  // height: 42px;
   font-weight: bold;
   background-color: #23B2A9
 }

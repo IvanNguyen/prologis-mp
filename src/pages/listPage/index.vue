@@ -1,31 +1,33 @@
 <template>
   <view>
-    <div class="top-bar">
+    <view class="top-navigation-bar">
       <topNavigation></topNavigation>
-      <positionInfo></positionInfo>
-      <div class="demo">
-      <div class="group-picker">
+    </view>
 
-        <picker class="picker region-picker" mode="selector" @change="regionPickerChange" :value="regionIndex" :range="region">
-          <div class="picker-content-wrapper">
-            <view class="picker-content">
-              {{region[regionIndex]}}
-            </view>
-            <img class="down-arrow" src="../../../static/images/down-arrow.png" alt="down-arrow">
-          </div>
-        </picker>
+    <view class="positionInfo-bar">
+      <view>
+        <positionInfoListPage></positionInfoListPage>
+      </view>
+    </view>
 
-        <picker class="picker city-picker" mode="selector" @change="cityPickerChange" :value="cityIndex" :range="city">
-          <div class="picker-content-wrapper">
-            <view class="picker-content">
-              {{city[cityIndex]}}
-            </view>
-            <img class="down-arrow" src="../../../static/images/down-arrow.png" alt="down-arrow">
-          </div>
-        </picker>
+    <div class="group-picker">
+      <picker class="picker region-picker" mode="selector" @change="regionPickerChange" :value="regionIndex" :range="region">
+        <div class="picker-content-wrapper">
+          <view class="picker-content">
+            {{region[regionIndex]}}
+          </view>
+          <img class="down-arrow" src="../../../static/images/down-arrow.png" alt="down-arrow">
+        </div>
+      </picker>
 
-      </div>
-      </div>
+      <picker class="picker city-picker" mode="selector" @change="cityPickerChange" :value="cityIndex" :range="city">
+        <div class="picker-content-wrapper">
+          <view class="picker-content">
+            {{city[cityIndex]}}
+          </view>
+          <img class="down-arrow" src="../../../static/images/down-arrow.png" alt="down-arrow">
+        </div>
+      </picker>
     </div>
 
     <div class="general-introduction-wrapper">
@@ -34,25 +36,32 @@
       v-for="(center, index) in centers"
       class="center"
       >
-        <generalIntroduction/>
+        <view>
+          <generalIntroductionListPage/>
+        </view>
       </div>
     </div>
 
+    <view class="bottomNavigation-bar">
+      <bottomNavigationListPage></bottomNavigationListPage>
+    </view>
   </view>
 </template>
 
 <script>
 
 import topNavigation from '../../components/topNavigation';
-import positionInfo from '../../components/positionInfo';
-import generalIntroduction from '../../components/generalIntroduction';
+import positionInfoListPage from '../../components/positionInfoListPage';
+import generalIntroductionListPage from '../../components/generalIntroductionListPage';
+import bottomNavigationListPage from '../../components/bottomNavigationListPage';
 import store from '../../store/appstore';
 
 export default {
   components: {
     topNavigation,
-    positionInfo,
-    generalIntroduction,
+    positionInfoListPage,
+    generalIntroductionListPage,
+    bottomNavigationListPage,
   },
   data() {
     return {
@@ -80,21 +89,21 @@ export default {
 
 <style scoped lang="scss">
 @import '../../global.scss';
-.top-bar {
- position: fixed;
- top: 0;
- left: 0;
+.positionInfo-bar {
+  position: fixed;
+  top: 82PX;
+  left: 0;
+  right: 0;
 }
 .group-picker {
+  position: fixed;
+  top: calc(82PX + 80px);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.demo {
-  background-color: white;
+  padding: 20px 0;
+  background-color: $theme-bg;
 }
 .picker {
   width: 168px;
@@ -104,6 +113,10 @@ export default {
   border: 1px solid $theme-color;
   font-size: 13px;
   color: #333333;
+  &:hover {
+    color: $theme-color !important;
+    background-color: whitesmoke !important;
+  }
 }
 .picker-content-wrapper {
   display: flex;
@@ -120,6 +133,14 @@ export default {
 // general-introduction
 .general-introduction-wrapper {
   margin-top: calc(82PX + 80px + 80px);
+  margin-bottom: 69px;
   width: 100%;
+}
+.bottomNavigation-bar {
+  display: block;
+  position: fixed;
+  bottom: 25px;
+  left: 15px;
+  right: 15px;
 }
 </style>

@@ -1,40 +1,54 @@
 $theme-bg: white;
 $theme-color: #23B2A9;
 
+$generalInfo-bg: #EFF9F8;
+
 $text-color: white;
 
 $border: 1px solid #BEA593;
 
 @mixin selection-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: $border;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: $border;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    height: 40px;
 }
 
 @mixin icon {
-  width: 16px;
-  height: 16px;
+    width: 16px;
+    height: 16px;
 }
 
-.position__smallLogo, .location__smallLogo {
-  height: 18px;
-  width: 14px;
+.position__smallLogo,
+.location__smallLogo {
+    height: 18px;
+    width: 14px;
 }
 
 button:after {
-  border: none;
+    border: none;
 }
 
 .button-hover {
-  color: $theme-color !important;
-  background-color: whitesmoke !important;
+    color: $theme-color !important;
+    background-color: whitesmoke !important;
 }
 
 cover-image {
-  display: inline-block;
+    display: inline-block;
+}
+
+view {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.top-navigation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }

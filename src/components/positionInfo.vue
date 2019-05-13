@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       currentRegion: '华东区',
-      closestCenter: '上海青浦物流中心上海青浦物流中心上海青浦物流中心',
+      closestCenter: '上海青浦物流中心',
       distance: 37,
     };
   },
@@ -58,7 +58,7 @@ export default {
   color: $text-color;
 }
 .position-info__content {
-  font-weight: 500;
+  font-weight: bold;
   padding-left: 5px;
 }
 .address {

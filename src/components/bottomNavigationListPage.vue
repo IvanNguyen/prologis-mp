@@ -1,27 +1,27 @@
 <template>
-  <cover-view class="group-button">
+  <view class="group-button">
     
-    <cover-view class="button map-button">
-      <cover-view class="content-wrapper disabled">
-        <cover-view class="text">
-          <cover-image src="../../static/images/map-icon.png" alt="map-icon"/>
-        </cover-view>
-        <cover-view class="text">地图模式</cover-view>
-      </cover-view>
-    </cover-view>
+    <view @click="backToHomePage" class="button map-button" hover-class="button-hover">
+      <view class="content-wrapper">
+        <view class="text">
+          <img src="../../static/images/map-icon.png" alt="map-icon"/>
+        </view>
+        <view class="text">地图模式</view>
+      </view>
+    </view>
 
-    <cover-view class="vertical-line"></cover-view>
+    <view class="vertical-line"></view>
 
-    <cover-view @click="toListpage" class="button list-button" hover-class="button-hover">
-      <cover-view class="content-wrapper">
-        <cover-view class="text">
-          <cover-image src="../../static/images/list-icon.png" alt="list-icon"/>
-        </cover-view>
-        <cover-view class="text">列表模式</cover-view>
-      </cover-view>
-    </cover-view>
+    <view class="button list-button">
+      <view class="content-wrapper disabled">
+        <view class="text">
+          <img src="../../static/images/list-icon.png" alt="list-icon"/>
+        </view>
+        <view class="text">列表模式</view>
+      </view>
+    </view>
 
-  </cover-view>
+  </view>
 </template>
 
 <script>
@@ -34,9 +34,9 @@ export default {
     };
   },
   methods: {
-    toListpage() {
+    backToHomePage() {
       // wx.navigateTo({ url:`/pages/centerInfo/main?id=${centerId}`})
-      wx.navigateTo({ url: '/pages/listPage/main' });
+      wx.navigateBack({ delta: 1 });
     },
   },
 };
@@ -47,7 +47,8 @@ export default {
 .group-button {
   width: 100%;
   height: 45px;
-  border-radius: 50PX;
+  border-radius: 50px;
+  overflow: hidden;
   background-color: $theme-color;
   position: relative;
 }
@@ -55,7 +56,7 @@ export default {
   position: absolute;
   z-index: 100;
   top: 8px;
-  left: 49.5%;
+  left: 50%;
   width: 2px;
   height: 30px;
   background-color: white;
@@ -82,7 +83,7 @@ export default {
 .map-button {
     // border-radius: 50px 0px 0px 50px;
     position: relative;
-    cover-image {
+    img {
       width: 18px;
       height: 16px;
       vertical-align: sub;
@@ -93,7 +94,7 @@ export default {
 }
 .list-button {
     // border-radius: 0 50px 50px 0;
-    cover-image {
+    img {
       width: 18px;
       height: 12px;
       vertical-align: sub;
@@ -102,7 +103,7 @@ export default {
 .text {
   display: inline-block;
 }
-cover-image {
+img {
   padding-right: 13px;
 }
 </style>

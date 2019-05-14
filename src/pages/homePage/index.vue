@@ -13,7 +13,7 @@
         :latitude="latitude"
         :scale="scale"
         :polyline="polyline"
-        show-compass="true"
+        show-compass=true
         enable-zooms
         enable-scroll
         enable-rotate
@@ -103,6 +103,7 @@ export default {
   mounted() {
     console.log('mounted');
     this.getCurrentRegion();
+    this.checkSystemInfo();
   },
   data() {
     return {
@@ -162,6 +163,19 @@ export default {
     },
   },
   methods: {
+    checkSystemInfo() {
+      wx.getSystemInfo({
+        success(res) {
+          console.log(res.model);
+          console.log(res.pixelRatio);
+          console.log(res.windowWidth);
+          console.log(res.windowHeight);
+          console.log(res.language);
+          console.log(res.version);
+          console.log(res.platform);
+        },
+      });
+    },
     showFakeLocation(coordinates) {
       store.commit('showFakeLocation', coordinates);
     },

@@ -55,7 +55,7 @@ export default {
   flex-grow: 1;
   font-size: 13px;
   line-height: 23px;
-  color: $text-color;
+  color: $button-text-color;
 }
 .position-info__content {
 //   font-family: -apple-system !important;

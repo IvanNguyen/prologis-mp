@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/detailPage/main",
     "pages/homePage/main",
-    "pages/listPage/main", 
-    "pages/routePage/main"
+    "pages/routePage/main",
+    "pages/detailPage/main",
+    "pages/listPage/main" 
   ],
   "permission": {
     "scope.userLocation": {

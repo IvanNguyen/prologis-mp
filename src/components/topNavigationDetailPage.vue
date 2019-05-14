@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="top-bar-placeholder"></div>
-    <div class="top-navigation">
+  <cover-view>
+    <cover-view class="top-bar-placeholder"></cover-view>
+    <cover-view class="top-navigation">
       <!-- <div class="group-button">
           <div @click="show()" class="back-button">
               B 
@@ -11,11 +11,11 @@
               H
           </div>
       </div> -->
-      <p class="page-title">
+      <cover-view class="page-title">
         安博Prologis
-      </p>
-    </div>
-  </div>
+      </cover-view>
+    </cover-view>
+  </cover-view>
 </template> 
 
 <script>
@@ -78,7 +78,7 @@ export default {
     background-color: #1C9790;
     padding-top: 3px;
 }
-img {
+cover-image {
     width: 100%;
     height: 100%;
 }

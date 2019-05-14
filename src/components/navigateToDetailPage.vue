@@ -36,7 +36,7 @@ export default {
   align-items: center;
   height: 40px;
   width: auto;
-  color: $text-color;
+  color: $button-text-color;
   font-weight: 400;
   font-size: 13px;
   line-height: 40px;

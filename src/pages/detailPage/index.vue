@@ -1,38 +1,94 @@
 <template>
   <div>
 
-    <div class="top-navigation-bar">
-      <div>
-        <topNavigation></topNavigation>
-      </div>
-    </div>
+    <!-- <cover-view class="top-navigation-bar">
+      <cover-view>
+        <topNavigationDetailPage></topNavigationDetailPage>
+      </cover-view>
+    </cover-view> -->
 
-    <div class="swiper-wrapper">
-      <swiper
-        class="mySwiper"
-        indicator-dots="true"
-        indicator-active-color="#ffffff"
-      >
-        <block>
-          <swiper-item>
-            <video
-            id="myVideo"
-            src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
-            controls
-          ></video>
-          </swiper-item>
-        </block>
-        <block>
-          <swiper-item>
-            <img src="../../../static/images/logistic2.jpg" alt="swiper-item">
-          </swiper-item>
-        </block>
-        <block>
-          <swiper-item>
-            <img src="../../../static/images/logistic.jpg" alt="swiper-item">
-          </swiper-item>
-        </block>
-      </swiper>
+    <div class="page-body">
+      <div class="swiper-wrapper">
+        <swiper
+          class="mySwiper"
+          indicator-dots="true"
+          indicator-active-color="#ffffff"
+          interval=2000
+        >
+          <block>
+            <swiper-item>
+              <img src="../../../static/images/logistic2.jpg" alt="swiper-item">
+            </swiper-item>
+          </block>
+          <block>
+            <swiper-item>
+              <img src="../../../static/images/logistic.jpg" alt="swiper-item">
+            </swiper-item>
+          </block>
+          <block>
+            <swiper-item>
+              <video
+              id="myVideo"
+              src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
+              controls=true
+              initial-time=1
+              poster=''
+              object-fit='cover'
+              play-btn-position='center'
+            >
+              <cover-view class="top-navigation-baz">
+                <topNavigationDetailPage></topNavigationDetailPage>
+              </cover-view>  
+            </video>
+            </swiper-item>
+          </block>
+        </swiper>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="description-title">
+          <p class="content-title align-left">华东区 <span>上海青浦配送中心</span></p>
+          <button class="direction-button">
+            <img src="../../../static/images/direction-icon.png" alt="direction-icon">
+            <span>路线</span>
+          </button>
+        </div>
+        <div class="content">
+          <p>
+            该现代化物流园各由一栋单层和双层建筑组成，可租赁面积81,800平方米，先后于2011年和2013年竣工。周边地区均为制造业建筑，限制了新仓库的建设。现代化设计包括早期快速响应灭火喷头系统，属于理想的仓储设施。
+          </p>
+          <p class="break-line">break-line</p>
+          <p>
+            该配送中心距G1501高速仅0.5公里，距S26高速5公里，距G2高速12公里，距上海虹桥机场也仅15公里。
+          </p>
+        </div>
+      </div>
+
+      <div class="content-wrapper gray-bg">
+        <p class="content-title">中心平面图</p>
+        <img class="content-picture" src="../../../static/images/diagram.png" alt="diagram-image"/>
+      </div>
+
+      <div class="content-wrapper">
+        <p class="content-title">周边地图与交通设施</p>
+        <img class="content-picture bit-map" src="../../../static/images/bitmap.png" alt="bitmap">
+      </div>
+
+      <div class="row">
+        <div class="col content">
+          <p>距苏州市区：<span>15公里</span></p>
+          <p>距苏州工业园区：<span>20公里</span></p>
+        </div>
+        <div class="col content">
+          <p>距苏州新区高铁：<span>5公里</span></p>
+          <p>距上海虹桥机场：<span>90公里</span></p>
+        </div>
+      </div>
+
+      <button class="exportPDF" hover-class="button-hover">
+        <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
+        <p>详细资料下载 (PDF)</p>
+      </button>
     </div>
 
   </div>
@@ -41,11 +97,11 @@
 <script>
 
 // import store from '../../store/appstore';
-import topNavigation from '../../components/topNavigation';
+import topNavigationDetailPage from '../../components/topNavigationDetailPage';
 
 export default {
   components: {
-    topNavigation,
+    topNavigationDetailPage,
   },
   data() {
     return {
@@ -66,16 +122,138 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../global.scss';
+// Top navigation bar
+.top-navigation-bar {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.top-navigation-baz {
+  position: fixed;
+  z-index: 999;
+  top: -40PX;
+  left: 0;
+  right: 0;
+}
+//page body
+.page-body {
+  margin-top: 82PX;
+}
+// Swiper
 .swiper-wrapper {
   height: 220px;
+  position: relative;
+  z-index: 2;
+}
+video {
+  // position: relative;
+  // z-index: 2;
+  // overflow: visible !important;
 }
 .mySwiper {
   height: 100%;
+  video, img {
+    height: 100%;
+    width: auto;
+    min-width: 100%;
+  }
 }
-video, img {
-  height: 100%;
-  width: auto;
-  min-width: 100%;
+//Content
+.content-wrapper {
+  padding: 30px 15px;
+}
+.description-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.content-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: $detail-content-title;
+  line-height: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.align-left {
+  text-align: left !important;
+  margin: 0 !important;
+}
+//button direction
+.direction-button {
+  widows: 89px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: $theme-color;
+  margin: 0;
+  img {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+  span {
+    padding-left: 6px;
+    color: $button-text-color;
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+//
+.content {
+  font-size: 13px;
+  line-height: 23px;
+  color: $content-text-color;
+}
+.break-line {
+  visibility: hidden;
+}
+.gray-bg {
+  background-color: #F8F8F8;
+}
+.content-picture {
+  width: 100%;
+}
+.bit-map {
+  margin-bottom: -10px;
+}
+.row {
+  display: flex;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+.col {
+  flex: 50%;
+  max-width: 50%;
+}
+//export PDF button
+.exportPDF {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 345px;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 50px;
+  background-color: $theme-color;
+  img {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+  p {
+    padding-left: 6px;
+    font-size: 13px;
+    color: $button-text-color;
+    line-height: 18px;
+  }
 }
 </style>
 

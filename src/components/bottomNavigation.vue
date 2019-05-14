@@ -66,7 +66,7 @@ export default {
   height: 100%;
   width: 50%;
   background-color: $theme-color;
-  color: $text-color;
+  color: $button-text-color;
   text-align: center;
   font-size: 13px;
   font-weight: 400;

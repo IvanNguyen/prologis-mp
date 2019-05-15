@@ -1,7 +1,7 @@
 <template>
   <view>
     <view class="top-navigation-bar">
-      <topNavigation></topNavigation>
+      <topNavigation :detailPage="isDetailPageOrRoutePage" ></topNavigation>
     </view>
 
     <view class="positionInfo-bar">
@@ -65,6 +65,7 @@ export default {
   },
   data() {
     return {
+      isDetailPageOrRoutePage: false,
       region: ['East China', 'West China', 'South China', 'North China'],
       regionIndex: 0,
       city: ['Beijing', 'Shanghai', 'Tianjin', 'Shenzhen', 'Chongqing', 'Suzhou', 'Guangzhou', 'Wuhan', 'Hangzhou'],

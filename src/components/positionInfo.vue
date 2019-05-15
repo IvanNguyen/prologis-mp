@@ -1,5 +1,5 @@
 <template>
-  <cover-view class="position-info-wrapper">
+  <cover-view @click="showGeneralIntroClosestCenter" class="position-info-wrapper">
 
     <cover-view class="thumbnail-wrapper">
       <cover-image class="thumbnail" src="../../static/images/circleLogo.png" alt="Logo"/>
@@ -26,6 +26,9 @@
 </template>
 
 <script>
+
+import store from '../store/appstore';
+
 export default {
   data() {
     return {
@@ -33,6 +36,11 @@ export default {
       closestCenter: '上海青浦物流中心',
       distance: 37,
     };
+  },
+  methods: {
+    showGeneralIntroClosestCenter() {
+      store.commit('showGeneralIntroduction');
+    },
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <view class="page-body">
     <div>
-      <topNavigation></topNavigation>
+      <topNavigation :detailPage="isDetailPageOrRoutePage" ></topNavigation>
     </div>
     <view class="map-section">
       <map
@@ -107,6 +107,7 @@ export default {
   },
   data() {
     return {
+      isDetailPageOrRoutePage: false,
       scale: '',
       polyline: [
         {

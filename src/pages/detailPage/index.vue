@@ -6,6 +6,15 @@
         <topNavigationDetailPage></topNavigationDetailPage>
       </cover-view>
     </cover-view> -->
+    <div class="top-navigation-bar">
+      <div>
+        <topNavigation :detailPage="isDetailPageOrRoutePage" ></topNavigation>
+      </div>
+    </div>
+
+    <!-- <cover-view class="test">
+      
+    </cover-view> -->
 
     <div class="page-body">
       <div class="swiper-wrapper">
@@ -36,9 +45,9 @@
               object-fit='cover'
               play-btn-position='center'
             >
-              <cover-view class="top-navigation-baz">
+              <!-- <cover-view class="top-navigation-baz">
                 <topNavigationDetailPage></topNavigationDetailPage>
-              </cover-view>  
+              </cover-view>   -->
             </video>
             </swiper-item>
           </block>
@@ -48,7 +57,7 @@
       <div class="content-wrapper">
         <div class="description-title">
           <p class="content-title align-left">华东区 <span>上海青浦配送中心</span></p>
-          <button class="direction-button">
+          <button @click="toRoutePage" class="direction-button">
             <img src="../../../static/images/direction-icon.png" alt="direction-icon">
             <span>路线</span>
           </button>
@@ -97,14 +106,15 @@
 <script>
 
 // import store from '../../store/appstore';
-import topNavigationDetailPage from '../../components/topNavigationDetailPage';
+import topNavigation from '../../components/topNavigation';
 
 export default {
   components: {
-    topNavigationDetailPage,
+    topNavigation,
   },
   data() {
     return {
+      isDetailPageOrRoutePage: true,
     };
   },
   computed: {
@@ -117,24 +127,29 @@ export default {
   //   console.log('center information onReady');
   // },
   methods: {
+    toRoutePage() {
+      wx.navigateTo({ url: '/pages/routePage/main' });
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
 @import '../../global.scss';
+// .test {
+//   height: 82PX;
+//   width: 100%;
+//   background-color: green;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 200;
+// }
 // Top navigation bar
 .top-navigation-bar {
   position: fixed;
   z-index: 100;
   top: 0;
-  left: 0;
-  right: 0;
-}
-.top-navigation-baz {
-  position: fixed;
-  z-index: 999;
-  top: -40PX;
   left: 0;
   right: 0;
 }
@@ -145,13 +160,6 @@ export default {
 // Swiper
 .swiper-wrapper {
   height: 220px;
-  position: relative;
-  z-index: 2;
-}
-video {
-  // position: relative;
-  // z-index: 2;
-  // overflow: visible !important;
 }
 .mySwiper {
   height: 100%;

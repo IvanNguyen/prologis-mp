@@ -1,6 +1,6 @@
 <template>
   <view class="general-introduction-wrapper">
-    <view class="content-row">
+    <view @click="toDetailPage" class="content-row">
       <view class="company-picture-wrapper">
         <img class="company-picture" src="../../static/images/company.png" alt="company"/>
       </view>
@@ -39,6 +39,11 @@
 
 <script>
 export default {
+  methods: {
+    toDetailPage() {
+      wx.navigateTo({ url: '/pages/detailPage/main' });
+    },
+  },
 };
 </script>
 

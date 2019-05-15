@@ -2,15 +2,9 @@
   <div>
     <div class="top-bar-placeholder"></div>
     <div class="top-navigation">
-      <!-- <div class="group-button">
-          <div @click="show()" class="back-button">
-              B 
-          </div>
-          <p>|</p>
-          <div class="home-button">
-              H
-          </div>
-      </div> -->
+      <div v-if="detailPage" class="back-and-home-button">
+        <backAndHomeButton></backAndHomeButton>
+      </div>
       <p class="page-title">
         安博Prologis
       </p>
@@ -19,8 +13,17 @@
 </template> 
 
 <script>
+
+import backAndHomeButton from './backAndHomeButton';
+
 export default {
-//   props: ['pageTitle']
+  props:
+  [
+    'detailPage',
+  ],
+  components: {
+    backAndHomeButton,
+  },
   methods: {
     show() {
       console.log('show');
@@ -51,33 +54,39 @@ export default {
     line-height: 23PX;
     font-weight: 400;
 }
-.back-button {
-    color: white;
-    background-color: #1C9790;
-    border-radius: 50px 0 0 50px;
-    padding: 3px 5px 3px 10px;
+.back-and-home-button {
+  position: absolute;
+  left: 10PX;
+  top: 3PX;
 }
-.home-button {
-    color: white;
-    background-color: #1C9790;
-    border-radius: 0 50px 50px 0;
-    padding: 3px 10px 3px 5px;
-}
-.group-button {
-    display: flex;
-    position: absolute;
-    left: 12PX;
-    font-size: 10px;
-    height: 30PX;
-    margin-top: -1PX;
-    /* width: 75PX; */
-}
-.group-button p {
-    color: white;
-    font-weight: 200;
-    background-color: #1C9790;
-    padding-top: 3px;
-}
+// .group-button {
+//     display: flex;
+//     position: absolute;
+//     left: 12PX;
+//     font-size: 10px;
+//     height: 30PX;
+//     margin-top: -1PX;
+//     // background-color: red;
+//     width: 75PX;
+// }
+// .back-button {
+//     color: white;
+//     background-color: #1C9790;
+//     border-radius: 50px 0 0 50px;
+//     padding: 3px 5px 3px 10px;
+// }
+// .home-button {
+//     color: white;
+//     background-color: #1C9790;
+//     border-radius: 0 50px 50px 0;
+//     padding: 3px 10px 3px 5px;
+// }
+// .group-button p {
+//     color: white;
+//     font-weight: 200;
+//     background-color: #1C9790;
+//     padding-top: 3px;
+// }
 img {
     width: 100%;
     height: 100%;

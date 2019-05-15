@@ -2,10 +2,10 @@
   <view class="page-body">
 
     <div class="top-navigation-bar">
-      <topNavigation></topNavigation>
+      <topNavigation :detailPage="isDetailPageOrRoutePage" ></topNavigation>
     </div>
 
-    <!-- <view class="map-section">
+    <view class="map-section">
       <map
         id="myMap"
         :markers="markers"
@@ -15,27 +15,21 @@
         :latitude="latitude"
         :scale="scale"
         :polyline="polyline"
-        show-compass="true"
+        show-compass
         enable-zooms
         enable-scroll
         enable-rotate
         :include-points="includePoints"
         @tap="mapTap"
       >     
-        <positionInfo></positionInfo>
-        <cover-view v-if="isGeneralIntroduction" class="generalIntroductionBar">
-          <cover-view>
-            <generalIntroduction></generalIntroduction>
-          </cover-view>
-          <cover-view>
-            <navigateToDetailPage></navigateToDetailPage>
-          </cover-view>
-        </cover-view>
-        <cover-view class="bottomBar">           
+        <!-- <cover-view class="bottomBar">           
           <bottomNavigation></bottomNavigation>
+        </cover-view> -->
+        <cover-view class="direction-bar">
+          <directionBar></directionBar>
         </cover-view>
       </map>
-    </view> -->
+    </view>
     
   </view>
 </template>
@@ -44,13 +38,16 @@
 
 // import store from '../../store/appstore';
 import topNavigation from '../../components/topNavigation';
+import directionBar from '../../components/directionBar';
 
 export default {
   components: {
     topNavigation,
+    directionBar,
   },
   data() {
     return {
+      isDetailPageOrRoutePage: true,
     };
   },
   computed: {
@@ -61,12 +58,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.top-navigation-bar {
+#myMap {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 82PX);
+}
+.direction-bar {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100;
 }
 </style>
 

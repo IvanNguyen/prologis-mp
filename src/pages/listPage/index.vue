@@ -4,13 +4,13 @@
       <topNavigation :detailPage="isDetailPageOrRoutePage" ></topNavigation>
     </view>
 
-    <view class="positionInfo-bar">
+    <view class="positionInfo-bar" :style="{ top: positionTopBar + 'PX'}">
       <view>
         <positionInfoListPage></positionInfoListPage>
       </view>
     </view>
 
-    <div class="group-picker">
+    <div class="group-picker" :style="{ top: positionGroupPicker + 'PX'}">
       <picker class="picker region-picker" mode="selector" @change="regionPickerChange" :value="regionIndex" :range="region">
         <div class="picker-content-wrapper">
           <view class="picker-content">
@@ -30,7 +30,7 @@
       </picker>
     </div>
 
-    <div class="general-introduction-wrapper">
+    <div class="general-introduction-wrapper" :style="{ marginTop : positionGeneralIntro + 'PX'}">
       <div
       :key="index"
       v-for="(center, index) in centers"
@@ -76,6 +76,19 @@ export default {
     centers() {
       return store.state.markers;
     },
+    positionTopBar() {
+      return store.state.statusBarHeight + 42;
+    },
+    positionGroupPicker() {
+      return store.state.statusBarHeight + 42 + 80;
+    },
+    positionGeneralIntro() {
+      return store.state.statusBarHeight + 42 + 80 + 80;
+    },
+  },
+  mounted() {
+    console.log('mounted List Page');
+    console.log(this.statusBarHeight);
   },
   methods: {
     regionPickerChange(event) {
@@ -92,13 +105,11 @@ export default {
 @import '../../global.scss';
 .positionInfo-bar {
   position: fixed;
-  top: 82PX;
   left: 0;
   right: 0;
 }
 .group-picker {
   position: fixed;
-  top: calc(82PX + 80px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,8 +144,7 @@ export default {
 }
 // general-introduction
 .general-introduction-wrapper {
-  margin-top: calc(82PX + 80px + 80px);
-  margin-bottom: 69px;
+  padding-bottom: 95px;
   width: 100%;
 }
 .bottomNavigation-bar {

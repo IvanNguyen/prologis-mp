@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="top-bar-placeholder"></div>
+    <div class="top-bar-placeholder" :style="{ height: statusBarHeight + 'PX'}"></div>
     <div class="top-navigation">
       <div v-if="detailPage" class="back-and-home-button">
         <backAndHomeButton></backAndHomeButton>
@@ -15,12 +15,18 @@
 <script>
 
 import backAndHomeButton from './backAndHomeButton';
+import store from '../store/appstore';
 
 export default {
   props:
   [
     'detailPage',
   ],
+  computed: {
+    statusBarHeight() {
+      return store.state.statusBarHeight;
+    },
+  },
   components: {
     backAndHomeButton,
   },
@@ -35,7 +41,6 @@ export default {
 <style scoped lang="scss">
 @import '../global.scss';
 .top-bar-placeholder {
-  height: 40PX;
   width: 100%;
   background-color: $theme-color;
 }
@@ -57,36 +62,9 @@ export default {
 .back-and-home-button {
   position: absolute;
   left: 10PX;
-  top: 3PX;
+  // right: 10PX;
+  bottom: 3px;
 }
-// .group-button {
-//     display: flex;
-//     position: absolute;
-//     left: 12PX;
-//     font-size: 10px;
-//     height: 30PX;
-//     margin-top: -1PX;
-//     // background-color: red;
-//     width: 75PX;
-// }
-// .back-button {
-//     color: white;
-//     background-color: #1C9790;
-//     border-radius: 50px 0 0 50px;
-//     padding: 3px 5px 3px 10px;
-// }
-// .home-button {
-//     color: white;
-//     background-color: #1C9790;
-//     border-radius: 0 50px 50px 0;
-//     padding: 3px 10px 3px 5px;
-// }
-// .group-button p {
-//     color: white;
-//     font-weight: 200;
-//     background-color: #1C9790;
-//     padding-top: 3px;
-// }
 img {
     width: 100%;
     height: 100%;

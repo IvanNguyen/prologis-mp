@@ -36,8 +36,10 @@ export default {
 .group-button {
   display: flex;
   position: relative;
-  width: 95px;
-  height: 32px;
+  // width: 86PX;
+  // height: 31PX;
+  width: 95PX;
+  height: 31PX;
   background-color: rgba(0, 0, 0, 0.19);
   border-radius: 50px;
   overflow: hidden;
@@ -51,24 +53,27 @@ export default {
 }
 .back-button {
   img {
-    width: 9px;
-    height: 13px;
+    width: 9PX;
+    height: 13PX;
   }
 }
 .home-button {
   img {
-    width: 16px;
-    height: 14px;
+    width: 16PX;
+    height: 14PX;
   }
+}
+.icon-wrapper {
+  display: flex;
 }
 .vertical-line {
   position: absolute;
   z-index: 100;
-  top: 7px;
+  top: 6PX;
   left: 49.5%;
-  width: 0.5px;
-  height: 19px;
+  width: 1PX;
+  height: 19PX;
   background-color: white;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 </style>

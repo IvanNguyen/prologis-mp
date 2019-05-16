@@ -7,20 +7,21 @@
       <map
         id="myMap"
         :markers="markers"
-        show-location
         @markertap="showCenterInformation"
         :longitude="longitude"
         :latitude="latitude"
-        :scale="scale"
+        scale=10
+        show-location
         :polyline="polyline"
-        show-compass=true
+        show-compass
         enable-zooms
         enable-scroll
-        enable-rotate
-        :include-points="includePoints"
+     
         @tap="mapTap"
+        :circles="fakeGPSLocation"
       >     
         <positionInfo></positionInfo>
+
         <cover-view v-if="isGeneralIntroduction" class="generalIntroductionBar">
           <cover-view>
             <generalIntroduction></generalIntroduction>
@@ -29,9 +30,15 @@
             <navigateToDetailPage></navigateToDetailPage>
           </cover-view>
         </cover-view>
+
+        <cover-view class="zoomBar">
+          <zoomBar></zoomBar>
+        </cover-view>
+
         <cover-view class="bottomBar">           
           <bottomNavigation></bottomNavigation>
         </cover-view>
+
       </map>
     </view>
     <!-- <form @submit="formSubmit">
@@ -79,6 +86,7 @@ import bottomNavigation from '../../components/bottomNavigation';
 import positionInfo from '../../components/positionInfo';
 import generalIntroduction from '../../components/generalIntroduction';
 import navigateToDetailPage from '../../components/navigateToDetailPage';
+import zoomBar from '../../components/zoomBar';
 import store from '../../store/appstore';
 import QQMapWX from '../../qqmap-wx-jssdk';
 
@@ -89,6 +97,7 @@ const qqmapsdk = new QQMapWX({
 export default {
   created() {
     console.log('created');
+    this.checkSystemInfo();
     // this.findClosestCenter();
   },
   onShow() {
@@ -98,17 +107,17 @@ export default {
   onReady() {
     console.log('ready');
     this.mapCtx = wx.createMapContext('myMap');
+    this.showClosestCenterAround();
     // this.showFakeLocation([31.132947630231154, 113.72277433984377]);
   },
   mounted() {
     console.log('mounted');
     this.getCurrentRegion();
-    this.checkSystemInfo();
   },
   data() {
     return {
       isDetailPageOrRoutePage: false,
-      scale: '',
+      // scale: 9,
       polyline: [
         {
           points: [],
@@ -132,6 +141,7 @@ export default {
           longitude: 113.72277433984377,
         },
         {
+          // Center No.6
           latitude: 38.203697,
           longitude: 115.346004,
         },
@@ -148,6 +158,7 @@ export default {
     bottomNavigation,
     generalIntroduction,
     navigateToDetailPage,
+    zoomBar,
   },
   computed: {
     markers() {
@@ -162,18 +173,23 @@ export default {
     isGeneralIntroduction() {
       return store.state.isGeneralIntroduction;
     },
+    statusBarHeight() {
+      return store.state.statusBarHeight;
+    },
   },
   methods: {
     checkSystemInfo() {
       wx.getSystemInfo({
         success(res) {
-          console.log(res.model);
-          console.log(res.pixelRatio);
-          console.log(res.windowWidth);
-          console.log(res.windowHeight);
-          console.log(res.language);
-          console.log(res.version);
-          console.log(res.platform);
+          console.log(res);
+          store.commit('getStatusBarHeight', res.statusBarHeight);
+          // console.log(res.model);
+          // console.log(res.pixelRatio);
+          // console.log(res.windowWidth);
+          // console.log(res.windowHeight);
+          // console.log(res.language);
+          // console.log(res.version);
+          // console.log(res.platform);
         },
       });
     },
@@ -324,7 +340,7 @@ export default {
         },
       });
     },
-    showIncludePoints() {
+    showClosestCenterAround() {
       this.mapCtx.includePoints({
         padding: [10],
         points: [
@@ -333,8 +349,8 @@ export default {
             longitude: 115.346004,
           },
           {
-            latitude: 40.730649,
-            longitude: 116.939021,
+            latitude: 31.132947630231154,
+            longitude: 113.72277433984377,
           },
         ],
       });
@@ -381,9 +397,14 @@ export default {
   left: 15px;
   right: 15px;
 }
+.zoomBar {
+  position: fixed;
+  right: 15px;
+  bottom: 166px;
+}
 #myMap {
   position: relative;
   width: 100%;
-  height: calc(100vh - 82PX);
+  height: 100vh;
 }
 </style>

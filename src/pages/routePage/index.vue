@@ -61,7 +61,7 @@ export default {
 #myMap {
   position: relative;
   width: 100%;
-  height: calc(100vh - 82PX);
+  height: 100vh;
 }
 .direction-bar {
   position: fixed;

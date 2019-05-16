@@ -16,7 +16,7 @@
       
     </cover-view> -->
 
-    <div class="page-body">
+    <div class="page-body" :style="{ marginTop : positionPageBody + 'PX'}">
       <div class="swiper-wrapper">
         <swiper
           class="mySwiper"
@@ -94,10 +94,12 @@
         </div>
       </div>
 
-      <button class="exportPDF" hover-class="button-hover">
-        <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
-        <p>详细资料下载 (PDF)</p>
-      </button>
+      <div class="button-wrapper">
+        <button class="exportPDF" hover-class="button-hover">
+          <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
+          <p>详细资料下载 (PDF)</p>
+        </button>
+      </div>
     </div>
 
   </div>
@@ -105,7 +107,7 @@
 
 <script>
 
-// import store from '../../store/appstore';
+import store from '../../store/appstore';
 import topNavigation from '../../components/topNavigation';
 
 export default {
@@ -118,6 +120,9 @@ export default {
     };
   },
   computed: {
+    positionPageBody() {
+      return store.state.statusBarHeight + 42;
+    },
   },
   // onReady() {
   //   const { id } = this.$root.$mp.query;
@@ -152,10 +157,6 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-}
-//page body
-.page-body {
-  margin-top: 82PX;
 }
 // Swiper
 .swiper-wrapper {
@@ -234,13 +235,16 @@ export default {
 .row {
   display: flex;
   padding: 0 15px;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 .col {
   flex: 50%;
   max-width: 50%;
 }
 //export PDF button
+.button-wrapper {
+  padding-bottom: 30px;
+}
 .exportPDF {
   display: flex;
   justify-content: center;
@@ -248,7 +252,6 @@ export default {
   width: 345px;
   height: 40px;
   margin: 0 auto;
-  margin-bottom: 30px;
   border-radius: 50px;
   background-color: $theme-color;
   img {

@@ -10,13 +10,12 @@
         @markertap="showCenterInformation"
         :longitude="longitude"
         :latitude="latitude"
-        scale=10
+        :scale="scale"
         show-location
         :polyline="polyline"
         show-compass
         enable-zooms
         enable-scroll
-     
         @tap="mapTap"
         :circles="fakeGPSLocation"
       >     
@@ -32,7 +31,11 @@
         </cover-view>
 
         <cover-view class="zoomBar">
-          <zoomBar></zoomBar>
+          <zoomBar 
+            @centerCurrentLocation="centerCurrentLocation" 
+            @zoomInMap="zoomInMap"
+            @zoomOutMap="zoomOutMap"
+          ></zoomBar>
         </cover-view>
 
         <cover-view class="bottomBar">           
@@ -97,32 +100,45 @@ const qqmapsdk = new QQMapWX({
 export default {
   created() {
     console.log('created');
+  },
+  onLoad() {
+    console.log('onLoad');
     this.checkSystemInfo();
-    // this.findClosestCenter();
+    this.mapCtx = wx.createMapContext('myMap');
+    this.findClosestCenter();
+    this.showClosestCenterAround();
+    this.getCenterLocation();
   },
   onShow() {
     console.log('show');
+    // this.showRoute(this.demoCenter);
+    // this.showClosestCenterAround();
+    // this.getCenterLocation();
     // store.commit('showCurrentLocation');
   },
   onReady() {
     console.log('ready');
-    this.mapCtx = wx.createMapContext('myMap');
-    this.showClosestCenterAround();
+    // this.getCurrentRegion();
+    // this.mapCtx = wx.createMapContext('myMap');
     // this.showFakeLocation([31.132947630231154, 113.72277433984377]);
   },
   mounted() {
     console.log('mounted');
-    this.getCurrentRegion();
+    // this.getCurrentRegion();
   },
   data() {
     return {
+      // demoCenter: {
+      //   latitude: 38.203697,
+      //   longitude: 115.346004,
+      // },
       isDetailPageOrRoutePage: false,
-      // scale: 9,
+      scale: '',
       polyline: [
         {
           points: [],
           color: '#008E5B',
-          width: 5,
+          width: 6,
         },
       ],
       fakeGPSLocation: [
@@ -193,6 +209,42 @@ export default {
         },
       });
     },
+    getCenterLocation() {
+      this.mapCtx.getCenterLocation({
+        success(res) {
+          const centerLocationCoordinates = {
+            longitude: res.longitude,
+            latitude: res.latitude,
+          };
+          store.commit('setCenterLocation', centerLocationCoordinates);
+        },
+      });
+    },
+    zoomInMap() {
+      const that = this;
+      this.getCenterLocation();
+      this.mapCtx.getScale({
+        success(res) {
+          console.log(res);
+          that.scale = res.scale + 1;
+        },
+        fail(error) {
+          console.log(error);
+        },
+      });
+    },
+    zoomOutMap() {
+      const that = this;
+      this.getCenterLocation();
+      this.mapCtx.getScale({
+        success(res) {
+          that.scale = res.scale - 1;
+        },
+        fail(error) {
+          console.log(error);
+        },
+      });
+    },
     showFakeLocation(coordinates) {
       store.commit('showFakeLocation', coordinates);
     },
@@ -223,7 +275,13 @@ export default {
             marker => marker.latitude === closestCenter[0].to.lat
                   && marker.longitude === closestCenter[0].to.lng,
           );
-          console.log(`The closet center is : ${closestCenterInfo.name}`);
+          console.log(`The closet center is : ${closestCenterInfo.centerName}`);
+          store.commit('setClosestCenterInfo', {
+            region: closestCenterInfo.region,
+            city: closestCenterInfo.city,
+            centerName: closestCenterInfo.centerName,
+            distance: (closestCenter[0].distance / 1000).toFixed(0),
+          });
         },
         fail(error) {
           console.error(error);
@@ -314,17 +372,9 @@ export default {
       // display the general introduction panel
       store.commit('showGeneralIntroduction');
     },
-    getCenterLocation() {
-      this.mapCtx.getCenterLocation({
-        success(res) {
-          console.log(res.longitude);
-          console.log(res.latitude);
-        },
-      });
-    },
-    showCurrentGpsLocation() {
+    centerCurrentLocation() {
       this.mapCtx.moveToLocation();
-      store.commit('showCurrentLocation');
+      store.commit('centerCurrentLocation');
     },
     translateMarker() {
       this.mapCtx.translateMarker({
@@ -342,7 +392,7 @@ export default {
     },
     showClosestCenterAround() {
       this.mapCtx.includePoints({
-        padding: [10],
+        padding: [160],
         points: [
           {
             latitude: 38.203697,
@@ -400,7 +450,7 @@ export default {
 .zoomBar {
   position: fixed;
   right: 15px;
-  bottom: 166px;
+  bottom: 85px;
 }
 #myMap {
   position: relative;

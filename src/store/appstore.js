@@ -5,16 +5,22 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
+    closestCenter: {
+      region: '',
+      city: '',
+      centerName: '',
+      distance: '',
+    },
     statusBarHeight: 0,
-    currentLatitude: '31.132947630231154',
-    currentLongitude: '113.72277433984377',
+    currentLatitude: '',
+    currentLongitude: '',
     isGeneralIntroduction: false,
     markers: [
       {
         id: 1,
         latitude: 23.099994,
         longitude: 113.32452,
-        // name: 'T.I.T',
+        centerName: 'T.I.T',
         // title: 'marker title',
         iconPath: '/static/images/location.png',
         width: 29,
@@ -26,7 +32,7 @@ const store = new Vuex.Store({
       },
       {
         id: 2,
-        // name: 'Center No.2',
+        centerName: 'Center No.2',
         latitude: 23.533822,
         longitude: 116.169978,
         iconPath: '/static/images/location.png',
@@ -39,7 +45,7 @@ const store = new Vuex.Store({
       },
       {
         id: 3,
-        // name: 'Center No.3',
+        centerName: 'Center No.3',
         latitude: 21.749346,
         longitude: 111.451351,
         iconPath: '/static/images/location.png',
@@ -52,7 +58,7 @@ const store = new Vuex.Store({
       },
       {
         id: 4,
-        // name: 'Center No.4',
+        centerName: 'Center No.4',
         latitude: 28.786965,
         longitude: 101.679012,
         iconPath: '/static/images/location.png',
@@ -65,7 +71,7 @@ const store = new Vuex.Store({
       },
       {
         id: 5,
-        // name: 'Center No.5',
+        centerName: 'Center No.5',
         latitude: 31.484939,
         longitude: 105.480281,
         iconPath: '/static/images/location.png',
@@ -78,20 +84,22 @@ const store = new Vuex.Store({
       },
       {
         id: 6,
-        // name: 'Center No.6',
+        centerName: 'Center No.6',
         latitude: 38.203697,
         longitude: 115.346004,
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
         description: 'Xin chao 6',
+        region: 'east',
+        city: 'shanghai',
         address: 'address 6',
         openTime: '13PM',
         phoneNumber: 909666666,
       },
       {
         id: 7,
-        // name: 'Beijing',
+        centerName: 'Beijing',
         latitude: 40.730649,
         longitude: 116.939021,
         iconPath: '/static/images/location.png',
@@ -114,7 +122,17 @@ const store = new Vuex.Store({
       // eslint-disable-next-line prefer-destructuring
       state.currentLongitude = coordinates[1];
     },
-    showCurrentLocation(state) {
+    setCenterLocation(state, centerLocationCoordinates) {
+      state.currentLongitude = centerLocationCoordinates.longitude;
+      state.currentLatitude = centerLocationCoordinates.latitude;
+    },
+    setClosestCenterInfo(state, closestCenterInfo) {
+      state.closestCenter.region = closestCenterInfo.region;
+      state.closestCenter.city = closestCenterInfo.city;
+      state.closestCenter.distance = closestCenterInfo.distance;
+      state.closestCenter.centerName = closestCenterInfo.centerName;
+    },
+    centerCurrentLocation(state) {
       wx.getLocation({
         type: 'wgs84',
         success(res) {

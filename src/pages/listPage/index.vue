@@ -66,13 +66,23 @@ export default {
   data() {
     return {
       isDetailPageOrRoutePage: false,
-      region: ['East China', 'West China', 'South China', 'North China'],
+      region: ['West China', 'East China', 'South China', 'North China'],
       regionIndex: 0,
       city: ['Beijing', 'Shanghai', 'Tianjin', 'Shenzhen', 'Chongqing', 'Suzhou', 'Guangzhou', 'Wuhan', 'Hangzhou'],
+      cityInEastChina: ['Shanghai', 'Suzhou', 'Kunshan', 'Wuxi', 'Nanjing', 'Hangzhou', 'Huzhou', 'Jiaxing', 'Wuhan'],
+      cityInNorthChina: ['Beijing', 'Tianjin', 'Shenyang', 'Jinan'],
+      cityInWestChina: ['Chengdu', 'Chongqing', 'Xian'],
+      cityInSouthChina: ['Guangzhou', 'Fushan', 'Dongwan', 'Huizhou'],
       cityIndex: 0,
     };
   },
   computed: {
+    // closestCenter() {
+    //   return {
+    //     region: store.state.closestCenter.region,
+    //     city: store.state.closestCenter.city,
+    //   }
+    // },
     centers() {
       return store.state.markers;
     },

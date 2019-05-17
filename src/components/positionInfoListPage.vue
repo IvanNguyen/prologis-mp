@@ -9,13 +9,13 @@
 
       <view class="region-wrapper">
         <view class="text">你目前的所在区域:</view>
-        <view class="text position-info__content">{{currentRegion}}</view>
+        <view class="text position-info__content">{{closestCenterRegion}}</view>
       </view>
       
       <view class="address-wrapper">
         <view class="text">离你最近的物业:</view>
-        <view class="text position-info__content address">{{closestCenter}}</view>
-        <view class="text position-info__content distance">{{distance}}km</view>
+        <view class="text position-info__content address">{{closestCenterName}}</view>
+        <view class="text position-info__content distance">{{closestCenterDistance}} km</view>
         <view class="text position__smallLogo-wrapper">
           <img class="position__smallLogo" src="../../static/images/smallLocation.png" alt="smallLocation-icon"/> 
         </view>
@@ -26,13 +26,27 @@
 </template>
 
 <script>
+
+import store from '../store/appstore';
+
 export default {
   data() {
     return {
-      currentRegion: '华东区',
-      closestCenter: '上海青浦物流中心',
-      distance: 37,
+      // currentRegion: '华东区',
+      // closestCenter: '上海青浦物流中心',
+      // distance: 37,
     };
+  },
+  computed: {
+    closestCenterRegion() {
+      return store.state.closestCenter.region;
+    },
+    closestCenterName() {
+      return store.state.closestCenter.centerName;
+    },
+    closestCenterDistance() {
+      return store.state.closestCenter.distance;
+    },
   },
 };
 </script>

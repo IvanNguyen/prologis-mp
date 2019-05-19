@@ -18,7 +18,7 @@
         enable-scroll
         @tap="mapTap"
         :circles="fakeGPSLocation"
-      >     
+      >
         <positionInfo></positionInfo>
 
         <cover-view v-if="isGeneralIntroduction" class="generalIntroductionBar">
@@ -31,14 +31,14 @@
         </cover-view>
 
         <cover-view class="zoomBar">
-          <zoomBar 
-            @centerCurrentLocation="centerCurrentLocation" 
+          <zoomBar
+            @centerCurrentLocation="centerCurrentLocation"
             @zoomInMap="zoomInMap"
             @zoomOutMap="zoomOutMap"
           ></zoomBar>
         </cover-view>
 
-        <cover-view class="bottomBar">           
+        <cover-view class="bottomBar">
           <bottomNavigation></bottomNavigation>
         </cover-view>
 
@@ -105,6 +105,10 @@ export default {
     console.log('onLoad');
     this.checkSystemInfo();
     this.mapCtx = wx.createMapContext('myMap');
+    wx.getLocation({
+      type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
+    });
+    this.test();
     this.findClosestCenter();
     this.showClosestCenterAround();
     this.getCenterLocation();
@@ -125,6 +129,24 @@ export default {
   mounted() {
     console.log('mounted');
     // this.getCurrentRegion();
+    wx.getSetting({
+      success(res) {
+        console.log(res.authSetting);
+        // res.authSetting = {
+        //   "scope.userInfo": true,
+        //   "scope.userLocation": true
+        // }
+      },
+    });
+    wx.openSetting({
+      success(res) {
+        console.log(res.authSetting);
+        // res.authSetting = {
+        //   "scope.userInfo": true,
+        //   "scope.userLocation": true
+        // }
+      },
+    });
   },
   data() {
     return {
@@ -194,11 +216,15 @@ export default {
     },
   },
   methods: {
+    test(res) {
+      console.log('test');
+      console.log(res.mp.detail);
+    },
     checkSystemInfo() {
       wx.getSystemInfo({
         success(res) {
           console.log(res);
-          store.commit('getStatusBarHeight', res.statusBarHeight);
+          store.commit('setStatusBarHeight', res.statusBarHeight);
           // console.log(res.model);
           // console.log(res.pixelRatio);
           // console.log(res.windowWidth);

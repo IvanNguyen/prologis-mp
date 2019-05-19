@@ -3,11 +3,11 @@
     "pages/homePage/main",
     "pages/routePage/main",
     "pages/detailPage/main",
-    "pages/listPage/main" 
+    "pages/listPage/main"
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "Message is limited 30 words"
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
   },
   "window": {
@@ -16,5 +16,8 @@
     "navigationBarTitleText": "HomePage",
     "navigationBarTextStyle": "white",
     "navigationStyle": "custom"
+  },
+  "networkTimeout": {
+    "request": 120000
   }
 }

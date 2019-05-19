@@ -20,10 +20,10 @@
         </div>
       </picker>
 
-      <picker class="picker city-picker" mode="selector" @change="cityPickerChange" :value="cityIndex" :range="city">
+      <picker class="picker city-picker" mode="selector" @change="cityPickerChange" :value="cityIndex" :range="cityInSelectedRegion">
         <div class="picker-content-wrapper">
           <view class="picker-content">
-            {{city[cityIndex]}}
+            {{cityInSelectedRegion[cityIndex]}}
           </view>
           <img class="down-arrow" src="../../../static/images/down-arrow.png" alt="down-arrow">
         </div>
@@ -67,8 +67,7 @@ export default {
     return {
       isDetailPageOrRoutePage: false,
       region: ['West China', 'East China', 'South China', 'North China'],
-      regionIndex: 0,
-      city: ['Beijing', 'Shanghai', 'Tianjin', 'Shenzhen', 'Chongqing', 'Suzhou', 'Guangzhou', 'Wuhan', 'Hangzhou'],
+      regionIndex: '',
       cityInEastChina: ['Shanghai', 'Suzhou', 'Kunshan', 'Wuxi', 'Nanjing', 'Hangzhou', 'Huzhou', 'Jiaxing', 'Wuhan'],
       cityInNorthChina: ['Beijing', 'Tianjin', 'Shenyang', 'Jinan'],
       cityInWestChina: ['Chengdu', 'Chongqing', 'Xian'],
@@ -77,12 +76,33 @@ export default {
     };
   },
   computed: {
-    // closestCenter() {
-    //   return {
-    //     region: store.state.closestCenter.region,
-    //     city: store.state.closestCenter.city,
-    //   }
-    // },
+    closestRegion() {
+      const closestRegion = this.region
+        .findIndex(region => region === store.state.closestCenter.region);
+      return closestRegion;
+    },
+    regionSelected() {
+      return this.region[this.regionIndex];
+    },
+    cityInSelectedRegion() {
+      switch (this.regionSelected) {
+        case 'West China':
+          return this.cityInWestChina;
+        case 'East China':
+          return this.cityInEastChina;
+        case 'South China':
+          return this.cityInSouthChina;
+        case 'North China':
+          return this.cityInNorthChina;
+        default:
+          return null;
+      }
+    },
+    closestCity() {
+      const closestCity = this.cityInSelectedRegion
+        .findIndex(city => city === store.state.closestCenter.city);
+      return closestCity;
+    },
     centers() {
       return store.state.markers;
     },
@@ -96,13 +116,17 @@ export default {
       return store.state.statusBarHeight + 42 + 80 + 80;
     },
   },
+  onLoad() {
+    this.regionIndex = this.closestRegion;
+    this.cityIndex = this.closestCity;
+  },
   mounted() {
     console.log('mounted List Page');
-    console.log(this.statusBarHeight);
   },
   methods: {
     regionPickerChange(event) {
       this.regionIndex = event.mp.detail.value;
+      this.cityIndex = 0;
     },
     cityPickerChange(event) {
       this.cityIndex = event.mp.detail.value;

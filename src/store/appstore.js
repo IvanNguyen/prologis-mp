@@ -91,8 +91,8 @@ const store = new Vuex.Store({
         width: 29,
         height: 37,
         description: 'Xin chao 6',
-        region: 'east',
-        city: 'shanghai',
+        region: 'East China',
+        city: 'Wuxi',
         address: 'address 6',
         openTime: '13PM',
         phoneNumber: 909666666,
@@ -113,7 +113,7 @@ const store = new Vuex.Store({
     ],
   },
   mutations: {
-    getStatusBarHeight(state, statusBarHeight) {
+    setStatusBarHeight(state, statusBarHeight) {
       state.statusBarHeight = statusBarHeight;
     },
     showFakeLocation(state, coordinates) {

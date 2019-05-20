@@ -7,26 +7,26 @@
 
       <cover-view class="center-info">
         
-        <cover-view class="text headline">安博苏州金阊物流中心</cover-view>
+        <cover-view class="text headline">{{centerName}}</cover-view>
 
         <cover-view class="address-wrapper">
           <cover-view class="text">地址</cover-view>
-          <cover-view class="text center-info__content">江苏省苏州市姑苏区金阊新城</cover-view>
+          <cover-view class="text center-info__content">{{centerAddress}}</cover-view>
         </cover-view>
 
         <cover-view class="phone-wrapper">
           <cover-view class="text">电话</cover-view>
-          <cover-view class="text center-info__content">(021) 6482-9472</cover-view>
+          <cover-view class="text center-info__content">{{centerPhoneNumber}}</cover-view>
         </cover-view>
        
         <cover-view class="overview-wrapper">
           <cover-view class="text">概况</cover-view>
-          <cover-view class="text center-info__content">108,000平方米</cover-view>
+          <cover-view class="text center-info__content">{{centerArea}} 平方米</cover-view>
         </cover-view>
 
         <cover-view class="distance-wrapper">
           <cover-view class="text">距离你</cover-view>
-          <cover-view class="text center-info__content">37km</cover-view>
+          <cover-view class="text center-info__content">{{centerDistance}} km</cover-view>
           <cover-view class="text">
             <cover-image class="location__smallLogo" src="../../static/images/smallLocation.png" alt="smallLocation-icon"/>
           </cover-view>
@@ -38,7 +38,27 @@
 </template>
 
 <script>
+
+import store from '../store/appstore';
+
 export default {
+  computed: {
+    centerName() {
+      return store.getters.selectedCenter.centerName;
+    },
+    centerAddress() {
+      return store.getters.selectedCenter.address;
+    },
+    centerPhoneNumber() {
+      return store.getters.selectedCenter.phoneNumber;
+    },
+    centerArea() {
+      return store.getters.selectedCenter.area;
+    },
+    centerDistance() {
+      return store.getters.selectedCenter.distance;
+    },
+  },
 };
 </script>
 

@@ -6,109 +6,122 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     closestCenter: {
+      id: '',
       region: '',
       city: '',
       centerName: '',
       distance: '',
     },
+    selectedCenterId: '',
     statusBarHeight: 0,
     currentLatitude: '',
     currentLongitude: '',
-    isGeneralIntroduction: false,
+    isShowGeneralIntroduction: false,
     markers: [
       {
         id: 1,
         latitude: 23.099994,
         longitude: 113.32452,
-        centerName: 'T.I.T',
-        // title: 'marker title',
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        description: 'Xin chao 1',
+        centerName: 'Center No.1',
+        region: 'East China',
+        city: 'Wuxi',
         address: 'address 1',
-        openTime: '8AM',
+        area: '111,000',
         phoneNumber: 909111111,
+        distance: '',
       },
       {
         id: 2,
-        centerName: 'Center No.2',
         latitude: 23.533822,
         longitude: 116.169978,
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        description: 'Xin chao 2',
+        centerName: 'Center No.2',
+        region: 'East China',
+        city: 'Wuxi',
         address: 'address 2',
-        openTime: '9AM',
+        area: '222,000',
         phoneNumber: 909222222,
+        distance: '',
       },
       {
         id: 3,
-        centerName: 'Center No.3',
         latitude: 21.749346,
         longitude: 111.451351,
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        description: 'Xin chao 3',
+        centerName: 'Center No.3',
+        region: 'East China',
+        city: 'Wuxi',
         address: 'address 3',
-        openTime: '10AM',
+        area: '333,000',
         phoneNumber: 909333333,
+        distance: '',
       },
       {
         id: 4,
-        centerName: 'Center No.4',
         latitude: 28.786965,
         longitude: 101.679012,
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        description: 'Xin chao 4',
+        centerName: 'Center No.4',
+        region: 'East China',
+        city: 'Wuxi',
         address: 'address 4',
-        openTime: '11AM',
+        area: '444,000',
         phoneNumber: 909444444,
+        distance: '',
       },
       {
         id: 5,
-        centerName: 'Center No.5',
         latitude: 31.484939,
         longitude: 105.480281,
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        description: 'Xin chao 5',
+        centerName: 'Center No.5',
+        region: 'East China',
+        city: 'Wuxi',
         address: 'address 5',
-        openTime: '12AM',
+        area: '555,000',
         phoneNumber: 909555555,
+        distance: '',
       },
       {
         id: 6,
-        centerName: 'Center No.6',
         latitude: 38.203697,
         longitude: 115.346004,
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        description: 'Xin chao 6',
+        centerName: 'Center No.6',
         region: 'East China',
         city: 'Wuxi',
         address: 'address 6',
-        openTime: '13PM',
+        area: '108,000',
         phoneNumber: 909666666,
+        distance: '',
       },
       {
         id: 7,
-        centerName: 'Beijing',
         latitude: 40.730649,
         longitude: 116.939021,
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        description: 'Xin chao 7',
+        centerName: 'Beijing',
+        region: 'North China',
+        city: 'Beijing',
         address: 'address 7',
-        openTime: '14PM',
+        area: '777,000',
         phoneNumber: 909777777,
+        distance: '',
       },
     ],
   },
@@ -127,10 +140,14 @@ const store = new Vuex.Store({
       state.currentLatitude = centerLocationCoordinates.latitude;
     },
     setClosestCenterInfo(state, closestCenterInfo) {
+      state.closestCenter.id = closestCenterInfo.id;
       state.closestCenter.region = closestCenterInfo.region;
       state.closestCenter.city = closestCenterInfo.city;
       state.closestCenter.distance = closestCenterInfo.distance;
       state.closestCenter.centerName = closestCenterInfo.centerName;
+    },
+    setSelectedCenterId(state, selectedCenterId) {
+      state.selectedCenterId = selectedCenterId;
     },
     centerCurrentLocation(state) {
       wx.getLocation({
@@ -149,10 +166,18 @@ const store = new Vuex.Store({
       state.currentLongitude = centerTapped.longitude;
     },
     showGeneralIntroduction(state) {
-      state.isGeneralIntroduction = true;
+      state.isShowGeneralIntroduction = true;
     },
     hideGeneralIntroduction(state) {
-      state.isGeneralIntroduction = false;
+      state.isShowGeneralIntroduction = false;
+    },
+    caclulateDistance(state, allCenterCoordinates) {
+      for (let i = 0; i < state.markers.length; i++) {
+        const center = allCenterCoordinates
+          .find(value => value.to.lng === state.markers[i].longitude
+            && value.to.lat === state.markers[i].latitude);
+        state.markers[i].distance = (center.distance / 1000).toFixed(0);
+      }
     },
   },
   getters: {
@@ -165,6 +190,11 @@ const store = new Vuex.Store({
         });
       }
       return allCenterLocation;
+    },
+    selectedCenter(state) {
+      let selectedCenter = {};
+      selectedCenter = state.markers.find(value => value.id === state.selectedCenterId);
+      return selectedCenter;
     },
   },
 });

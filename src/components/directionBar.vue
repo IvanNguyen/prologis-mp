@@ -10,7 +10,7 @@
           </cover-view>
           <cover-view>
             <cover-view class="text">电话</cover-view>
-            <cover-view class="content">{{centerPhone}}</cover-view>
+            <cover-view class="content">{{centerPhoneNumber}}</cover-view>
           </cover-view>
         </cover-view>
       </cover-view>
@@ -29,19 +29,36 @@
 </template>
 
 <script>
+
+import store from '../store/appstore';
+
 export default {
   data() {
     return {
-      centerName: '上海青浦配送中心',
-      centerAddress: '中国上海青浦工业园新团路518号',
-      centerPhone: '(021) 6482-9472',
     };
+  },
+  computed: {
+    centerName() {
+      return store.getters.selectedCenter.centerName;
+    },
+    centerAddress() {
+      return store.getters.selectedCenter.address;
+    },
+    centerPhoneNumber() {
+      return store.getters.selectedCenter.phoneNumber;
+    },
+    centerLongitude() {
+      return store.getters.selectedCenter.longitude;
+    },
+    centerLatitude() {
+      return store.getters.selectedCenter.latitude;
+    },
   },
   methods: {
     openMap() {
       wx.openLocation({
-        latitude: 39.98406,
-        longitude: 116.30752,
+        latitude: this.centerLatitude,
+        longitude: this.centerLongitude,
         scale: 5,
       });
     },

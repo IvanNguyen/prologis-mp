@@ -21,7 +21,7 @@
       >
         <positionInfo></positionInfo>
 
-        <cover-view v-if="isGeneralIntroduction" class="generalIntroductionBar">
+        <cover-view v-if="isShowGeneralIntroduction" class="generalIntroductionBar">
           <cover-view>
             <generalIntroduction></generalIntroduction>
           </cover-view>
@@ -101,14 +101,15 @@ export default {
   created() {
     console.log('created');
   },
+  onLaunch() {
+    wx.getLocation({
+      type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
+    });
+  },
   onLoad() {
     console.log('onLoad');
     this.checkSystemInfo();
     this.mapCtx = wx.createMapContext('myMap');
-    wx.getLocation({
-      type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
-    });
-    this.test();
     this.findClosestCenter();
     this.showClosestCenterAround();
     this.getCenterLocation();
@@ -199,6 +200,9 @@ export default {
     zoomBar,
   },
   computed: {
+    closestCenter() {
+      return store.state.closestCenter;
+    },
     markers() {
       return store.state.markers;
     },
@@ -208,18 +212,14 @@ export default {
     longitude() {
       return store.state.currentLongitude;
     },
-    isGeneralIntroduction() {
-      return store.state.isGeneralIntroduction;
+    isShowGeneralIntroduction() {
+      return store.state.isShowGeneralIntroduction;
     },
     statusBarHeight() {
       return store.state.statusBarHeight;
     },
   },
   methods: {
-    test(res) {
-      console.log('test');
-      console.log(res.mp.detail);
-    },
     checkSystemInfo() {
       wx.getSystemInfo({
         success(res) {
@@ -290,6 +290,8 @@ export default {
         success(res) {
           console.log(res);
           const result = res.result.elements;
+          console.log(result);
+          store.commit('caclulateDistance', result);
           const closestCenter = result.sort((a, b) => a.distance - b.distance);
           const closestCenterCoordinates = {
             latitude: closestCenter[0].to.lat,
@@ -303,11 +305,13 @@ export default {
           );
           console.log(`The closet center is : ${closestCenterInfo.centerName}`);
           store.commit('setClosestCenterInfo', {
+            id: closestCenterInfo.id,
             region: closestCenterInfo.region,
             city: closestCenterInfo.city,
             centerName: closestCenterInfo.centerName,
             distance: (closestCenter[0].distance / 1000).toFixed(0),
           });
+          // store.commit('setSelectedCenterId', closestCenterInfo.id);
         },
         fail(error) {
           console.error(error);
@@ -346,37 +350,6 @@ export default {
         },
       });
     },
-    showRoute(centerCoordinates) {
-      const that = this;
-      qqmapsdk.direction({
-        mode: 'driving',
-        from: {
-          latitude: 31.132947630231154, // Fake current latitude
-          longitude: 113.72277433984377, // Fake current longitude
-        },
-        to: {
-          latitude: centerCoordinates.latitude,
-          longitude: centerCoordinates.longitude,
-        },
-        success(res) {
-          console.log(res);
-          const ret = res;
-          const coors = ret.result.routes[0].polyline;
-          const pl = [];
-          const kr = 1000000;
-          for (let i = 2; i < coors.length; i++) {
-            coors[i] = Number(coors[i - 2]) + Number(coors[i]) / kr;
-          }
-          for (let i = 0; i < coors.length; i += 2) {
-            pl.push({ latitude: coors[i], longitude: coors[i + 1] });
-          }
-          that.polyline[0].points = pl;
-        },
-        fail(error) {
-          console.error(error);
-        },
-      });
-    },
     makePhoneCall() {
       wx.makePhoneCall({
         phoneNumber: '1340000', // fake number phone
@@ -396,6 +369,7 @@ export default {
       // };
       // this.showRoute(centerCoordinates);
       // display the general introduction panel
+      store.commit('setSelectedCenterId', centerId);
       store.commit('showGeneralIntroduction');
     },
     centerCurrentLocation() {

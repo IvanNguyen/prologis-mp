@@ -9,13 +9,13 @@
 
       <cover-view class="region-wrapper">
         <cover-view class="text">你目前的所在区域:</cover-view>
-        <cover-view class="text position-info__content">{{currentRegion}}</cover-view>
+        <cover-view class="text position-info__content">{{closestRegion}}</cover-view>
       </cover-view>
       
       <cover-view class="address-wrapper">
         <cover-view class="text">离你最近的物业:</cover-view>
-        <cover-view class="text position-info__content address">{{closestCenter}}</cover-view>
-        <cover-view class="text position-info__content distance">{{distance}}km</cover-view>
+        <cover-view class="text position-info__content address">{{closestCenterName}}</cover-view>
+        <cover-view class="text position-info__content distance">{{closestCenterDistance}}km</cover-view>
         <cover-view class="text position__smallLogo-wrapper">
           <cover-image class="position__smallLogo" src="../../static/images/smallLocation.png" alt="smallLocation-icon"/> 
         </cover-view>
@@ -32,13 +32,25 @@ import store from '../store/appstore';
 export default {
   data() {
     return {
-      currentRegion: '华东区',
-      closestCenter: '上海青浦物流中心',
-      distance: 37,
     };
+  },
+  computed: {
+    closestRegion() {
+      return store.state.closestCenter.region;
+    },
+    closestCenterName() {
+      return store.state.closestCenter.centerName;
+    },
+    closestCenterDistance() {
+      return store.state.closestCenter.distance;
+    },
+    closestCenterId() {
+      return store.state.closestCenter.id;
+    },
   },
   methods: {
     showGeneralIntroClosestCenter() {
+      store.commit('setSelectedCenterId', this.closestCenterId);
       store.commit('showGeneralIntroduction');
     },
   },

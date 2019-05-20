@@ -56,7 +56,7 @@
 
       <div class="content-wrapper">
         <div class="description-title">
-          <p class="content-title align-left">华东区 <span>上海青浦配送中心</span></p>
+          <p class="content-title align-left">{{centerRegion}} <span>{{centerName}}</span></p>
           <button @click="toRoutePage" class="direction-button">
             <img src="../../../static/images/direction-icon.png" alt="direction-icon">
             <span>路线</span>
@@ -122,6 +122,12 @@ export default {
   computed: {
     positionPageBody() {
       return store.state.statusBarHeight + 42;
+    },
+    centerRegion() {
+      return store.getters.selectedCenter.region;
+    },
+    centerName() {
+      return store.getters.selectedCenter.centerName;
     },
   },
   // onReady() {

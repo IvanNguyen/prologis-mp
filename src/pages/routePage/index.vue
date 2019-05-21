@@ -12,7 +12,6 @@
         show-location
         :longitude="longitude"
         :latitude="latitude"
-        :scale="scale"
         :polyline="polyline"
         show-compass
         enable-zooms
@@ -21,9 +20,6 @@
         :include-points="includePoints"
         :circles="fakeGPSLocation"
       >     
-        <!-- <cover-view class="bottomBar">           
-          <bottomNavigation></bottomNavigation>
-        </cover-view> -->
         <cover-view class="direction-bar">
           <directionBar></directionBar>
         </cover-view>
@@ -59,6 +55,7 @@ export default {
           width: 6,
         },
       ],
+      reRender: '',
       fakeGPSLocation: [
         {
           latitude: 31.132947630231154,
@@ -84,11 +81,13 @@ export default {
   },
   onLoad() {
     console.log('RoutePageOnLoad');
+    this.mapCtx = wx.createMapContext('myMap');
     this.showRoute();
     this.zoomToView();
   },
   onShow() {
     console.log('RoutePageOnShow');
+    // this.showRoute();
   },
   onReady() {
     console.log('RoutePageOnReady');
@@ -98,6 +97,17 @@ export default {
   },
   mounted() {
     console.log('RoutePageMounted');
+    console.log(this.polyline[0].points);
+    this.reRender = 'true';
+  },
+  beforeUpdate() {
+    console.log('RoutedBeforeUpdate');
+    console.log(this.polyline[0].points);
+    // this.showRoute();
+  },
+  update() {
+    console.log('RouteUpdate');
+    // this.showRoute();
   },
   methods: {
     showRoute() {
@@ -110,12 +120,12 @@ export default {
           longitude: 113.72277433984377, // Fake current longitude
         },
         to: {
-          latitude: 23.099994,
-          longitude: 113.32452,
+          latitude: this.centerLatitude,
+          longitude: this.centerLongitude,
         },
         success(res) {
+          console.log('success');
           console.log(res);
-          console.log('thanhcong');
           const ret = res;
           const coors = ret.result.routes[0].polyline;
           const pl = [];
@@ -135,7 +145,7 @@ export default {
     },
     zoomToView() {
       this.mapCtx.includePoints({
-        padding: [160],
+        padding: [160, 40, 160, 40],
         points: [
           {
             latitude: this.centerLatitude,

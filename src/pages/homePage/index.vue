@@ -44,41 +44,6 @@
 
       </map>
     </view>
-    <!-- <form @submit="formSubmit">
-      <label>
-        Input your location to find the closest center:
-        <input
-          style="border:1px solid #000;"
-          name="start"
-        >
-      </label>
-      <button form-type="submit">Find the closet center</button>
-    </form>
-    <view class="btn-area">
-      <button @click="search()" class="page-body-button" type="primary">Search POI</button>
-    </view>
-    <view class="btn-area">
-      <button @click="makePhoneCall()" class="page-body-button" type="primary">Make a phone call</button>
-    </view>
-    <view class="btn-area">
-      <button
-        @click="getCenterLocation()"
-        class="page-body-button"
-        type="primary"
-      >Get Center Location</button>
-      <button
-        open-type="openSetting"
-        @click="showCurrentGpsLocation()"
-        class="page-body-button"
-        type="primary"
-      >Current GPS Location</button>
-      <button @click="translateMarker()" class="page-body-button" type="primary">Moving annotation</button>
-      <button
-        @click="includePoints()"
-        class="page-body-button"
-        type="primary"
-      >Zoom the field of view to show all latitude and longitude</button>
-    </view> -->
   </view>
 </template>
 
@@ -99,23 +64,27 @@ const qqmapsdk = new QQMapWX({
 
 export default {
   created() {
-    console.log('created');
+    console.log('HomePageCreated');
   },
   onLaunch() {
-    wx.getLocation({
-      type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
-    });
+    console.log('onLaunch');
   },
   onLoad() {
     console.log('onLoad');
+    wx.getLocation({
+      type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
+    });
     this.checkSystemInfo();
     this.mapCtx = wx.createMapContext('myMap');
     this.findClosestCenter();
     this.showClosestCenterAround();
     this.getCenterLocation();
+    // this.mapTap();
+    // this.showRoute();
   },
   onShow() {
     console.log('show');
+    // this.mapTap();
     // this.showRoute(this.demoCenter);
     // this.showClosestCenterAround();
     // this.getCenterLocation();
@@ -123,13 +92,17 @@ export default {
   },
   onReady() {
     console.log('ready');
+    // this.mapTap();
     // this.getCurrentRegion();
     // this.mapCtx = wx.createMapContext('myMap');
     // this.showFakeLocation([31.132947630231154, 113.72277433984377]);
   },
+  beforeMount() {
+    console.log('beforeMount');
+  },
   mounted() {
     console.log('mounted');
-    // this.getCurrentRegion();
+    this.getCurrentRegion();
     wx.getSetting({
       success(res) {
         console.log(res.authSetting);
@@ -148,6 +121,16 @@ export default {
         // }
       },
     });
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate');
+    // this.mapTap();
+    console.log(this.polyline[0].points);
+    // this.showRoute();
+  },
+  update() {
+    console.log('Update');
+    // this.showRoute();
   },
   data() {
     return {
@@ -174,21 +157,21 @@ export default {
           strokeWidth: 10,
         },
       ],
-      includePoints: [
-        {
-          latitude: 31.132947630231154,
-          longitude: 113.72277433984377,
-        },
-        {
-          // Center No.6
-          latitude: 38.203697,
-          longitude: 115.346004,
-        },
-        // {
-        //   latitude: 40.730649,
-        //   longitude: 116.939021,
-        // },
-      ],
+      // includePoints: [
+      //   {
+      //     latitude: 31.132947630231154,
+      //     longitude: 113.72277433984377,
+      //   },
+      //   {
+      //     // Center No.6
+      //     latitude: 38.203697,
+      //     longitude: 115.346004,
+      //   },
+      //   // {
+      //   //   latitude: 40.730649,
+      //   //   longitude: 116.939021,
+      //   // },
+      // ],
     };
   },
   components: {
@@ -278,7 +261,7 @@ export default {
       store.commit('hideGeneralIntroduction');
     },
     findClosestCenter() {
-      const that = this;
+      // const that = this;
       qqmapsdk.calculateDistance({
         // from: event.mp.detail.value.start || '',
         from: {
@@ -293,11 +276,11 @@ export default {
           console.log(result);
           store.commit('caclulateDistance', result);
           const closestCenter = result.sort((a, b) => a.distance - b.distance);
-          const closestCenterCoordinates = {
-            latitude: closestCenter[0].to.lat,
-            longitude: closestCenter[0].to.lng,
-          };
-          that.includePoints.push(closestCenterCoordinates);
+          // const closestCenterCoordinates = {
+          //   latitude: closestCenter[0].to.lat,
+          //   longitude: closestCenter[0].to.lng,
+          // };
+          // that.includePoints.push(closestCenterCoordinates);
           console.log(`The closest center far from you : ${closestCenter[0].distance}`);
           const closestCenterInfo = store.state.markers.find(
             marker => marker.latitude === closestCenter[0].to.lat
@@ -311,7 +294,7 @@ export default {
             centerName: closestCenterInfo.centerName,
             distance: (closestCenter[0].distance / 1000).toFixed(0),
           });
-          // store.commit('setSelectedCenterId', closestCenterInfo.id);
+          store.commit('setSelectedCenterId', closestCenterInfo.id);
         },
         fail(error) {
           console.error(error);

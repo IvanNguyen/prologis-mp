@@ -19,13 +19,17 @@
 </template> 
 
 <script>
+
+import store from '../store/appstore';
+
 export default {
   methods: {
     goBack() {
       wx.navigateBack({ delta: 1 });
     },
     toHomePage() {
-      wx.reLaunch({ url: '/pages/homePage/main' });
+      store.commit('hideGeneralIntroduction');
+      wx.navigateBack({ delta: 2 });
     },
   },
 };

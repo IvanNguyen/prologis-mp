@@ -37,7 +37,9 @@
       class="center"
       >
         <view>
-          <generalIntroductionListPage/>
+          <generalIntroductionListPage
+            :centerId="centerId"
+          />
         </view>
       </div>
     </div>

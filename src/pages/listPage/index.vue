@@ -31,17 +31,24 @@
     </div>
 
     <div class="general-introduction-wrapper" :style="{ marginTop : positionGeneralIntro + 'PX'}">
-      <div
+      <!-- <div
       :key="index"
       v-for="(center, index) in centers"
       class="center"
-      >
+      > -->
         <view>
           <generalIntroductionListPage
-            :centerId="centerId"
+            :key="index"
+            v-for="(center, index) in centers"
+            :centerId="center.id"
+            :centerName="center.centerName"
+            :centerAddress="center.address"
+            :centerPhoneNumber="center.phoneNumber"
+            :centerArea="center.area"
+            :centerDistance="center.distance"
           />
         </view>
-      </div>
+      <!-- </div> -->
     </div>
 
     <view class="bottomNavigation-bar">
@@ -106,7 +113,7 @@ export default {
       return closestCity;
     },
     centers() {
-      return store.state.markers;
+      return store.getters.centerFilter;
     },
     positionTopBar() {
       return store.state.statusBarHeight + 42;
@@ -129,9 +136,11 @@ export default {
     regionPickerChange(event) {
       this.regionIndex = event.mp.detail.value;
       this.cityIndex = 0;
+      store.commit('setCityFilter', this.cityInSelectedRegion[0]);
     },
     cityPickerChange(event) {
       this.cityIndex = event.mp.detail.value;
+      store.commit('setCityFilter', this.cityInSelectedRegion[event.mp.detail.value]);
     },
   },
 };

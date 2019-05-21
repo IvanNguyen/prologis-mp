@@ -6,27 +6,27 @@
       </view>
 
       <view class="center-info">
-        
-        <view class="text headline">安博苏州金阊物流中心</view>
+
+        <view class="text headline">{{centerName}}</view>
 
         <view class="address-wrapper">
           <view class="text">地址</view>
-          <view class="text center-info__content">江苏省苏州市姑苏区金阊新城</view>
+          <view class="text center-info__content">{{centerAddress}}</view>
         </view>
 
         <view class="phone-wrapper">
           <view class="text">电话</view>
-          <view class="text center-info__content">(021) 6482-9472</view>
+          <view class="text center-info__content">{{centerPhoneNumber}}</view>
         </view>
-       
+
         <view class="overview-wrapper">
           <view class="text">概况</view>
-          <view class="text center-info__content">108,000平方米</view>
+          <view class="text center-info__content">{{centerArea}}平方米</view>
         </view>
 
         <view class="distance-wrapper">
           <view class="text">距离你</view>
-          <view class="text center-info__content">37km</view>
+          <view class="text center-info__content">{{centerDistance}}km</view>
           <view class="text">
             <img class="location__smallLogo" src="../../static/images/smallLocation.png" alt="smallLocation-icon"/>
           </view>
@@ -38,9 +38,21 @@
 </template>
 
 <script>
+
+import store from '../store/appstore';
+
 export default {
+  props: [
+    'centerId',
+    'centerName',
+    'centerAddress',
+    'centerPhoneNumber',
+    'centerArea',
+    'centerDistance',
+  ],
   methods: {
     toDetailPage() {
+      store.commit('setSelectedCenterId', this.centerId);
       wx.navigateTo({ url: '/pages/detailPage/main' });
     },
   },

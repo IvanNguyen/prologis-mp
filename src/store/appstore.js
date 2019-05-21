@@ -12,6 +12,7 @@ const store = new Vuex.Store({
       centerName: '',
       distance: '',
     },
+    cityFilter: '',
     selectedCenterId: '',
     statusBarHeight: 0,
     currentLatitude: '',
@@ -25,9 +26,9 @@ const store = new Vuex.Store({
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        centerName: 'Center No.1',
+        centerName: 'Wuhan No.1',
         region: 'East China',
-        city: 'Wuxi',
+        city: 'Wuhan',
         address: 'address 1',
         area: '111,000',
         phoneNumber: 909111111,
@@ -40,7 +41,7 @@ const store = new Vuex.Store({
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        centerName: 'Center No.2',
+        centerName: 'Wuxi No.2',
         region: 'East China',
         city: 'Wuxi',
         address: 'address 2',
@@ -55,9 +56,9 @@ const store = new Vuex.Store({
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        centerName: 'Center No.3',
+        centerName: 'Wuhan No.3',
         region: 'East China',
-        city: 'Wuxi',
+        city: 'Wuhan',
         address: 'address 3',
         area: '333,000',
         phoneNumber: 909333333,
@@ -70,7 +71,7 @@ const store = new Vuex.Store({
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        centerName: 'Center No.4',
+        centerName: 'Wuxi No.4',
         region: 'East China',
         city: 'Wuxi',
         address: 'address 4',
@@ -85,9 +86,9 @@ const store = new Vuex.Store({
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        centerName: 'Center No.5',
+        centerName: 'Shanghai No.5',
         region: 'East China',
-        city: 'Wuxi',
+        city: 'Shanghai',
         address: 'address 5',
         area: '555,000',
         phoneNumber: 909555555,
@@ -100,7 +101,7 @@ const store = new Vuex.Store({
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        centerName: 'Center No.6',
+        centerName: 'Wuxi No.6',
         region: 'East China',
         city: 'Wuxi',
         address: 'address 6',
@@ -145,6 +146,7 @@ const store = new Vuex.Store({
       state.closestCenter.city = closestCenterInfo.city;
       state.closestCenter.distance = closestCenterInfo.distance;
       state.closestCenter.centerName = closestCenterInfo.centerName;
+      state.cityFilter = closestCenterInfo.city;
     },
     setSelectedCenterId(state, selectedCenterId) {
       state.selectedCenterId = selectedCenterId;
@@ -179,6 +181,9 @@ const store = new Vuex.Store({
         state.markers[i].distance = (center.distance / 1000).toFixed(0);
       }
     },
+    setCityFilter(state, cityFilter) {
+      state.cityFilter = cityFilter;
+    },
   },
   getters: {
     allCenterLocation(state) {
@@ -195,6 +200,11 @@ const store = new Vuex.Store({
       let selectedCenter = {};
       selectedCenter = state.markers.find(value => value.id === state.selectedCenterId);
       return selectedCenter;
+    },
+    centerFilter(state) {
+      let centerFilter = [];
+      centerFilter = state.markers.filter(value => value.city === state.cityFilter);
+      return centerFilter;
     },
   },
 });

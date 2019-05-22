@@ -71,66 +71,30 @@ export default {
   },
   onLoad() {
     console.log('onLoad');
-    wx.getLocation({
-      type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
-    });
+    this.getLocation();
     this.checkSystemInfo();
     this.mapCtx = wx.createMapContext('myMap');
     this.findClosestCenter();
     this.showClosestCenterAround();
     this.getCenterLocation();
-    // this.mapTap();
-    // this.showRoute();
   },
   onShow() {
-    console.log('show');
-    // this.mapTap();
-    // this.showRoute(this.demoCenter);
-    // this.showClosestCenterAround();
-    // this.getCenterLocation();
-    // store.commit('showCurrentLocation');
+    console.log('homePageShow');
   },
   onReady() {
     console.log('ready');
-    // this.mapTap();
-    // this.getCurrentRegion();
-    // this.mapCtx = wx.createMapContext('myMap');
-    // this.showFakeLocation([31.132947630231154, 113.72277433984377]);
   },
   beforeMount() {
     console.log('beforeMount');
   },
   mounted() {
     console.log('mounted');
-    this.getCurrentRegion();
-    wx.getSetting({
-      success(res) {
-        console.log(res.authSetting);
-        // res.authSetting = {
-        //   "scope.userInfo": true,
-        //   "scope.userLocation": true
-        // }
-      },
-    });
-    wx.openSetting({
-      success(res) {
-        console.log(res.authSetting);
-        // res.authSetting = {
-        //   "scope.userInfo": true,
-        //   "scope.userLocation": true
-        // }
-      },
-    });
   },
   beforeUpdate() {
     console.log('beforeUpdate');
-    // this.mapTap();
-    console.log(this.polyline[0].points);
-    // this.showRoute();
   },
   update() {
     console.log('Update');
-    // this.showRoute();
   },
   data() {
     return {
@@ -203,18 +167,46 @@ export default {
     },
   },
   methods: {
+    getLocation() {
+      const that = this;
+      wx.getLocation({
+        type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
+        success() {
+          wx.getSetting({
+            success() {
+            },
+          });
+        },
+        fail() {
+          that.openConfirm();
+        },
+      });
+    },
+    openConfirm() {
+      const that = this;
+      wx.showModal({
+        content: '请允许微信访问此设备的位置以获得更好的体验!',
+        confirmText: '允许',
+        confirmColor: '#008000',
+        cancelText: '拒绝',
+        success(res) {
+          console.log(res);
+          if (res.confirm) {
+            wx.openSetting({
+              success() {
+                that.getLocation();
+              },
+            });
+          } else {
+            that.getLocation();
+          }
+        },
+      });
+    },
     checkSystemInfo() {
       wx.getSystemInfo({
         success(res) {
-          console.log(res);
           store.commit('setStatusBarHeight', res.statusBarHeight);
-          // console.log(res.model);
-          // console.log(res.pixelRatio);
-          // console.log(res.windowWidth);
-          // console.log(res.windowHeight);
-          // console.log(res.language);
-          // console.log(res.version);
-          // console.log(res.platform);
         },
       });
     },
@@ -271,22 +263,14 @@ export default {
         },
         to: store.getters.allCenterLocation,
         success(res) {
-          console.log(res);
+          // console.log(res);
           const result = res.result.elements;
-          console.log(result);
           store.commit('caclulateDistance', result);
           const closestCenter = result.sort((a, b) => a.distance - b.distance);
-          // const closestCenterCoordinates = {
-          //   latitude: closestCenter[0].to.lat,
-          //   longitude: closestCenter[0].to.lng,
-          // };
-          // that.includePoints.push(closestCenterCoordinates);
-          console.log(`The closest center far from you : ${closestCenter[0].distance}`);
           const closestCenterInfo = store.state.markers.find(
             marker => marker.latitude === closestCenter[0].to.lat
                   && marker.longitude === closestCenter[0].to.lng,
           );
-          console.log(`The closet center is : ${closestCenterInfo.centerName}`);
           store.commit('setClosestCenterInfo', {
             id: closestCenterInfo.id,
             region: closestCenterInfo.region,
@@ -298,38 +282,6 @@ export default {
         },
         fail(error) {
           console.error(error);
-        },
-      });
-    },
-    search() {
-      wx.getSetting({
-        success(res) {
-          console.log(res.authSetting);
-          if (!res.authSetting['scope.record']) {
-            console.log('scope record have been set');
-            wx.authorize({
-              scope: 'scope.userLocation',
-              success() {
-                console.log('authorize success');
-              },
-              fail(error) {
-                console.log(error);
-              },
-            });
-          }
-        },
-      });
-      wx.getLocation({
-        type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
-        success(res) {
-          console.log(res);
-          // const latitude = res.latitude
-          // const longitude = res.longitude
-          wx.openLocation({
-            latitude: 39.98406,
-            longitude: 116.30752,
-            scale: 5,
-          });
         },
       });
     },
@@ -386,24 +338,6 @@ export default {
             longitude: 113.72277433984377,
           },
         ],
-      });
-    },
-    getCurrentRegion() {
-      this.mapCtx.getRegion({
-        success(res) {
-          console.log(res);
-        },
-        fail(error) {
-          console.log(error);
-        },
-      });
-      this.mapCtx.getScale({
-        success(res) {
-          console.log(res);
-        },
-        fail(error) {
-          console.log(error);
-        },
       });
     },
   },

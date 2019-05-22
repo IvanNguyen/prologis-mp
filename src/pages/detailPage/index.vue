@@ -95,11 +95,12 @@
       </div>
 
       <div class="button-wrapper">
-        <button class="exportPDF" hover-class="button-hover">
+        <button @click="downloadFile" class="exportPDF" hover-class="button-hover">
           <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
           <p>详细资料下载 (PDF)</p>
         </button>
       </div>
+      <!-- <web-view src="https://prologis.getbynder.com/m/5976be5f14c48140/original/Prologis-Shanghai-Qingpu-Distribution-Center-190220.pdf"></web-view> -->
     </div>
 
   </div>
@@ -141,21 +142,39 @@ export default {
     toRoutePage() {
       wx.navigateTo({ url: '/pages/routePage/main' });
     },
+    downloadFile() {
+      wx.downloadFile({
+        url: 'https://prologis.getbynder.com/m/5976be5f14c48140/original/Prologis-Shanghai-Qingpu-Distribution-Center-190220.pdf',
+        success(res) {
+          console.log(res);
+          const fileDownLoad = res.tempFilePath;
+          // const filePath = res.tempFilePath;
+          // wx.saveFile({
+          //   tempFilePath: fileDownLoad,
+          //   success(result) {
+          //     console.log(result);
+          //     const { savedFilePath } = res;
+          //     console.log(`${savedFilePath} + saved file`);
+          //   },
+          //   fail(error) {
+          //     console.log(error);
+          //   },
+          // });
+          wx.openDocument({
+            filePath: fileDownLoad,
+            success(result) {
+              console.log(result);
+            },
+          });
+        },
+      });
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
 @import '../../global.scss';
-// .test {
-//   height: 82PX;
-//   width: 100%;
-//   background-color: green;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 200;
-// }
 // Top navigation bar
 .top-navigation-bar {
   position: fixed;

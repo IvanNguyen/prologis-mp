@@ -145,7 +145,7 @@ export default {
     },
     zoomToView() {
       this.mapCtx.includePoints({
-        padding: [160, 40, 160, 40],
+        padding: [180, 40, 40, 40],
         points: [
           {
             latitude: this.centerLatitude,

@@ -29,7 +29,7 @@ export default {
     },
     toHomePage() {
       store.commit('hideGeneralIntroduction');
-      wx.navigateBack({ delta: 2 });
+      wx.navigateBack({ delta: 3 });
     },
   },
 };

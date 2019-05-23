@@ -327,7 +327,7 @@ export default {
     },
     showClosestCenterAround() {
       this.mapCtx.includePoints({
-        padding: [160],
+        padding: [160, 40, 40, 160],
         points: [
           {
             latitude: 38.203697,

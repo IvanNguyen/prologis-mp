@@ -13,10 +13,8 @@
         :longitude="longitude"
         :latitude="latitude"
         :polyline="polyline"
-        show-compass
         enable-zooms
         enable-scroll
-        enable-rotate
         :include-points="includePoints"
         :circles="fakeGPSLocation"
       >     
@@ -146,6 +144,7 @@ export default {
     zoomToView() {
       this.mapCtx.includePoints({
         padding: [180, 40, 40, 40],
+        // padding: [200, 40, 40, 200],
         points: [
           {
             latitude: this.centerLatitude,

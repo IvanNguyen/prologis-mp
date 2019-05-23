@@ -22,7 +22,6 @@
           class="mySwiper"
           indicator-dots="true"
           indicator-active-color="#ffffff"
-          interval=2000
         >
           <block>
             <swiper-item>
@@ -38,7 +37,7 @@
             <swiper-item>
               <video
               id="myVideo"
-              src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
+              src="https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4"
               controls=true
               initial-time=1
               poster=''
@@ -144,11 +143,21 @@ export default {
     },
     downloadFile() {
       wx.downloadFile({
-        url: 'https://prologis.getbynder.com/m/5976be5f14c48140/original/Prologis-Shanghai-Qingpu-Distribution-Center-190220.pdf',
+        url: 'https://cdn.prologis.site/PDF/Prologis%20Shanghai%20Qingpu%20Distribution%20Center%20190220.pdf',
+        // url: 'https://calibre-ebook.com/downloads/demos/demo.docx',
         success(res) {
           console.log(res);
-          const fileDownLoad = res.tempFilePath;
           // const filePath = res.tempFilePath;
+          // wx.showModal({
+          //   content: 'success',
+          //   confirmText: '允许',
+          //   confirmColor: '#008000',
+          //   cancelText: '拒绝',
+          //   success(result) {
+          //     console.log(result);
+          //   },
+          // });
+          const filePath = res.tempFilePath;
           // wx.saveFile({
           //   tempFilePath: fileDownLoad,
           //   success(result) {
@@ -161,7 +170,23 @@ export default {
           //   },
           // });
           wx.openDocument({
-            filePath: fileDownLoad,
+            filePath,
+            fileType: 'pdf',
+            success(result) {
+              console.log(result);
+            },
+            fail(error) {
+              console.log(error);
+            },
+          });
+        },
+        fail(error) {
+          console.log(error);
+          wx.showModal({
+            content: 'error',
+            confirmText: '允许',
+            confirmColor: '#008000',
+            cancelText: '拒绝',
             success(result) {
               console.log(result);
             },

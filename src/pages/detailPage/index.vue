@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!-- <cover-view class="top-navigation-bar">
       <cover-view>
         <topNavigationDetailPage></topNavigationDetailPage>
@@ -25,7 +24,7 @@
         >
           <block>
             <swiper-item>
-              <img src="../../../static/images/logistic2.jpg" alt="swiper-item">
+              <img @click="previewImage" src="../../../static/images/logistic2.jpg" alt="swiper-item">
             </swiper-item>
           </block>
           <block>
@@ -94,7 +93,7 @@
       </div>
 
       <div class="button-wrapper">
-        <button @click="downloadFile" class="exportPDF" hover-class="button-hover">
+        <button @click="toWebView" class="exportPDF" hover-class="button-hover">
           <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
           <p>详细资料下载 (PDF)</p>
         </button>
@@ -138,6 +137,9 @@ export default {
   //   console.log('center information onReady');
   // },
   methods: {
+    toWebView() {
+      wx.navigateTo({ url: '/pages/webView/main' });
+    },
     toRoutePage() {
       wx.navigateTo({ url: '/pages/routePage/main' });
     },
@@ -157,7 +159,7 @@ export default {
           //     console.log(result);
           //   },
           // });
-          const filePath = res.tempFilePath;
+          const pdfFilePath = res.tempFilePath;
           // wx.saveFile({
           //   tempFilePath: fileDownLoad,
           //   success(result) {
@@ -170,10 +172,10 @@ export default {
           //   },
           // });
           wx.openDocument({
-            filePath,
+            filePath: pdfFilePath,
             fileType: 'pdf',
-            success(result) {
-              console.log(result);
+            success() {
+              console.log('open PDF success');
             },
             fail(error) {
               console.log(error);
@@ -193,6 +195,15 @@ export default {
           });
         },
       });
+    },
+    previewImage(e) {
+      // const { value } = this.relationships.field_carousel;
+      // const urls = value.map(item => item.attributes.uri.previewUrl);
+      wx.previewImage({
+        current: 'https://media.alienwarearena.com/media/1327-a.jpg',
+        urls: ['http://personal.psu.edu/xqz5228/jpg.jpg', 'https://media.alienwarearena.com/media/1327-a.jpg', 'http://www.haogongzhang.com/Uploads/baike/201406/53916cf3bc8f1.jpg'],
+      });
+      console.log(e.currentTarget);
     },
   },
 };

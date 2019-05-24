@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/homePage/main",
-    "pages/routePage/main",
+    "pages/webView/main",
     "pages/detailPage/main",
+    "pages/routePage/main",
     "pages/listPage/main"
   ],
   "permission": {

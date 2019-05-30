@@ -1,19 +1,19 @@
 <template>
   <div>
-    <!-- <cover-view class="top-navigation-bar">
-      <cover-view>
+    <!-- <div class="top-navigation-bar">
+      <div>
         <topNavigationDetailPage></topNavigationDetailPage>
-      </cover-view>
+      </div>
+    </div> -->
+
+    <!-- <cover-view class="top-navigation-bar test">
     </cover-view> -->
+
     <div class="top-navigation-bar">
       <div>
         <topNavigation :detailPage="isDetailPageOrRoutePage" ></topNavigation>
       </div>
     </div>
-
-    <!-- <cover-view class="test">
-      
-    </cover-view> -->
 
     <div class="page-body" :style="{ marginTop : positionPageBody + 'PX'}">
       <div class="swiper-wrapper">
@@ -22,31 +22,35 @@
           indicator-dots="true"
           indicator-active-color="#ffffff"
         >
-          <block>
+          <!-- images -->
+          <block
+            :key="index"
+            v-for="(image, index) in swiperImages"
+          >
             <swiper-item>
-              <img @click="previewImage" src="../../../static/images/logistic2.jpg" alt="swiper-item">
+              <div class="picture-placeholder">
+                <img src="../../../static/images/logo.png" alt="picture-placeholder">
+              </div>
+              <img :src="image" alt="swiper-item">
             </swiper-item>
           </block>
+          <!-- video -->
           <block>
             <swiper-item>
-              <img src="../../../static/images/logistic.jpg" alt="swiper-item">
-            </swiper-item>
-          </block>
-          <block>
-            <swiper-item>
+              <div class="picture-placeholder">
+                <img src="../../../static/images/logo.png" alt="picture-placeholder">
+              </div>
               <video
               id="myVideo"
-              src="https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4"
+              :src="swiperVideo"
               controls=true
               initial-time=1
-              poster=''
+              poster
               object-fit='cover'
               play-btn-position='center'
-            >
-              <!-- <cover-view class="top-navigation-baz">
-                <topNavigationDetailPage></topNavigationDetailPage>
-              </cover-view>   -->
-            </video>
+              >
+              <!-- <cover-view class="demo"/> -->
+              </video>
             </swiper-item>
           </block>
         </swiper>
@@ -54,7 +58,10 @@
 
       <div class="content-wrapper">
         <div class="description-title">
-          <p class="content-title align-left">{{centerRegion}} <span>{{centerName}}</span></p>
+          <div class="d-flex f-grow-1">
+            <p class="region content-title align-left">{{centerRegion}}</p>
+            <span class="centerName content-title">{{centerName}}</span>
+          </div>  
           <button @click="toRoutePage" class="direction-button">
             <img src="../../../static/images/direction-icon.png" alt="direction-icon">
             <span>路线</span>
@@ -62,43 +69,66 @@
         </div>
         <div class="content">
           <p>
-            该现代化物流园各由一栋单层和双层建筑组成，可租赁面积81,800平方米，先后于2011年和2013年竣工。周边地区均为制造业建筑，限制了新仓库的建设。现代化设计包括早期快速响应灭火喷头系统，属于理想的仓储设施。
+            {{description.overView}}
           </p>
           <p class="break-line">break-line</p>
           <p>
-            该配送中心距G1501高速仅0.5公里，距S26高速5公里，距G2高速12公里，距上海虹桥机场也仅15公里。
+            {{description.accessibilities}}
           </p>
         </div>
       </div>
 
       <div class="content-wrapper gray-bg">
         <p class="content-title">中心平面图</p>
-        <img class="content-picture" src="../../../static/images/diagram.png" alt="diagram-image"/>
+        <swiper
+        id="plans-swiper"
+        :indicator-dots="plansIndicatorDots"
+        indicator-active-color="#ffffff"
+        >
+          <block
+            :key="index"
+            v-for="(plan, index) in plans"
+          >
+            <swiper-item>
+              <div class="picture-placeholder">
+                <img src="../../../static/images/logo.png" alt="picture-placeholder">
+              </div>
+              <img 
+                @click="previewImage" 
+                :id="plan" 
+                :src="plan"
+                :demo="demo"
+                alt="swiper-item">
+            </swiper-item>
+          </block>
+        </swiper>
       </div>
 
       <div class="content-wrapper">
         <p class="content-title">周边地图与交通设施</p>
-        <img class="content-picture bit-map" src="../../../static/images/bitmap.png" alt="bitmap">
+        <div class="map-wrapper">
+          <div class="picture-placeholder">
+            <img src="../../../static/images/logo.png" alt="picture-placeholder">
+          </div>
+          <img @click="previewImage" class="content-picture bit-map" :src="map" alt="bitmap">
+        </div>
       </div>
-
       <div class="row">
-        <div class="col content">
-          <p>距苏州市区：<span>15公里</span></p>
-          <p>距苏州工业园区：<span>20公里</span></p>
-        </div>
-        <div class="col content">
-          <p>距苏州新区高铁：<span>5公里</span></p>
-          <p>距上海虹桥机场：<span>90公里</span></p>
-        </div>
+        <div
+          :key="index"
+          v-for="(accessibility, index) in accessibilities"
+          class="col content"
+        >
+          <p>{{accessibility.destination}}：<span>{{accessibility.distance}}公里</span></p>
+        </div> 
       </div>
 
-      <div class="button-wrapper">
+      <div v-if="pdf" class="button-wrapper">
         <button @click="toWebView" class="exportPDF" hover-class="button-hover">
           <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
           <p>详细资料下载 (PDF)</p>
         </button>
       </div>
-      <!-- <web-view src="https://prologis.getbynder.com/m/5976be5f14c48140/original/Prologis-Shanghai-Qingpu-Distribution-Center-190220.pdf"></web-view> -->
     </div>
 
   </div>
@@ -122,11 +152,39 @@ export default {
     positionPageBody() {
       return store.state.statusBarHeight + 42;
     },
+    swiperImages() {
+      return store.getters.selectedCenter.swiper.images;
+    },
+    swiperVideo() {
+      return store.getters.selectedCenter.swiper.video;
+    },
     centerRegion() {
       return store.getters.selectedCenter.region;
     },
     centerName() {
       return store.getters.selectedCenter.centerName;
+    },
+    description() {
+      return store.getters.selectedCenter.description;
+    },
+    plans() {
+      return store.getters.selectedCenter.plans;
+    },
+    plansIndicatorDots() {
+      const plansLength = store.getters.selectedCenter.plans.length;
+      if (plansLength === 1) {
+        return false;
+      }
+      return true;
+    },
+    map() {
+      return store.getters.selectedCenter.map;
+    },
+    accessibilities() {
+      return store.getters.selectedCenter.accessibilities;
+    },
+    pdf() {
+      return store.getters.selectedCenter.pdf;
     },
   },
   // onReady() {
@@ -145,8 +203,8 @@ export default {
     },
     downloadFile() {
       wx.downloadFile({
-        url: 'https://cdn.prologis.site/PDF/Prologis%20Shanghai%20Qingpu%20Distribution%20Center%20190220.pdf',
-        // url: 'https://calibre-ebook.com/downloads/demos/demo.docx',
+        // url: this.pdf,
+        url: 'https://calibre-ebook.com/downloads/demos/demo.docx',
         success(res) {
           console.log(res);
           // const filePath = res.tempFilePath;
@@ -171,24 +229,36 @@ export default {
           //     console.log(error);
           //   },
           // });
-          wx.openDocument({
-            filePath: pdfFilePath,
-            fileType: 'pdf',
-            success() {
-              console.log('open PDF success');
-            },
-            fail(error) {
-              console.log(error);
-            },
-          });
+          if (res.statusCode === 200) {
+            wx.openDocument({
+              filePath: pdfFilePath,
+              // fileType: 'pdf',
+              success() {
+                console.log('open PDF success');
+              },
+              fail(error) {
+                console.log(error);
+              },
+            });
+          } else {
+            wx.showModal({
+              content: '下载失败',
+              confirmText: '好',
+              confirmColor: '#008000',
+              showCancel: false,
+              success(result) {
+                console.log(result);
+              },
+            });
+          }
         },
         fail(error) {
           console.log(error);
           wx.showModal({
-            content: 'error',
-            confirmText: '允许',
+            content: '下载失败',
+            confirmText: '好',
             confirmColor: '#008000',
-            cancelText: '拒绝',
+            showCancel: false,
             success(result) {
               console.log(result);
             },
@@ -197,13 +267,12 @@ export default {
       });
     },
     previewImage(e) {
-      // const { value } = this.relationships.field_carousel;
-      // const urls = value.map(item => item.attributes.uri.previewUrl);
-      wx.previewImage({
-        current: 'https://media.alienwarearena.com/media/1327-a.jpg',
-        urls: ['http://personal.psu.edu/xqz5228/jpg.jpg', 'https://media.alienwarearena.com/media/1327-a.jpg', 'http://www.haogongzhang.com/Uploads/baike/201406/53916cf3bc8f1.jpg'],
-      });
       console.log(e.currentTarget);
+      const urls = e.currentTarget.dataset.eventid === '2' ? [this.map] : this.plans;
+      wx.previewImage({
+        current: e.currentTarget.id,
+        urls,
+      });
     },
   },
 };
@@ -211,6 +280,10 @@ export default {
 
 <style scoped lang="scss">
 @import '../../global.scss';
+// .test {
+//   padding: 31PX;
+//   background-color: red;
+// }
 // Top navigation bar
 .top-navigation-bar {
   position: fixed;
@@ -231,6 +304,21 @@ export default {
     min-width: 100%;
   }
 }
+.picture-placeholder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    display: block;
+    width: 110px !important;
+    height: 110px !important;
+    min-width: unset;
+  }
+}
 //Content
 .content-wrapper {
   padding: 30px 15px;
@@ -238,7 +326,6 @@ export default {
 .description-title {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 16px;
 }
 .content-title {
@@ -249,15 +336,25 @@ export default {
   text-align: center;
   margin-bottom: 20px;
 }
+.region {
+  flex-shrink: 0 !important;
+  padding-right: 7px;
+}
+.centerName {
+  margin-bottom: 0;
+  text-align: left;
+}
 .align-left {
   text-align: left !important;
   margin: 0 !important;
 }
 //button direction
 .direction-button {
-  widows: 89px;
+  width: 89px;
   height: 30px;
   display: flex;
+  flex-shrink: 0;
+  align-self: center;
   justify-content: center;
   align-items: center;
   border-radius: 50px;
@@ -287,14 +384,27 @@ export default {
 .gray-bg {
   background-color: #F8F8F8;
 }
+#plans-swiper {
+  height: 185px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
 .content-picture {
   width: 100%;
+  height: 100%;
+}
+.map-wrapper {
+  height: 220px;
+  position: relative;
 }
 .bit-map {
   margin-bottom: -10px;
 }
 .row {
   display: flex;
+  flex-wrap: wrap;
   padding: 0 15px;
   padding-bottom: 30px;
 }

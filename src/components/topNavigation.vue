@@ -2,7 +2,9 @@
   <div>
     <div class="top-bar-placeholder" :style="{ height: statusBarHeight + 'PX'}"></div>
     <div class="top-navigation">
-      <div v-if="detailPage" class="back-and-home-button">
+      <div v-if="detailPage" :class="[
+        isAndroid ? 'androidButtonPosition' : 'iosButtonPosition',
+        'back-and-home-button']">
         <backAndHomeButton></backAndHomeButton>
       </div>
       <p class="page-title">
@@ -25,6 +27,9 @@ export default {
   computed: {
     statusBarHeight() {
       return store.state.statusBarHeight;
+    },
+    isAndroid() {
+      return store.state.isAndroid;
     },
   },
   components: {
@@ -61,9 +66,14 @@ export default {
 }
 .back-and-home-button {
   position: absolute;
+}
+.androidButtonPosition {
   left: 10PX;
-  // right: 10PX;
   bottom: 3px;
+}
+.iosButtonPosition {
+  left: 10PX;
+  bottom: 7px;
 }
 img {
     width: 100%;

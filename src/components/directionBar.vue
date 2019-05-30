@@ -3,14 +3,14 @@
     <cover-view class="wrapper">
       <cover-view class="center-info">
         <cover-view class="center-name">{{centerName}}</cover-view>
-        <cover-view class="content-wrapper">
+        <cover-view :class="[isAndroid ? 'androidLineHeight' : 'iosLineHeight', 'content-wrapper']">
           <cover-view>
             <cover-view class="text">地址</cover-view>
             <cover-view class="content">{{centerAddress}}</cover-view>
           </cover-view>
           <cover-view>
             <cover-view class="text">电话</cover-view>
-            <cover-view class="content">{{centerPhoneNumber}}</cover-view>
+            <cover-view @click="makeCall" class="content">({{centerPhoneNumber.areaCode}}) {{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}}</cover-view>
           </cover-view>
         </cover-view>
       </cover-view>
@@ -53,13 +53,21 @@ export default {
     centerLatitude() {
       return store.getters.selectedCenter.latitude;
     },
+    isAndroid() {
+      return store.state.isAndroid;
+    },
   },
   methods: {
     openMap() {
       wx.openLocation({
         latitude: this.centerLatitude,
         longitude: this.centerLongitude,
-        scale: 5,
+        scale: 12,
+      });
+    },
+    makeCall() {
+      wx.makePhoneCall({
+        phoneNumber: this.centerPhoneNumber.phoneNumber,
       });
     },
   },
@@ -83,13 +91,12 @@ export default {
 .center-name {
   font-size: 18px;
   color: $detail-content-title;
-  line-height: 25px;
+  line-height: 25px !important;
   font-weight: bold;
   margin-bottom: 7px;
 }
 .content-wrapper {
   font-size: 13px;
-  line-height: 23px;
   color: $content-text-color;
 }
 .text {

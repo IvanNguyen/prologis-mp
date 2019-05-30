@@ -14,7 +14,7 @@
 
     <cover-view @click="toListpage" class="button list-button" hover-class="button-hover">
       <cover-view class="content-wrapper">
-        <cover-view class="text">
+        <cover-view class="text mt-2">
           <cover-image src="../../static/images/list-icon.png" alt="list-icon"/>
         </cover-view>
         <cover-view class="text">列表模式</cover-view>
@@ -96,7 +96,6 @@ export default {
     cover-image {
       width: 18px;
       height: 12px;
-      vertical-align: sub;
     }
 }
 .text {

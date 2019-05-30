@@ -5,7 +5,7 @@ export default {
 
 <style>
 * {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'PingFang SC', sans-serif;
   font-weight: 400;
 }
 .container {

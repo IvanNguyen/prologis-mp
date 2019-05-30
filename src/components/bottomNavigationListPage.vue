@@ -97,6 +97,7 @@ export default {
     img {
       width: 18px;
       height: 12px;
+      margin-bottom: 1px;
       vertical-align: sub;
     }
 }

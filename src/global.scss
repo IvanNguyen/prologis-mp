@@ -30,11 +30,9 @@ $border: 1px solid #BEA593;
     height: 18px;
     width: 14px;
 }
-
 button:after {
     border: none;
 }
-
 .button-hover {
     // color: $theme-color !important;
     background-color: rgba(225, 225, 225,  0.7) !important;
@@ -42,18 +40,39 @@ button:after {
 .zoom-bar-hover {
     background-color: white !important;
 }
-
+.androidLineHeight {
+    line-height: 1.2 !important;
+}
+.iosLineHeight {
+    line-height: 1.8 !important;
+}
+.lh-14 {
+    line-height: 1.4 !important;
+}
+cover-view {
+    line-height: unset;
+}
 cover-image {
     display: inline-block;
 }
-
-view {
-    font-family: 'Quicksand', sans-serif;
-}
-
+// view {
+//     font-family: 'Quicksand', sans-serif;
+// }
 .top-navigation-bar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+}
+.d-flex {
+    display: flex;
+}
+.f-grow-1 {
+    flex-grow: 1;
+}
+.mt--6 {
+    margin-top: -6px !important;
+}
+.mt-2 {
+    margin-top: 2px;
 }

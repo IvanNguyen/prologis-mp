@@ -2,7 +2,10 @@
   <view class="general-introduction-wrapper">
     <view @click="toDetailPage" class="content-row">
       <view class="company-picture-wrapper">
-        <img class="company-picture" src="../../static/images/company.png" alt="company"/>
+        <div class="picture-placeholder">
+          <img src="../../static/images/logo.png" alt="company"/>
+        </div>
+        <img class="company-picture" :src="centerAvatar" alt="company"/>
       </view>
 
       <view class="center-info">
@@ -16,8 +19,8 @@
 
         <view class="phone-wrapper">
           <view class="text">电话</view>
-          <view class="text center-info__content">{{centerPhoneNumber}}</view>
-        </view>
+          <view @click.stop="makeCall" class="text center-info__content">({{centerPhoneNumber.areaCode}}) {{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}}</view>
+        </view> 
 
         <view class="overview-wrapper">
           <view class="text">概况</view>
@@ -49,11 +52,17 @@ export default {
     'centerPhoneNumber',
     'centerArea',
     'centerDistance',
+    'centerAvatar',
   ],
   methods: {
     toDetailPage() {
       store.commit('setSelectedCenterId', this.centerId);
       wx.navigateTo({ url: '/pages/detailPage/main' });
+    },
+    makeCall() {
+      wx.makePhoneCall({
+        phoneNumber: this.centerPhoneNumber.phoneNumber,
+      });
     },
   },
 };
@@ -61,12 +70,27 @@ export default {
 
 <style scoped lang="scss">
 @import '../global.scss';
-.compamy-picture-wrapper {
-    display: flex;
+.company-picture-wrapper {
+  width: 109px;
+  height: 119px;
+  position: relative;
+}
+.picture-placeholder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 .company-picture {
   width: 109px;
   height: 119px;
+  position: absolute;
+  z-index: 2;
+  // display: inline-block
 }
 .general-introduction-wrapper {
     padding: 20px 0 16px 15px;

@@ -18,6 +18,7 @@ const store = new Vuex.Store({
     currentLatitude: '',
     currentLongitude: '',
     isShowGeneralIntroduction: false,
+    isAndroid: false,
     markers: [
       {
         id: 1,
@@ -88,7 +89,7 @@ const store = new Vuex.Store({
         height: 37,
         centerName: 'Shanghai No.5',
         region: 'East China',
-        city: 'Shanghai',
+        city: 'Wuxi',
         address: 'address 5',
         area: '555,000',
         phoneNumber: 909555555,
@@ -101,13 +102,15 @@ const store = new Vuex.Store({
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        centerName: 'Wuxi No.6',
-        region: 'East China',
+        centerName: '北京首都机场第二物流中心', // center No.6
+        region: 'East China', // East China
         city: 'Wuxi',
         address: 'address 6',
         area: '108,000',
         phoneNumber: 909666666,
         distance: '',
+        avatar:
+          'https://cdn.prologis.site/IMAGES/North%20China/Shenyang%20Hunan/icon_Shenyang%20Hunnan.jpg',
       },
       {
         id: 7,
@@ -116,26 +119,78 @@ const store = new Vuex.Store({
         iconPath: '/static/images/location.png',
         width: 29,
         height: 37,
-        centerName: 'Beijing',
-        region: 'North China',
+        region: '华北区', // North China
         city: 'Beijing',
-        address: 'address 7',
-        area: '777,000',
-        phoneNumber: 909777777,
+        centerName: '北京首都机场第二物流中心',
+        address: '近北京市空港物流园区',
+        area: '96,100',
+        phoneNumber: {
+          areaCode: '021',
+          part1: '6482',
+          part2: '9472',
+          phoneNumber: '02164829472',
+        },
         distance: '',
+        avatar:
+          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/icon_Shanghai%20Jiuting.jpg',
+        swiper: {
+          images: [
+            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
+            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+          ],
+          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+        },
+        description: {
+          overView:
+            '该现代化物流园各由一栋单层和双层建筑组成，可租赁面积81,800平方米，先后于2011年和2013年竣工。周边地区均为制造业建筑，限制了新仓库的建设。现代化设计包括早期快速响应灭火喷头系统，属于理想的仓储设施。',
+          accessibilities:
+            '该配送中心距G1501高速仅0.5公里，距S26高速5公里，距G2高速12公里，距上海虹桥机场也仅15公里。',
+        },
+        plans: [
+          'http://personal.psu.edu/xqz5228/jpg.jpg',
+          'https://media.alienwarearena.com/media/1327-a.jpg',
+          'http://www.haogongzhang.com/Uploads/baike/201406/53916cf3bc8f1.jpg',
+        ],
+        map:
+          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        accessibilities: [
+          {
+            destination: '距苏州市区',
+            distance: '15',
+          },
+          {
+            destination: '距苏州工业园区',
+            distance: '20',
+          },
+          {
+            destination: '距苏州新区高铁',
+            distance: '5',
+          },
+          {
+            destination: '距上海虹桥机场',
+            distance: '90',
+          },
+        ],
+        pdf:
+          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
       },
     ],
   },
   mutations: {
+    platformCheck(state, platform) {
+      if (platform !== 'ios') {
+        state.isAndroid = true;
+      }
+    },
     setStatusBarHeight(state, statusBarHeight) {
       state.statusBarHeight = statusBarHeight;
     },
-    showFakeLocation(state, coordinates) {
-      // eslint-disable-next-line prefer-destructuring
-      state.currentLatitude = coordinates[0];
-      // eslint-disable-next-line prefer-destructuring
-      state.currentLongitude = coordinates[1];
-    },
+    // showFakeLocation(state, coordinates) {
+    //   // eslint-disable-next-line prefer-destructuring
+    //   state.currentLatitude = coordinates[0];
+    //   // eslint-disable-next-line prefer-destructuring
+    //   state.currentLongitude = coordinates[1];
+    // },
     setCenterLocation(state, centerLocationCoordinates) {
       state.currentLongitude = centerLocationCoordinates.longitude;
       state.currentLatitude = centerLocationCoordinates.latitude;
@@ -175,9 +230,10 @@ const store = new Vuex.Store({
     },
     caclulateDistance(state, allCenterCoordinates) {
       for (let i = 0; i < state.markers.length; i++) {
-        const center = allCenterCoordinates
-          .find(value => value.to.lng === state.markers[i].longitude
-            && value.to.lat === state.markers[i].latitude);
+        const center = allCenterCoordinates.find(
+          value => value.to.lng === state.markers[i].longitude
+            && value.to.lat === state.markers[i].latitude,
+        );
         state.markers[i].distance = (center.distance / 1000).toFixed(0);
       }
     },
@@ -203,7 +259,9 @@ const store = new Vuex.Store({
     },
     centerFilter(state) {
       let centerFilter = [];
-      centerFilter = state.markers.filter(value => value.city === state.cityFilter);
+      centerFilter = state.markers
+        .filter(value => value.city === state.cityFilter)
+        .sort((a, b) => a.distance - b.distance);
       return centerFilter;
     },
   },

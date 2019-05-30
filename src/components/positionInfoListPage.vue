@@ -15,7 +15,7 @@
       <view class="address-wrapper">
         <view class="text">离你最近的物业:</view>
         <view class="text position-info__content address">{{closestCenterName}}</view>
-        <view class="text position-info__content distance">{{closestCenterDistance}} km</view>
+        <view class="text position-info__content distance">{{closestCenterDistance}}km</view>
         <view class="text position__smallLogo-wrapper">
           <img class="position__smallLogo" src="../../static/images/smallLocation.png" alt="smallLocation-icon"/> 
         </view>
@@ -59,36 +59,53 @@ export default {
   height: 80px;
   width: 100%;
   background-color: $theme-color;
+  font-family: -apple-system;
+}
+.thumbnail-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 .thumbnail {
   height: 46px;
   width: 46px;
   padding: 17px 15px;
 }
+.region-wrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 3px;
+}
 .position-info__detail {
   flex-grow: 1;
   font-size: 13px;
-  line-height: 23px;
+  // line-height: 23px;
   color: $button-text-color;
 }
 .position-info__content {
-//   font-family: -apple-system !important;
   font-weight: bold;
   padding-left: 5px;
+  font-size: 13px;
+}
+.address-wrapper {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 .address {
   white-space: nowrap;
-  max-width: 140px;
+  max-width: 36%;
   overflow: hidden;
   text-overflow:ellipsis;
 }
 .text {
-  display: inline-block !important;
-  line-height:1.2;
+  // display: inline-block !important;
+  line-height:1.4;
   overflow:hidden;
   white-space:nowrap;
   pointer-events:auto;
-  font-family:-apple-system;
+  // font-family:-apple-system;
 }
 .position__smallLogo {
   padding-left: 5px;

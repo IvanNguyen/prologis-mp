@@ -1,6 +1,8 @@
 <template>
   <view>
-    <view class="group-button">
+    <view :class="[
+        isAndroid ? 'androidButtonSize' : 'iosButtonSize',
+        'group-button']">
       <view @click="goBack" class="back-button" hover-class="button-hover">
         <view class="icon-wrapper">
           <img src="../../static/images/back-icon-white.png" alt="back-icon">
@@ -23,6 +25,11 @@
 import store from '../store/appstore';
 
 export default {
+  computed: {
+    isAndroid() {
+      return store.state.isAndroid;
+    },
+  },
   methods: {
     goBack() {
       wx.navigateBack({ delta: 1 });
@@ -40,13 +47,17 @@ export default {
 .group-button {
   display: flex;
   position: relative;
-  // width: 86PX;
-  // height: 31PX;
-  width: 95PX;
-  height: 31PX;
   background-color: rgba(0, 0, 0, 0.19);
   border-radius: 50px;
   overflow: hidden;
+}
+.androidButtonSize {
+  width: 95PX;
+  height: 31PX;
+}
+.iosButtonSize {
+  width: 86PX;
+  height: 30PX;
 }
 .back-button,
 .home-button {

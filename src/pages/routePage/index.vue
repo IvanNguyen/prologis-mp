@@ -56,8 +56,9 @@ export default {
       reRender: '',
       fakeGPSLocation: [
         {
-          latitude: 31.132947630231154,
-          longitude: 113.72277433984377,
+          // Shanghai coordinates
+          latitude: 31.2304,
+          longitude: 121.4737,
           radius: 20000,
           color: '#ff0000',
           fillColor: '#b22222',
@@ -114,8 +115,9 @@ export default {
       qqmapsdk.direction({
         mode: 'driving',
         from: {
-          latitude: 31.132947630231154, // Fake current latitude
-          longitude: 113.72277433984377, // Fake current longitude
+          // Shanghai coordinates
+          latitude: 31.2304,
+          longitude: 121.4737,
         },
         to: {
           latitude: this.centerLatitude,
@@ -143,16 +145,15 @@ export default {
     },
     zoomToView() {
       this.mapCtx.includePoints({
-        padding: [180, 40, 40, 40],
-        // padding: [200, 40, 40, 200],
+        padding: [110, 60, 120, 60],
         points: [
           {
             latitude: this.centerLatitude,
             longitude: this.centerLongitude,
           },
           {
-            latitude: 31.132947630231154,
-            longitude: 113.72277433984377,
+            latitude: 31.2304,
+            longitude: 121.4737,
           },
         ],
       });
@@ -162,10 +163,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.page-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+.map-section {
+  flex-grow: 1;
+  display: flex;
+}
 #myMap {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 .direction-bar {
   position: fixed;

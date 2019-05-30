@@ -1,6 +1,7 @@
 <template>
   <view>
-    <web-view src="https://cdn.prologis.site/PDF/Prologis%20Shanghai%20Qingpu%20Distribution%20Center%20190220.pdf"></web-view>
+    <!-- <web-view src="https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf"></web-view> -->
+    <web-view src="https://calibre-ebook.com/downloads/demos/demo.docx"></web-view>
   </view>  
 </template>
 

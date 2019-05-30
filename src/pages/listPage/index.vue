@@ -7,48 +7,44 @@
     <view class="positionInfo-bar" :style="{ top: positionTopBar + 'PX'}">
       <view>
         <positionInfoListPage></positionInfoListPage>
+        <div class="group-picker">
+          <picker class="picker region-picker" mode="selector" @change="regionPickerChange" :value="regionIndex" :range="region">
+            <div class="picker-content-wrapper">
+              <view class="picker-content">
+                {{region[regionIndex]}}
+              </view>
+              <img class="down-arrow" src="../../../static/images/down-arrow.png" alt="down-arrow">
+            </div>
+          </picker>
+
+          <picker class="picker city-picker" mode="selector" @change="cityPickerChange" :value="cityIndex" :range="cityInSelectedRegion">
+            <div class="picker-content-wrapper">
+              <view class="picker-content">
+                {{cityInSelectedRegion[cityIndex]}}
+              </view>
+              <img class="down-arrow" src="../../../static/images/down-arrow.png" alt="down-arrow">
+            </div>
+          </picker>
+        </div>
       </view>
     </view>
 
-    <div class="group-picker" :style="{ top: positionGroupPicker + 'PX'}">
-      <picker class="picker region-picker" mode="selector" @change="regionPickerChange" :value="regionIndex" :range="region">
-        <div class="picker-content-wrapper">
-          <view class="picker-content">
-            {{region[regionIndex]}}
-          </view>
-          <img class="down-arrow" src="../../../static/images/down-arrow.png" alt="down-arrow">
-        </div>
-      </picker>
-
-      <picker class="picker city-picker" mode="selector" @change="cityPickerChange" :value="cityIndex" :range="cityInSelectedRegion">
-        <div class="picker-content-wrapper">
-          <view class="picker-content">
-            {{cityInSelectedRegion[cityIndex]}}
-          </view>
-          <img class="down-arrow" src="../../../static/images/down-arrow.png" alt="down-arrow">
-        </div>
-      </picker>
-    </div>
-
-    <div class="general-introduction-wrapper" :style="{ marginTop : positionGeneralIntro + 'PX'}">
-      <!-- <div
-      :key="index"
-      v-for="(center, index) in centers"
-      class="center"
-      > -->
-        <view>
-          <generalIntroductionListPage
-            :key="index"
-            v-for="(center, index) in centers"
-            :centerId="center.id"
-            :centerName="center.centerName"
-            :centerAddress="center.address"
-            :centerPhoneNumber="center.phoneNumber"
-            :centerArea="center.area"
-            :centerDistance="center.distance"
-          />
-        </view>
-      <!-- </div> -->
+    <div class="general-introduction-wrapper">
+      <view :style="{ padding: topNavigationBarPlaceholder + 'PX'}"/>
+      <view class="positionInfo-bar-placeholder"/>
+      <view>
+        <generalIntroductionListPage
+          :key="index"
+          v-for="(center, index) in centers"
+          :centerId="center.id"
+          :centerName="center.centerName"
+          :centerAddress="center.address"
+          :centerPhoneNumber="center.phoneNumber"
+          :centerArea="center.area"
+          :centerDistance="center.distance"
+          :centerAvatar="center.avatar"
+        />
+      </view>
     </div>
 
     <view class="bottomNavigation-bar">
@@ -118,11 +114,8 @@ export default {
     positionTopBar() {
       return store.state.statusBarHeight + 42;
     },
-    positionGroupPicker() {
-      return store.state.statusBarHeight + 42 + 80;
-    },
-    positionGeneralIntro() {
-      return store.state.statusBarHeight + 42 + 80 + 80;
+    topNavigationBarPlaceholder() {
+      return (store.state.statusBarHeight + 42) / 2;
     },
   },
   onLoad() {
@@ -131,6 +124,7 @@ export default {
   },
   mounted() {
     console.log('mounted List Page');
+    console.log(this.centers);
   },
   methods: {
     regionPickerChange(event) {
@@ -148,13 +142,19 @@ export default {
 
 <style scoped lang="scss">
 @import '../../global.scss';
+.top-navigation-bar {
+    z-index: 10;
+}
+.positionInfo-bar-placeholder {
+  padding: 81px 0; 
+}
 .positionInfo-bar {
   position: fixed;
   left: 0;
   right: 0;
+  z-index: 10;
 }
 .group-picker {
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +189,7 @@ export default {
 }
 // general-introduction
 .general-introduction-wrapper {
-  padding-bottom: 95px;
+  padding-bottom: 90px;
   width: 100%;
 }
 .bottomNavigation-bar {
@@ -198,5 +198,6 @@ export default {
   bottom: 25px;
   left: 15px;
   right: 15px;
+  z-index: 10;
 }
 </style>

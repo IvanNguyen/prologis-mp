@@ -71,11 +71,10 @@ export default {
   },
   onLoad() {
     console.log('onLoad');
-    this.getLocation();
     this.checkSystemInfo();
+    this.getLocation();
     this.mapCtx = wx.createMapContext('myMap');
     this.findClosestCenter();
-    this.showClosestCenterAround();
     this.getCenterLocation();
   },
   onShow() {
@@ -98,10 +97,6 @@ export default {
   },
   data() {
     return {
-      // demoCenter: {
-      //   latitude: 38.203697,
-      //   longitude: 115.346004,
-      // },
       isDetailPageOrRoutePage: false,
       scale: '',
       polyline: [
@@ -113,29 +108,15 @@ export default {
       ],
       fakeGPSLocation: [
         {
-          latitude: 31.132947630231154,
-          longitude: 113.72277433984377,
+          // Shanghai coordinates
+          latitude: 31.2304,
+          longitude: 121.4737,
           radius: 20000,
           color: '#ff0000',
           fillColor: '#b22222',
           strokeWidth: 10,
         },
       ],
-      // includePoints: [
-      //   {
-      //     latitude: 31.132947630231154,
-      //     longitude: 113.72277433984377,
-      //   },
-      //   {
-      //     // Center No.6
-      //     latitude: 38.203697,
-      //     longitude: 115.346004,
-      //   },
-      //   // {
-      //   //   latitude: 40.730649,
-      //   //   longitude: 116.939021,
-      //   // },
-      // ],
     };
   },
   components: {
@@ -167,7 +148,16 @@ export default {
     },
   },
   methods: {
+    checkSystemInfo() {
+      wx.getSystemInfo({
+        success(res) {
+          store.commit('platformCheck', res.platform);
+          store.commit('setStatusBarHeight', res.statusBarHeight);
+        },
+      });
+    },
     getLocation() {
+      console.log('getLocation');
       const that = this;
       wx.getLocation({
         type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
@@ -180,6 +170,62 @@ export default {
         fail() {
           that.openConfirm();
         },
+      });
+    },
+    findClosestCenter() {
+      const that = this;
+      console.log('findClosestCenter');
+      qqmapsdk.calculateDistance({
+        // from: event.mp.detail.value.start || '',
+        from: {
+          // Shanghai location
+          latitude: 31.2304,
+          longitude: 121.4737,
+        },
+        to: store.getters.allCenterLocation,
+        success(res) {
+          // console.log(res);
+          const result = res.result.elements;
+          store.commit('caclulateDistance', result);
+          const closestCenter = result.sort((a, b) => a.distance - b.distance);
+          const closestCenterInfo = store.state.markers.find(
+            marker => marker.latitude === closestCenter[0].to.lat
+                  && marker.longitude === closestCenter[0].to.lng,
+          );
+          const nearestCenter = {
+            longitude: closestCenterInfo.longitude,
+            latitude: closestCenterInfo.latitude,
+          };
+          that.showClosestCenterAround(nearestCenter);
+          store.commit('setClosestCenterInfo', {
+            id: closestCenterInfo.id,
+            region: closestCenterInfo.region,
+            city: closestCenterInfo.city,
+            centerName: closestCenterInfo.centerName,
+            distance: (closestCenter[0].distance / 1000).toFixed(0),
+          });
+          store.commit('setSelectedCenterId', closestCenterInfo.id);
+        },
+        fail(error) {
+          console.error(error);
+        },
+      });
+    },
+    showClosestCenterAround(nearestCenter) {
+      console.log('showClosestCenterAround');
+      this.mapCtx.includePoints({
+        padding: [50, 80, 80, 80],
+        points: [
+          {
+            latitude: nearestCenter.latitude,
+            longitude: nearestCenter.longitude,
+          },
+          {
+            // Shanghai coordinates
+            latitude: 31.2304,
+            longitude: 121.4737,
+          },
+        ],
       });
     },
     openConfirm() {
@@ -200,13 +246,6 @@ export default {
           } else {
             that.getLocation();
           }
-        },
-      });
-    },
-    checkSystemInfo() {
-      wx.getSystemInfo({
-        success(res) {
-          store.commit('setStatusBarHeight', res.statusBarHeight);
         },
       });
     },
@@ -246,64 +285,16 @@ export default {
         },
       });
     },
-    showFakeLocation(coordinates) {
-      store.commit('showFakeLocation', coordinates);
-    },
+    // showFakeLocation(coordinates) {
+    //   store.commit('showFakeLocation', coordinates);
+    // },
     mapTap() {
       store.commit('hideGeneralIntroduction');
-    },
-    findClosestCenter() {
-      // const that = this;
-      qqmapsdk.calculateDistance({
-        // from: event.mp.detail.value.start || '',
-        from: {
-          // Fake current location
-          latitude: 31.132947630231154,
-          longitude: 113.72277433984377,
-        },
-        to: store.getters.allCenterLocation,
-        success(res) {
-          // console.log(res);
-          const result = res.result.elements;
-          store.commit('caclulateDistance', result);
-          const closestCenter = result.sort((a, b) => a.distance - b.distance);
-          const closestCenterInfo = store.state.markers.find(
-            marker => marker.latitude === closestCenter[0].to.lat
-                  && marker.longitude === closestCenter[0].to.lng,
-          );
-          store.commit('setClosestCenterInfo', {
-            id: closestCenterInfo.id,
-            region: closestCenterInfo.region,
-            city: closestCenterInfo.city,
-            centerName: closestCenterInfo.centerName,
-            distance: (closestCenter[0].distance / 1000).toFixed(0),
-          });
-          store.commit('setSelectedCenterId', closestCenterInfo.id);
-        },
-        fail(error) {
-          console.error(error);
-        },
-      });
-    },
-    makePhoneCall() {
-      wx.makePhoneCall({
-        phoneNumber: '1340000', // fake number phone
-      });
     },
     showCenterInformation(event) {
       // display the Center-icon in the center of the map
       const centerId = event.mp.markerId;
       store.commit('centerTheCentre', centerId);
-      // display the route from your current location to the selected center
-      // const centerSelected = store.state.markers.find(
-      //   marker => marker.id === +centerId,
-      // );
-      // const centerCoordinates = {
-      //   latitude: centerSelected.latitude,
-      //   longitude: centerSelected.longitude,
-      // };
-      // this.showRoute(centerCoordinates);
-      // display the general introduction panel
       store.commit('setSelectedCenterId', centerId);
       store.commit('showGeneralIntroduction');
     },
@@ -311,40 +302,21 @@ export default {
       this.mapCtx.moveToLocation();
       store.commit('centerCurrentLocation');
     },
-    translateMarker() {
-      this.mapCtx.translateMarker({
-        markerId: 1,
-        autoRotate: true,
-        duration: 2000,
-        destination: {
-          latitude: 21.033333000000013,
-          longitude: 105.85,
-        },
-        animationEnd() {
-          console.log('animation end');
-        },
-      });
-    },
-    showClosestCenterAround() {
-      this.mapCtx.includePoints({
-        padding: [160, 40, 40, 160],
-        points: [
-          {
-            latitude: 38.203697,
-            longitude: 115.346004,
-          },
-          {
-            latitude: 31.132947630231154,
-            longitude: 113.72277433984377,
-          },
-        ],
-      });
-    },
   },
 };
 </script>
 
 <style scoped>
+.page-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.map-section {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
 .generalIntroductionBar {
   position: absolute;
   z-index: 2;
@@ -372,6 +344,6 @@ export default {
 #myMap {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 </style>

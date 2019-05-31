@@ -68,10 +68,19 @@
           </button>
         </div>
         <div class="content">
-          <p>
+          <!-- <p>
             {{description.overView}}
           </p>
-          <p class="break-line">break-line</p>
+          <p class="break-line">break-line</p> -->
+          <div 
+            v-for="(overView, index) in description.overView"
+            :key="index"
+          >
+            <p>
+              {{overView}}
+            </p>
+            <p class="break-line">break-line</p>
+          </div>
           <p>
             {{description.accessibilities}}
           </p>

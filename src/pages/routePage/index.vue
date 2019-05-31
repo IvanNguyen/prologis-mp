@@ -16,7 +16,7 @@
         enable-zooms
         enable-scroll
         :include-points="includePoints"
-        :circles="fakeGPSLocation"
+      
       >     
         <cover-view class="direction-bar">
           <directionBar></directionBar>
@@ -59,7 +59,7 @@ export default {
           // Shanghai coordinates
           latitude: 31.2304,
           longitude: 121.4737,
-          radius: 20000,
+          radius: 1000,
           color: '#ff0000',
           fillColor: '#b22222',
           strokeWidth: 10,
@@ -68,6 +68,9 @@ export default {
     };
   },
   computed: {
+    userCoordinates() {
+      return store.state.userCoordinates;
+    },
     markers() {
       return store.state.markers;
     },
@@ -116,8 +119,10 @@ export default {
         mode: 'driving',
         from: {
           // Shanghai coordinates
-          latitude: 31.2304,
-          longitude: 121.4737,
+          // latitude: 31.2304,
+          // longitude: 121.4737,
+          latitude: this.userCoordinates.userLatitude,
+          longitude: this.userCoordinates.userLongitude,
         },
         to: {
           latitude: this.centerLatitude,

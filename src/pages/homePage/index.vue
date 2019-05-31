@@ -17,7 +17,7 @@
         enable-zooms
         enable-scroll
         @tap="mapTap"
-        :circles="fakeGPSLocation"
+
       >
         <positionInfo></positionInfo>
 
@@ -111,7 +111,7 @@ export default {
           // Shanghai coordinates
           latitude: 31.2304,
           longitude: 121.4737,
-          radius: 20000,
+          radius: 1000,
           color: '#ff0000',
           fillColor: '#b22222',
           strokeWidth: 10,
@@ -161,26 +161,36 @@ export default {
       const that = this;
       wx.getLocation({
         type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
-        success() {
-          wx.getSetting({
-            success() {
-            },
-          });
+        success(result) {
+          // wx.getSetting({
+          //   success() {
+          //   },
+          // });
+          const userCoordinates = {
+            userLatitude: result.latitude,
+            userLongitude: result.longitude,
+          };
+          console.log(userCoordinates);
+          that.findClosestCenter(userCoordinates);
+          store.commit('setUserCoordinates', userCoordinates);
         },
         fail() {
           that.openConfirm();
         },
       });
     },
-    findClosestCenter() {
+    findClosestCenter(userCoordinates) {
       const that = this;
       console.log('findClosestCenter');
+      console.log(userCoordinates);
       qqmapsdk.calculateDistance({
         // from: event.mp.detail.value.start || '',
         from: {
           // Shanghai location
-          latitude: 31.2304,
-          longitude: 121.4737,
+          // latitude: 31.2304,
+          // longitude: 121.4737,
+          latitude: userCoordinates.userLatitude,
+          longitude: userCoordinates.userLongitude,
         },
         to: store.getters.allCenterLocation,
         success(res) {

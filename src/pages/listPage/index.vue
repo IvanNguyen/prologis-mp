@@ -71,12 +71,12 @@ export default {
   data() {
     return {
       isDetailPageOrRoutePage: false,
-      region: ['West China', 'East China', 'South China', 'North China'],
+      region: ['华西区', '华东区', '华南区', '华北区'],
       regionIndex: '',
-      cityInEastChina: ['Shanghai', 'Suzhou', 'Kunshan', 'Wuxi', 'Nanjing', 'Hangzhou', 'Huzhou', 'Jiaxing', 'Wuhan'],
-      cityInNorthChina: ['Beijing', 'Tianjin', 'Shenyang', 'Jinan'],
-      cityInWestChina: ['Chengdu', 'Chongqing', 'Xian'],
-      cityInSouthChina: ['Guangzhou', 'Fushan', 'Dongwan', 'Huizhou'],
+      cityInEastChina: ['上海', '苏州', '昆山', '无锡', '南京', '杭州', '湖州', '嘉兴', '武汉'],
+      cityInNorthChina: ['北京', '天津', '沈阳', '济南'],
+      cityInWestChina: ['成都', '重庆', '西安'],
+      cityInSouthChina: ['广州', '佛山', '东莞', '惠州'],
       cityIndex: 0,
     };
   },
@@ -91,13 +91,13 @@ export default {
     },
     cityInSelectedRegion() {
       switch (this.regionSelected) {
-        case 'West China':
+        case '华西区':
           return this.cityInWestChina;
-        case 'East China':
+        case '华东区':
           return this.cityInEastChina;
-        case 'South China':
+        case '华南区':
           return this.cityInSouthChina;
-        case 'North China':
+        case '华北区':
           return this.cityInNorthChina;
         default:
           return null;

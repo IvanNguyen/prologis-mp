@@ -2,10 +2,10 @@
   <cover-view class="general-introduction-wrapper">
     <cover-view class="content-row">
       <cover-view class="company-picture-wrapper">
-        <!-- <cover-view class="picture-placeholder">
+        <cover-view class="picture-placeholder">
           <cover-image src="../../static/images/logo.png" alt="company"/>
-        </cover-view> -->
-        <cover-image class="company-picture" src="https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/icon_Shanghai%20Jiuting.jpg" alt="company"/>
+        </cover-view>
+        <cover-image class="company-picture" :src="avatar" alt="company"/>
       </cover-view>
 
       <cover-view :class="[
@@ -86,7 +86,7 @@ export default {
 .company-picture-wrapper {
   width: 109px;
   height: 119px;
-  // position: relative;
+  position: relative;
 }
 .picture-placeholder {
   position: absolute;

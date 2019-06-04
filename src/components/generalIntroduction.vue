@@ -8,10 +8,7 @@
         <cover-image class="company-picture" :src="avatar" alt="company"/>
       </cover-view>
 
-      <cover-view :class="[
-        isAndroid ? 'androidLineHeight' : 'iosLineHeight',
-        'center-info',
-        isAndroid ? '' : 'mt--6']">
+      <cover-view  class="center-info lh-18">
         
         <cover-view class="text headline">{{centerName}} </cover-view>
 
@@ -87,6 +84,7 @@ export default {
   width: 109px;
   height: 119px;
   position: relative;
+  flex-shrink: 0;
 }
 .picture-placeholder {
   position: absolute;
@@ -108,12 +106,24 @@ export default {
   font-size: 13px;
   font-weight: 300;
   padding-left: 9px;
+  cover-view {
+    display: flex !important;
+  }
   &__content {
     padding-left: 7px;
   }
 }
 .headline {
   font-weight: bold !important;
+}
+.address-wrapper {
+  display: flex;
+  cover-view:first-child {
+    flex-shrink: 0;
+  }
+  .center-info__content {
+    white-space: normal;
+  }
 }
 .text {
   display: inline-block;

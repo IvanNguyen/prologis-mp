@@ -54,6 +54,11 @@ export default {
     'centerDistance',
     'centerAvatar',
   ],
+  computed: {
+    isShowGeneralIntroduction() {
+      return store.state.isShowGeneralIntroduction;
+    },
+  },
   methods: {
     toDetailPage() {
       store.commit('setSelectedCenterId', this.centerId);
@@ -74,6 +79,7 @@ export default {
   width: 109px;
   height: 119px;
   position: relative;
+  flex-shrink: 0;
 }
 .picture-placeholder {
   width: 100%;
@@ -91,6 +97,12 @@ export default {
   position: absolute;
   z-index: 2;
   // display: inline-block
+}
+.address-wrapper {
+  display: flex;
+  & > view:first-child {
+    flex-shrink: 0;
+  }
 }
 .general-introduction-wrapper {
     padding: 20px 0 16px 15px;

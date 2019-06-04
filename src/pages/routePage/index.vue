@@ -16,7 +16,7 @@
         enable-zooms
         enable-scroll
         :include-points="includePoints"
-      
+        :circles="fakeGPSLocation"
       >     
         <cover-view class="direction-bar">
           <directionBar></directionBar>
@@ -119,10 +119,10 @@ export default {
         mode: 'driving',
         from: {
           // Shanghai coordinates
-          // latitude: 31.2304,
-          // longitude: 121.4737,
-          latitude: this.userCoordinates.userLatitude,
-          longitude: this.userCoordinates.userLongitude,
+          latitude: 31.2304,
+          longitude: 121.4737,
+          // latitude: this.userCoordinates.userLatitude,
+          // longitude: this.userCoordinates.userLongitude,
         },
         to: {
           latitude: this.centerLatitude,

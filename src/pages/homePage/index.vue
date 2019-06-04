@@ -17,7 +17,7 @@
         enable-zooms
         enable-scroll
         @tap="mapTap"
-
+        :circles="fakeGPSLocation"
       >
         <positionInfo></positionInfo>
 
@@ -72,9 +72,9 @@ export default {
   onLoad() {
     console.log('onLoad');
     this.checkSystemInfo();
-    this.getLocation();
     this.mapCtx = wx.createMapContext('myMap');
-    this.findClosestCenter();
+    this.getLocation();
+    // this.findClosestCenter();
     this.getCenterLocation();
   },
   onShow() {
@@ -161,36 +161,35 @@ export default {
       const that = this;
       wx.getLocation({
         type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
-        success(result) {
+        success() {
           // wx.getSetting({
           //   success() {
           //   },
           // });
-          const userCoordinates = {
-            userLatitude: result.latitude,
-            userLongitude: result.longitude,
-          };
-          console.log(userCoordinates);
-          that.findClosestCenter(userCoordinates);
-          store.commit('setUserCoordinates', userCoordinates);
+          // const userCoordinates = {
+          //   userLatitude: result.latitude,
+          //   userLongitude: result.longitude,
+          // };
+          // that.findClosestCenter(userCoordinates);
+          that.findClosestCenter();
+          // store.commit('setUserCoordinates', userCoordinates);
         },
         fail() {
           that.openConfirm();
         },
       });
     },
-    findClosestCenter(userCoordinates) {
+    findClosestCenter() {
       const that = this;
       console.log('findClosestCenter');
-      console.log(userCoordinates);
       qqmapsdk.calculateDistance({
         // from: event.mp.detail.value.start || '',
         from: {
           // Shanghai location
-          // latitude: 31.2304,
-          // longitude: 121.4737,
-          latitude: userCoordinates.userLatitude,
-          longitude: userCoordinates.userLongitude,
+          latitude: 31.2304,
+          longitude: 121.4737,
+          // latitude: userCoordinates.userLatitude,
+          // longitude: userCoordinates.userLongitude,
         },
         to: store.getters.allCenterLocation,
         success(res) {
@@ -212,6 +211,10 @@ export default {
             region: closestCenterInfo.region,
             city: closestCenterInfo.city,
             centerName: closestCenterInfo.centerName,
+            address: closestCenterInfo.address,
+            phoneNumber: closestCenterInfo.phoneNumber,
+            area: closestCenterInfo.area,
+            avatar: closestCenterInfo.avatar,
             distance: (closestCenter[0].distance / 1000).toFixed(0),
           });
           store.commit('setSelectedCenterId', closestCenterInfo.id);
@@ -316,7 +319,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '../../global.scss';
 .page-body {
   display: flex;
   flex-direction: column;
@@ -328,16 +332,16 @@ export default {
   width: 100%;
 }
 .generalIntroductionBar {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 215px;
-  /* height: 0; */
-  background: rgba(255,255,255,1);
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.20);
-  overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 215px;
+    /* height: 0; */
+    background: rgba(255,255,255,1);
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.20);
+    overflow: hidden;
 }
 .bottomBar {
   position: fixed;

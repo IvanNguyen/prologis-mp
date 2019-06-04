@@ -3,12 +3,12 @@
     <cover-view class="wrapper">
       <cover-view class="center-info">
         <cover-view class="center-name">{{centerName}}</cover-view>
-        <cover-view :class="[isAndroid ? 'androidLineHeight' : 'iosLineHeight', 'content-wrapper']">
-          <cover-view>
+        <cover-view class="content-wrapper lh-18">
+          <cover-view class="d-flex">
             <cover-view class="text">地址</cover-view>
             <cover-view class="content">{{centerAddress}}</cover-view>
           </cover-view>
-          <cover-view>
+          <cover-view class="d-flex">
             <cover-view class="text">电话</cover-view>
             <cover-view @click="makeCall" class="content">({{centerPhoneNumber.areaCode}}) {{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}}</cover-view>
           </cover-view>
@@ -115,6 +115,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   background-color: $theme-color;
   width: 60px;
   height: 60px;

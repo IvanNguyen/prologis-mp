@@ -26,7 +26,7 @@
 
 <script>
 
-// import store from '../store/appstore';
+import store from '../store/appstore';
 
 export default {
   data() {
@@ -36,6 +36,7 @@ export default {
   methods: {
     backToHomePage() {
       // wx.navigateTo({ url:`/pages/centerInfo/main?id=${centerId}`})
+      store.commit('hideGeneralIntroduction');
       wx.navigateBack({ delta: 1 });
     },
   },

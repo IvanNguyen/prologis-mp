@@ -14,6 +14,10 @@ const store = new Vuex.Store({
       region: '',
       city: '',
       centerName: '',
+      address: '',
+      phoneNumber: '',
+      area: '',
+      avatar: '',
       distance: '',
     },
     cityFilter: '',
@@ -44,13 +48,16 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/shanghai_qingpu/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_qingpu/photo1.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_qingpu/photo2.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_qingpu/photo3.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_qingpu/photo4.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_qingpu/photo5.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -62,10 +69,8 @@ const store = new Vuex.Store({
         plans: [
           'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
           'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/east_china/shanghai_qingpu/map.jpg',
         accessibilities: [
           {
             destination: '距G1501高速公路',
@@ -108,8 +113,7 @@ const store = new Vuex.Store({
             distance: '100',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/shanghai_qingpu/pdf.pdf',
       },
       {
         id: 2,
@@ -130,13 +134,15 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/shanghai_jiuting/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_jiuting/photo1.JPG',
+            'https://cdn.prologis.site/images/east_china/shanghai_jiuting/photo2.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_jiuting/photo3.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_jiuting/photo4.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -145,13 +151,8 @@ const store = new Vuex.Store({
           accessibilities:
             '地理位置优越，距上海市中心仅20公里，距上海虹桥机场仅10公里，通往华东地区各个港口均极为便捷。此外该园区距G50高速仅4公里，距G92高速仅5公里，距G15和S20高速仅6公里。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/east_china/shanghai_jiuting/if.jpg'],
+        map: 'https://cdn.prologis.site/images/east_china/shanghai_jiuting/map.jpg',
         accessibilities: [
           {
             destination: '至G50高速公路',
@@ -190,8 +191,7 @@ const store = new Vuex.Store({
             distance: '75',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/shanghai_jiuting/pdf.pdf',
       },
       {
         id: 3,
@@ -212,13 +212,16 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/shanghai_jinshan/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_jinshan/photo_1.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_jinshan/photo_2.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_jinshan/photo_3.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_jinshan/photo_4.jpg',
+            'https://cdn.prologis.site/images/east_china/shanghai_jinshan/photo_5.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologisshanghaijinshanlogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -227,13 +230,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物业坐落于长江三角洲的核心区域，距上海市中心仅50公里，距G15高速仅1公里。此外距离浙江和江苏各为45分钟车程，是城市配送和区域配送的理想选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg'],
+        map: 'https://cdn.prologis.site/images/east_china/shanghai_jinshan/map.jpg',
         accessibilities: [
           {
             destination: '距上海市区',
@@ -248,8 +246,7 @@ const store = new Vuex.Store({
             distance: '1',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/shanghai_jinshan/pdf.pdf',
       },
       {
         id: 4,
@@ -270,13 +267,15 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/suzhou_jinchang/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/suzhou_jinchang/photo1.jpg',
+            'https://cdn.prologis.site/images/east_china/suzhou_jinchang/photo2.jpg',
+            'https://cdn.prologis.site/images/east_china/suzhou_jinchang/photo3.jpg',
+            'https://cdn.prologis.site/images/east_china/suzhou_jinchang/photo4.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/suzhoujinchang.mp4',
         },
         description: {
           overView: [
@@ -286,12 +285,10 @@ const store = new Vuex.Store({
             '该物业毗邻苏州内环，距苏州市中心仅10分钟车程。位于江苏省中心，临近G312国道和G42上海－南京高速，距上海和浙江仅各1小时车程。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/east_china/suzhou_jinchang/1F.jpg',
+          'https://cdn.prologis.site/images/east_china/suzhou_jinchang/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/east_china/suzhou_jinchang/map.jpg',
         accessibilities: [
           {
             destination: '距苏州市区',
@@ -318,8 +315,7 @@ const store = new Vuex.Store({
             distance: '3',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/suzhou_jinchang/pdf.pdf',
       },
       {
         id: 5,
@@ -340,13 +336,17 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/Jiaxing/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_1.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_2.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_3.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_4.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_5.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_6.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologissuzhouxuguanlogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -355,11 +355,7 @@ const store = new Vuex.Store({
           accessibilities:
             '坐落于华东地区的核心区域，距苏州市中心仅15公里车程，靠近G42沪蓉高速和G312国道，距上海市和浙江省仅各1小时车程。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
+        plans: ['https://cdn.prologis.site/images/east_china/Jiaxing/1f.jpg'],
         map:
           'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
         accessibilities: [
@@ -414,13 +410,15 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/Kunshan_lujia/icon_kunshan_lujia.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center.jpg',
+            'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center_3.jpg',
+            'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center_4.jpg',
+            'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center_5.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -430,13 +428,9 @@ const store = new Vuex.Store({
           accessibilities:
             '该物业坐落于长江三角洲内陆地区的黄金交通枢纽，是中国沿海和长江经济开发区物流运营的理想选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
+        plans: ['https://cdn.prologis.site/images/east_china/Kunshan_lujia/1f.jpg'],
         map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+          'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center.jpg',
         accessibilities: [
           {
             destination: '距G2京沪高速公路',
@@ -468,7 +462,7 @@ const store = new Vuex.Store({
           },
         ],
         pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+          'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center190220.pdf',
       },
       {
         id: 7,
@@ -489,13 +483,14 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/wuxi_meicun/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/wuxi_meicun/photo1.jpg',
+            'https://cdn.prologis.site/images/east_china/wuxi_meicun/photo2.jpg',
+            'https://cdn.prologis.site/images/east_china/wuxi_meicun/photo3.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologiswuximeicunlogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -504,12 +499,10 @@ const store = new Vuex.Store({
           accessibilities: '此外距无锡机场10公里，距京沪高铁无锡东站5公里。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/east_china/wuxi_meicun/1F.jpg',
+          'https://cdn.prologis.site/images/east_china/wuxi_meicun/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/east_china/wuxi_meicun/map.jpg',
         accessibilities: [
           {
             destination: '距无锡市区',
@@ -536,8 +529,7 @@ const store = new Vuex.Store({
             distance: '5',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/wuxi_meicun/pdf.pdf',
       },
       {
         id: 8,
@@ -558,13 +550,16 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/nanjing_airport/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/nanjing_airport/photo_1.jpg',
+            'https://cdn.prologis.site/images/east_china/nanjing_airport/photo_2.jpg',
+            'https://cdn.prologis.site/images/east_china/nanjing_airport/photo_3.jpg',
+            'https://cdn.prologis.site/images/east_china/nanjing_airport/photo_4.jpg',
+            'https://cdn.prologis.site/images/east_china/nanjing_airport/photo_5.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -573,13 +568,9 @@ const store = new Vuex.Store({
           accessibilities:
             '该中心地理位置优越，距将军大道0.5公里，距连接南京市中心的S55南京机场快线和S123省道各4公里。同时，该物业距南京市中心仅45分钟车程，距南京禄口机场也仅20分钟车程，是城市配送的最佳选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
+        plans: ['https://cdn.prologis.site/images/east_china/nanjing_airport/1f.jpg'],
         map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+          'https://cdn.prologis.site/images/east_china/nanjing_airport/nanjing_airport-logistics-center.jpg',
         accessibilities: [
           {
             destination: '距南京市区',
@@ -606,8 +597,7 @@ const store = new Vuex.Store({
             distance: '4',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/nanjing_airport/pdf.pdf',
       },
       {
         id: 9,
@@ -628,13 +618,10 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/nanjing_liuhe/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/east_china/nanjing_liuhe/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -644,12 +631,10 @@ const store = new Vuex.Store({
             '该物流中心紧邻宁洛高速(G36)、南京绕城高速(G2501)、沪陕高速(G40)，距南京市中心仅30公里，距地铁S8号线长芦站1.1公里，交通便利。所处的南京六合经济开发区，目前已入驻大量知名企业，工业基础扎实、周边配套完善。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/east_china/nanjing_liuhe/2f.jpg',
+          'https://cdn.prologis.site/images/east_china/nanjing_liuhe/if.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/east_china/nanjing_liuhe/map.jpg',
         accessibilities: [
           {
             destination: '距地铁S8号线长芦地铁站',
@@ -680,8 +665,7 @@ const store = new Vuex.Store({
             distance: '50',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/nanjing_liuhe/pdf.pdf',
       },
       {
         id: 10,
@@ -702,26 +686,26 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar:
+          'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/hangzhou_renhe/prologis_hangzhou_renhe_logistics_center_1.jpg',
+            'https://cdn.prologis.site/images/east_china/hangzhou_renhe/prologis_hangzhou_renhe_logistics_center_2.jpg',
+            'https://cdn.prologis.site/images/east_china/hangzhou_renhe/prologis_hangzhou_renhe_logistics_center_3.jpg',
+            'https://cdn.prologis.site/images/east_china/hangzhou_renhe/prologis_hangzhou_renhe_logistics_center_5.jpg',
+            'https://cdn.prologis.site/images/east_china/hangzhou_renhe/prologis_hangzhou_renhe_logistics_center_6.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologishangzhourenhelogisticscenter.mp4',
         },
         description: {
           overView: ['杭州仁和物流中心位于杭州市余杭区仁和镇，可租赁面积76,200平方米。'],
           accessibilities:
             '距杭州市中心仅15公里，距G23高速仅2公里，距杭州仁和先进制造业基地的S13/S32申嘉湖高速公路也仅7公里，是城市配送和区域配送的最佳选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
+        plans: ['https://cdn.prologis.site/images/east_china/hangzhou_renhe/1F.jpg'],
         map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+          'https://cdn.prologis.site/images/east_china/hangzhou_renhe/hangzhou_renhe_logistics_center.jpg',
         accessibilities: [
           {
             destination: '距杭州市区',
@@ -761,7 +745,7 @@ const store = new Vuex.Store({
           },
         ],
         pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+          'https://cdn.prologis.site/images/east_china/hangzhou_renhe/prologis_hangzhou_renhe_logistics_center190220.pdf',
       },
       {
         id: 11,
@@ -782,13 +766,12 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/huzhou_lianshi/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/huzhou_lianshi/huzhou_lianshi_logistics_center_1.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -798,12 +781,11 @@ const store = new Vuex.Store({
             '该物流中心位于浙江省核心区域，距杭州市中心约75公里，距苏州市中心约78公里，距上海市中心约130公里，紧邻申嘉湖高速(S12)、练杭高速(S13)，是长三角经济区域分拨的优良节点。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/east_china/huzhou_lianshi/1F.jpg',
+          'https://cdn.prologis.site/images/east_china/huzhou_lianshi/2F.jpg',
         ],
         map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+          'https://cdn.prologis.site/images/east_china/huzhou_lianshi/huzhou_lianshi_logistics_center.jpg',
         accessibilities: [
           {
             destination: '距申嘉湖高速',
@@ -831,7 +813,7 @@ const store = new Vuex.Store({
           },
         ],
         pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+          'https://cdn.prologis.site/images/east_china/huzhou_lianshi/huzhou_lianshi_logistics_center190214.pdf',
       },
       {
         id: 12,
@@ -852,13 +834,17 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/Jiaxing/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_1.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_2.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_3.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_4.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_5.jpg',
+            'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_6.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -867,13 +853,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该中心可直通市内主要高速公路，距G320高速仅3公里，距沪杭高速和乍嘉苏高速各为4公里。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/east_china/Jiaxing/1f.jpg'],
+        map: 'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center.jpg',
         accessibilities: [
           {
             destination: '距杭州湾环线高速及乍嘉苏高速',
@@ -901,7 +882,7 @@ const store = new Vuex.Store({
           },
         ],
         pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+          'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_190220.pdf',
       },
       {
         id: 13,
@@ -922,13 +903,11 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar:
+          'https://cdn.prologis.site/images/east_china/wuhan_jiangxia/icon_Wuhan_Jiangxia.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/east_china/wuhan_jiangxia/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -938,12 +917,10 @@ const store = new Vuex.Store({
             '该物流中心位于江夏开发区内，毗邻光谷，是汽车、医药和电子产品的制造基地。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/east_china/wuhan_jiangxia/1F.jpg',
+          'https://cdn.prologis.site/images/east_china/wuhan_jiangxia/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/east_china/wuhan_jiangxia/map.jpg',
         accessibilities: [
           {
             destination: '距武汉市中心',
@@ -958,8 +935,7 @@ const store = new Vuex.Store({
             distance: '0',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/wuhan_jiangxia/pdf.pdf',
       },
       {
         id: 14,
@@ -980,13 +956,18 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/wuhan_gedian/icon_Gedian.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/east_china/wuhan_gedian/photo1.jpg',
+            'https://cdn.prologis.site/images/east_china/wuhan_gedian/photo2.jpg',
+            'https://cdn.prologis.site/images/east_china/wuhan_gedian/photo3.jpg',
+            'https://cdn.prologis.site/images/east_china/wuhan_gedian/photo4.jpg',
+            'https://cdn.prologis.site/images/east_china/wuhan_gedian/photo5.jpg',
+            'https://cdn.prologis.site/images/east_china/wuhan_gedian/photo6.jpg',
+            'https://cdn.prologis.site/images/east_china/wuhan_gedian/photo7.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/pologisgedianlogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -995,13 +976,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物流中心距武汉东部仅30分钟车程，可经过汉鄂高速公路（S7）和高新路便捷通达武汉。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/east_china/wuhan_gedian/1f.jpg'],
+        map: 'https://cdn.prologis.site/images/east_china/wuhan_gedian/map.jpg',
         accessibilities: [
           {
             destination: '距武汉市区',
@@ -1020,8 +996,7 @@ const store = new Vuex.Store({
             distance: '20',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/wuhan_gedian/pdf.pdf',
       },
       {
         id: 15,
@@ -1042,13 +1017,10 @@ const store = new Vuex.Store({
           phoneNumber: '15921805824',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/east_china/wuhan_caidian/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/east_china/wuhan_caidian/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -1059,12 +1031,10 @@ const store = new Vuex.Store({
             '项目毗邻G50沪渝高速公路，八个周边城市（孝感，天门，钱江，仙桃，咸宁，黄石，鄂州，黄冈）均在100公里车程之内，是理想的区域配送选择。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/east_china/wuhan_caidian/1f.jpg',
+          'https://cdn.prologis.site/images/east_china/wuhan_caidian/2f.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/east_china/wuhan_caidian/map.jpg',
         accessibilities: [
           {
             destination: '距离沪渝高速(G50)永安出口',
@@ -1083,8 +1053,7 @@ const store = new Vuex.Store({
             distance: '56',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/east_china/wuhan_caidian/pdf.pdf',
       },
       // North China
       {
@@ -1106,13 +1075,15 @@ const store = new Vuex.Store({
           phoneNumber: '18514411107',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/photo1.jpg',
+            'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/photo2.jpg',
+            'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/photo3.jpg',
+            'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/photo4.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -1122,12 +1093,11 @@ const store = new Vuex.Store({
             '该物流中心距北京首都机场仅5分钟车程，距北京市中心约30分钟车程，是城市配送的理想选择。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/1F.jpg',
+          'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/2F.jpg',
+          'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/3F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/map.jpg',
         accessibilities: [
           {
             destination: '距6环路东出口',
@@ -1158,8 +1128,7 @@ const store = new Vuex.Store({
             distance: '1.5',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/2F.jpg',
       },
       {
         id: 17,
@@ -1180,13 +1149,12 @@ const store = new Vuex.Store({
           phoneNumber: '18514411107',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/photo.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -1196,12 +1164,10 @@ const store = new Vuex.Store({
             '该物业距G111高速1公里，距六环快速路北出口2公里，距北京首都机场5公里，距北京市中心25公里。是北京物流区中距中心商业区路程最短的物流中心。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/1F.jpg',
+          'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/map.jpg',
         accessibilities: [
           {
             destination: '距6环路东出口',
@@ -1232,8 +1198,7 @@ const store = new Vuex.Store({
             distance: '1.5',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/pdf.pdf',
       },
       {
         id: 18,
@@ -1254,13 +1219,16 @@ const store = new Vuex.Store({
           phoneNumber: '18514411107',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/north_china/tianjin_ninghe/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/north_china/tianjin_ninghe/photo1.jpg',
+            'https://cdn.prologis.site/images/north_china/tianjin_ninghe/photo2.jpg',
+            'https://cdn.prologis.site/images/north_china/tianjin_ninghe/photo3.jpg',
+            'https://cdn.prologis.site/images/north_china/tianjin_ninghe/photo4.jpg',
+            'https://cdn.prologis.site/images/north_china/tianjin_ninghe/photo5.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologistianjinninghelogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -1269,13 +1237,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物流中心位于天津未来科技城的现代化工业区内，距天津仅10公里，距天津空港经济开发区8公里，距天津经济技术开发区35公里。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/north_china/tianjin_ninghe/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/north_china/tianjin_ninghe/map.jpg',
         accessibilities: [
           {
             destination: '距离北京市中心',
@@ -1294,8 +1257,7 @@ const store = new Vuex.Store({
             distance: '35',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/north_china/tianjin_ninghe/pdf.pdf',
       },
       {
         id: 19,
@@ -1316,13 +1278,15 @@ const store = new Vuex.Store({
           phoneNumber: '18514411107',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/north_china/tianjin_jingbin/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/north_china/tianjin_jingbin/photo1.jpg',
+            'https://cdn.prologis.site/images/north_china/tianjin_jingbin/photo2.jpg',
+            'https://cdn.prologis.site/images/north_china/tianjin_jingbin/photo3.jpg',
+            'https://cdn.prologis.site/images/north_china/tianjin_jingbin/photo4.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -1331,13 +1295,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物流中心毗邻廊坊经济开发区和天津京滨工业园，距北京市区仅30公里，距北京首都机场65公里，距天津滨海国际机场75公里，是城市配送和区域配送的理想选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/north_china/tianjin_jingbin/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/north_china/tianjin_jingbin/map.jpg',
         accessibilities: [
           {
             destination: '距北京市区',
@@ -1360,8 +1319,7 @@ const store = new Vuex.Store({
             distance: '105',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/north_china/tianjin_jingbin/pdf.pdf',
       },
       // Has no PDF file
       {
@@ -1383,13 +1341,10 @@ const store = new Vuex.Store({
           phoneNumber: '18514411107',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/north_china/port_of_tianjin/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/north_china/port_of_tianjin/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -1398,13 +1353,8 @@ const store = new Vuex.Store({
           accessibilities:
             '其地理位置优越，位于天津港自由贸易区，毗邻天津港，与北京和河北省仅一步之遥，是华北地区极为重要的集装箱港口和配送枢纽。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: [],
+        map: 'https://cdn.prologis.site/images/north_china/port_of_tianjin/map.jpg',
         accessibilities: [],
         pdf: '',
       },
@@ -1427,26 +1377,22 @@ const store = new Vuex.Store({
           phoneNumber: '18511546611',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/north_china/shenyang_hunan/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/north_china/shenyang_hunan/photo.jpg',
+            'https://cdn.prologis.site/images/north_china/shenyang_hunan/photo2.JPG',
+            'https://cdn.prologis.site/images/north_china/shenyang_hunan/photo3.JPG',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: ['该现代化物流中心由五栋单层建筑组成，可租赁面积96,100平方米。'],
           accessibilities:
             '地理位置优越，毗邻沈阳环城高速，距沈阳市中心仅10公里，距沈阳机场20公里，是电子商务配送的极佳选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/north_china/shenyang_hunan/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/north_china/shenyang_hunan/map.jpg',
         accessibilities: [
           {
             destination: '距离沈阳绕城高速(三环)',
@@ -1469,8 +1415,7 @@ const store = new Vuex.Store({
             distance: '7',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/north_china/shenyang_hunan/pdf.pdf',
       },
       {
         id: 22,
@@ -1491,13 +1436,10 @@ const store = new Vuex.Store({
           phoneNumber: '18511546611',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/north_china/shenyang_shenxi/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/north_china/shenyang_shenxi/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -1506,13 +1448,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该项目地理位置优越，处于西四环路与京哈高速公路交汇处（G1），交通相当便利，是绝佳的区域和城市配送选择。同时距离沈阳市中心仅三公里，距中德装备制造工业园八公里。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/north_china/shenyang_shenxi/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/north_china/shenyang_shenxi/map.jpg',
         accessibilities: [
           {
             destination: '距离沈阳绕城高速(三环)',
@@ -1535,8 +1472,7 @@ const store = new Vuex.Store({
             distance: '4',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/north_china/shenyang_shenxi/pdf.pdf',
       },
       {
         id: 23,
@@ -1557,13 +1493,10 @@ const store = new Vuex.Store({
           phoneNumber: '18514411107',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/north_china/jinan_airport/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/north_china/jinan_airport/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -1572,13 +1505,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物流中心位于济南高新区国际物流发展中心，紧邻青银高速(G20)、济广高速(G35)与济南绕城高速(G2001)，通往济南国际机场和济南市区仅10至15分钟车程，可辐射至整个山东半岛。所处经济园区为区域性物流中心，周边区域产业基础良好，区内吸引了跨境电商、保税加工制造、高端装备制造、电商物流等企业入驻。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/north_china/jinan_airport/f1.jpg'],
+        map: 'https://cdn.prologis.site/images/north_china/jinan_airport/map.jpg',
         accessibilities: [
           {
             destination: '距离机场路',
@@ -1605,8 +1533,7 @@ const store = new Vuex.Store({
             distance: '9',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/north_china/jinan_airport/pdf.pdf',
       },
       {
         id: 24,
@@ -1627,13 +1554,10 @@ const store = new Vuex.Store({
           phoneNumber: '18514411107',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/north_china/jinan_west/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/north_china/jinan_west/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -1642,13 +1566,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物流中心通往济南市区仅30分钟车程，距京台高速(G3)、青银高速(G20)与济南绕城高速(G2001)仅10分钟车程。周边拥有完善交通网络，可辐射至河北及河南大部分城市。所处园区聚焦新能源汽车和高端装备制造产业，拥有良好的周边区域产业基础和仓储物流企业发展环境。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/north_china/jinan_west/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/north_china/jinan_west/map.jpg',
         accessibilities: [
           {
             destination: '距离G308国道(齐安大道)',
@@ -1671,8 +1590,7 @@ const store = new Vuex.Store({
             distance: '4.7',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/north_china/jinan_west/pdf.pdf',
       },
       // West China
       {
@@ -1694,13 +1612,15 @@ const store = new Vuex.Store({
           phoneNumber: '15102816742',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/west_china/chengdu_airport/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_airport/photo1.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_airport/photo2.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_airport/photo3.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_airport/photo4.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -1709,13 +1629,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物业周边交通便捷，距成都市区和新城市中心均45分钟车程，是城市配送和区域配送的理想选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/west_china/chengdu_airport/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/west_china/chengdu_airport/map.jpg',
         accessibilities: [
           {
             destination: '距G5(京昆)、G93(成渝环线)高速公路',
@@ -1742,8 +1657,7 @@ const store = new Vuex.Store({
             distance: '15',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/west_china/chengdu_airport/pdf.pdf',
       },
       {
         id: 26,
@@ -1764,13 +1678,17 @@ const store = new Vuex.Store({
           phoneNumber: '15102816742',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/west_china/chengdu_longquan/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_longquan/photo1.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_longquan/photo2.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_longquan/photo3.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_longquan/photo4.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_longquan/photo5.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_longquan/photo6.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologischengdulongquanlogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -1780,12 +1698,10 @@ const store = new Vuex.Store({
             '该物业距成都环城高速（G4201）8公里车程，便捷通往成都周边各大高速公路，距成都市区14公里。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/west_china/chengdu_longquan/1F.jpg',
+          'https://cdn.prologis.site/images/west_china/chengdu_longquan/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/west_china/chengdu_longquan/map.jpg',
         accessibilities: [
           {
             destination: '距成都市区',
@@ -1804,8 +1720,7 @@ const store = new Vuex.Store({
             distance: '30',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/west_china/chengdu_longquan/pdf.pdf',
       },
       {
         id: 27,
@@ -1826,13 +1741,18 @@ const store = new Vuex.Store({
           phoneNumber: '18200326844',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/west_china/chengdu_xindu/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_xindu/photo1.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_xindu/photo2.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_xindu/photo3.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_xindu/photo4.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_xindu/photo5.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_xindu/photo6.jpg',
+            'https://cdn.prologis.site/images/west_china/chengdu_xindu/photo7.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: '',
         },
         description: {
           overView: [
@@ -1842,32 +1762,49 @@ const store = new Vuex.Store({
             '该物流中心交通便捷，可直接通往成都一环路，地理位置优越，是城市配送、区域配送和速运的理想选择。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/west_china/chengdu_xindu/1F.jpg',
+          'https://cdn.prologis.site/images/west_china/chengdu_xindu/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/west_china/chengdu_xindu/map.jpg',
         accessibilities: [
           {
             destination: '距成都市区',
-            distance: '14',
+            distance: '15',
           },
           {
             destination: '距G4201成都绕城高速',
-            distance: '10',
+            distance: '0.4',
           },
           {
-            destination: '距G76成渝高速',
-            distance: '14',
+            destination: '距货运大道',
+            distance: '0.8',
           },
           {
-            destination: '距离成都双流国际机场',
-            distance: '30',
+            destination: '距108国道',
+            distance: '2',
+          },
+          {
+            destination: '距三环路',
+            distance: '9',
+          },
+          {
+            destination: '距G42沪蓉高速',
+            distance: '17',
+          },
+          {
+            destination: '距成都国际铁路港（青白江)',
+            distance: '27',
+          },
+          {
+            destination: '距成都双流国际机场（经绕城高速)',
+            distance: '50',
+          },
+          {
+            destination: '距成都天府国际机场（在建)',
+            distance: '70',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/west_china/chengdu_xindu/pdf.pdf',
       },
       {
         id: 28,
@@ -1888,13 +1825,10 @@ const store = new Vuex.Store({
           phoneNumber: '18200326844',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/west_china/chengdu_qingbaijiang/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/west_china/chengdu_qingbaijiang/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -1903,13 +1837,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物流中心毗邻成都青白江路，距货运铁路仅10公里，连接成都周边公路网络，距市中心仅30分钟车程，也可快速通往成都（新都）公路货运中心和成都（青白江）铁路中心，地理位置优越，是城市配送和区域配送的理想选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/west_china/chengdu_qingbaijiang/iF.jpg'],
+        map: 'https://cdn.prologis.site/images/west_china/chengdu_qingbaijiang/map.jpg',
         accessibilities: [
           {
             destination: '距G4201(成都第一绕城高速)',
@@ -1948,8 +1877,7 @@ const store = new Vuex.Store({
             distance: '70',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/west_china/chengdu_qingbaijiang/pdf.pdf',
       },
       {
         id: 29,
@@ -1970,13 +1898,17 @@ const store = new Vuex.Store({
           phoneNumber: '15102816741',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo1.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo2.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo3.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo4.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo5.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo6.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologischongqingliangjianglogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -1985,13 +1917,8 @@ const store = new Vuex.Store({
           accessibilities:
             '其所处位置交通便利，位于重庆环路入口处，临近沪渝高速公路，利于客户的品牌展示',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/west_china/chongqing_liangjiang/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/map.jpg',
         accessibilities: [
           {
             destination: '距重庆市区',
@@ -2018,8 +1945,7 @@ const store = new Vuex.Store({
             distance: '25',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/pdf.pdf',
       },
       {
         id: 30,
@@ -2040,13 +1966,16 @@ const store = new Vuex.Store({
           phoneNumber: '18883234175',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/west_china/chongqing_airport/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_airport/photo1.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_airport/photo2.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_airport/photo3.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_airport/photo4.jpg',
+            'https://cdn.prologis.site/images/west_china/chongqing_airport/photo5.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologischongqingairportlogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -2055,13 +1984,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物流中心距重庆市中心 25公里，距中国最重要的空港之一重庆江北国际机场10公里，临近重庆环路和包茂高速公路，可便捷通往重庆各个区域，地理位置优越，是城市配送和区域配送的理想选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/west_china/chongqing_airport/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/west_china/chongqing_airport/map.jpg',
         accessibilities: [
           {
             destination: '距重庆市区',
@@ -2088,8 +2012,7 @@ const store = new Vuex.Store({
             distance: '0.8',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/west_china/chongqing_airport/pdf.pdf',
       },
       {
         id: 31,
@@ -2110,13 +2033,10 @@ const store = new Vuex.Store({
           phoneNumber: '18883234175',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/west_china/chongqing_west/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/west_china/chongqing_west/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -2126,12 +2046,10 @@ const store = new Vuex.Store({
             '该物业位于西部新城内，距离重庆市核心商圈仅15公里。毗邻G93成渝环线高速，通过G93可辐射成渝经济圈及西南大多数省市市场。距离中欧国际班列重庆起点站“团结村铁路集装箱中心站”仅2公里，可快速连接重庆、亚太及欧洲地区。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/west_china/chongqing_west/1F.jpg',
+          'https://cdn.prologis.site/images/west_china/chongqing_west/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/west_china/chongqing_west/map.jpg',
         accessibilities: [
           {
             destination: '距离轻轨13号线(规划)',
@@ -2158,8 +2076,7 @@ const store = new Vuex.Store({
             distance: '15',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/west_china/chongqing_west/pdf.pdf',
       },
       {
         id: 32,
@@ -2180,13 +2097,10 @@ const store = new Vuex.Store({
           phoneNumber: '13679105010',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/west_china/xi_an_fengxi/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/west_china/xi_an_fengxi/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -2196,12 +2110,10 @@ const store = new Vuex.Store({
             '该园区距离咸阳和西安市区分别为5公里和10公里，并毗邻G30连霍高速。其战略地理位置必将受益于一带一路倡议，是城市配送和区域分拨的最佳节点。地铁五号线距离该中心仅为3公里，建成后将大大提升来往于西安市区的便利程度。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/west_china/xi_an_fengxi/1F.jpg',
+          'https://cdn.prologis.site/images/west_china/xi_an_fengxi/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/west_china/xi_an_fengxi/map.jpg',
         accessibilities: [
           {
             destination: '距离G30(南线)咸阳南出口',
@@ -2228,8 +2140,7 @@ const store = new Vuex.Store({
             distance: '3',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/west_china/xi_an_fengxi/pdf.pdf',
       },
       {
         id: 33,
@@ -2250,13 +2161,10 @@ const store = new Vuex.Store({
           phoneNumber: '13679105010',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/west_china/xi_an_itl/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/west_china/xi_an_itl/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -2266,12 +2174,10 @@ const store = new Vuex.Store({
             '该物流中心地处陕西省西安市国际港务区，毗邻中欧班列长安号始发站西安港、海关和综保区，是西北最具规模的国际商贸交易平台和公铁联运中转枢区，同时也是“一带一路”上的重要结点。毗邻G5京昆高速，距离西安市区5公里，通过G5可辐射西北大多数省市市场，是西北区域分拨的最佳节点。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/west_china/xi_an_itl/1F.jpg',
+          'https://cdn.prologis.site/images/west_china/xi_an_itl/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/west_china/xi_an_itl/map.jpg',
         accessibilities: [
           {
             destination: '距离G5港务区出口',
@@ -2298,8 +2204,7 @@ const store = new Vuex.Store({
             distance: '40',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/west_china/xi_an_itl/pdf.pdf',
       },
       // South China
       {
@@ -2321,28 +2226,29 @@ const store = new Vuex.Store({
           phoneNumber: '18475398140',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/photo1.jpg',
+            'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/photo2.jpg',
+            'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/photo3.jpg',
+            'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/photo4.jpg',
+            'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/photo5.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video:
+            'https://cdn.prologis.site/Videos/prologisguangzhoudevelopmentzonelogisticscenter.mp4',
         },
         description: {
-          overView: [
-            '该现代化物流中心由两栋三层建筑和一栋两层建筑组成，可租赁面积128,000平方米。',
-          ],
+          overView: ['该现代化物流中心由两栋三层建筑和一栋两层建筑组成，可租赁面积128,000平方米。'],
           accessibilities:
             '该物流中心位于广州经济技术开发区内，拥有超过100家全球500强企业。距广深高速不到2公里，距黄埔港仅需10分钟车程，距世界吞吐量排名第七的货运港口南沙港也仅需30分钟车程。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/1F.jpg',
+          'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/2F.jpg',
+          'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/3F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/map.jpg',
         accessibilities: [
           {
             destination: '距广深高速公路',
@@ -2365,8 +2271,7 @@ const store = new Vuex.Store({
             distance: '40',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/pdf.pdf',
       },
       {
         id: 35,
@@ -2387,28 +2292,22 @@ const store = new Vuex.Store({
           phoneNumber: '18475398140',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/south_china/foshan_datang/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/south_china/foshan_datang/photo1.jpg',
+            'https://cdn.prologis.site/images/south_china/foshan_datang/photo2.jpg',
+            'https://cdn.prologis.site/images/south_china/foshan_datang/photo3.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologisfoshandatanglogisticscenter.mp4',
         },
         description: {
-          overView: [
-            '该物流中心可租赁面积将超过110,400平方米，包括五栋单层仓库，分两期建设完成。',
-          ],
+          overView: ['该物流中心可租赁面积将超过110,400平方米，包括五栋单层仓库，分两期建设完成。'],
           accessibilities:
             '该物业距佛山市三环公路仅两公里，距乐平工业园和花都日产汽车工业园等市级产业园均15分钟车程，距大众工业园20分钟车程，距佛山市区和广州市区均50分钟车程，是电子商务客户、零售商和制造业企业区域配送的理想选择。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/south_china/foshan_datang/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/south_china/foshan_datang/map.jpg',
         accessibilities: [
           {
             destination: '距珠三环高速公路',
@@ -2427,8 +2326,7 @@ const store = new Vuex.Store({
             distance: '50',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/south_china/foshan_datang/pdf.pdf',
       },
       {
         id: 36,
@@ -2449,13 +2347,10 @@ const store = new Vuex.Store({
           phoneNumber: '18475398140',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/south_china/foshan_gaoming/icon.jpg',
         swiper: {
-          images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
-          ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          images: ['https://cdn.prologis.site/images/south_china/foshan_gaoming/photo.jpg'],
+          video: '',
         },
         description: {
           overView: [
@@ -2465,12 +2360,10 @@ const store = new Vuex.Store({
             '该物流中心地处粤港澳大湾区广佛肇经济圈——佛山西，地理位置优越。5分钟直达S5广明高速公路出口，连接G94珠三角环线高速公路和G1501广州绕城高速公路，2.5小时内直抵珠三角各大城市，是辐射广州、佛山、珠江西岸各城市的区域的首选配送中心。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/south_china/foshan_gaoming/1F.jpg',
+          'https://cdn.prologis.site/images/south_china/foshan_gaoming/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/south_china/foshan_gaoming/map.jpg',
         accessibilities: [
           {
             destination: '距S5广明高速公路',
@@ -2493,8 +2386,7 @@ const store = new Vuex.Store({
             distance: '100',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/south_china/foshan_gaoming/pdf.pdf',
       },
       {
         id: 37,
@@ -2515,13 +2407,15 @@ const store = new Vuex.Store({
           phoneNumber: '18475398140',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/south_china/dongguan_shipai/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/south_china/dongguan_shipai/photo1.jpg',
+            'https://cdn.prologis.site/images/south_china/dongguan_shipai/photo2.jpg',
+            'https://cdn.prologis.site/images/south_china/dongguan_shipai/photo3.jpg',
+            'https://cdn.prologis.site/images/south_china/dongguan_shipai/photo4.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologisdongguanshipailogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -2531,13 +2425,8 @@ const store = new Vuex.Store({
           accessibilities:
             '该物流中心是理想的城市配送点，距东莞市中心仅20分钟车程，距深圳市和东莞市中心各90分钟车程。',
         },
-        plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
-        ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        plans: ['https://cdn.prologis.site/images/south_china/dongguan_shipai/1F.jpg'],
+        map: 'https://cdn.prologis.site/images/south_china/dongguan_shipai/map.jpg',
         accessibilities: [
           {
             destination: '距离石排镇中心区域约',
@@ -2560,8 +2449,7 @@ const store = new Vuex.Store({
             distance: '75',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/south_china/dongguan_shipai/pdf.pdf',
       },
       {
         id: 38,
@@ -2582,13 +2470,16 @@ const store = new Vuex.Store({
           phoneNumber: '18475398140',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/south_china/dongguan_hongmei/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/south_china/dongguan_hongmei/photo1.jpg',
+            'https://cdn.prologis.site/images/south_china/dongguan_hongmei/photo2.jpg',
+            'https://cdn.prologis.site/images/south_china/dongguan_hongmei/photo3.jpg',
+            'https://cdn.prologis.site/images/south_china/dongguan_hongmei/photo4.jpg',
+            'https://cdn.prologis.site/images/south_china/dongguan_hongmei/photo5.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologisdongguanhongmeihogisticscenter.mp4',
         },
         description: {
           overView: [
@@ -2598,12 +2489,10 @@ const store = new Vuex.Store({
             '该物业距广州仅25分钟车程，距深圳40分钟车程。距珠江三角洲其余主要城市车程也在90分钟内。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/south_china/dongguan_hongmei/1F.jpg',
+          'https://cdn.prologis.site/images/south_china/dongguan_hongmei/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/south_china/dongguan_hongmei/map.jpg',
         accessibilities: [
           {
             destination: '距广深沿江高速',
@@ -2622,8 +2511,7 @@ const store = new Vuex.Store({
             distance: '80',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/south_china/dongguan_hongmei/pdf.pdf',
       },
       {
         id: 39,
@@ -2644,13 +2532,16 @@ const store = new Vuex.Store({
           phoneNumber: '18475398140',
         },
         distance: '',
-        avatar: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/icon_hangzhou_renhe.jpg',
+        avatar: 'https://cdn.prologis.site/images/south_china/huizhou_huiyang/icon.jpg',
         swiper: {
           images: [
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%281%29.JPG',
-            'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Photos/Prologis%20Shanghai%20Jiuting%20Logistics%20Center%20%20%283%29.jpg',
+            'https://cdn.prologis.site/images/south_china/huizhou_huiyang/photo1.jpg',
+            'https://cdn.prologis.site/images/south_china/huizhou_huiyang/photo2.jpg',
+            'https://cdn.prologis.site/images/south_china/huizhou_huiyang/photo3.jpg',
+            'https://cdn.prologis.site/images/south_china/huizhou_huiyang/photo4.jpg',
+            'https://cdn.prologis.site/images/south_china/huizhou_huiyang/photo5.jpg',
           ],
-          video: 'https://cdn.prologis.site/Videos/Pologis%20Gedian%20Logistics%20Center.mp4',
+          video: 'https://cdn.prologis.site/Videos/prologishuizhouhuiyang.mp4',
         },
         description: {
           overView: [
@@ -2660,12 +2551,10 @@ const store = new Vuex.Store({
             '距G15高速仅3公里，距惠阳市中心10分钟车程，距深圳市中心40分钟车程，距广东市中心也仅有90分钟车程，是区域配送和制造业仓储的理想选择。',
         },
         plans: [
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
-          'https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg',
+          'https://cdn.prologis.site/images/south_china/huizhou_huiyang/1F.jpg',
+          'https://cdn.prologis.site/images/south_china/huizhou_huiyang/2F.jpg',
         ],
-        map:
-          'https://cdn.prologis.site/IMAGES/East%20China/Shanghai%20Jiuting/Map/Shanghai%20Jiuting%20Logistics%20Center.jpg',
+        map: 'https://cdn.prologis.site/images/south_china/huizhou_huiyang/map.jpg',
         accessibilities: [
           {
             destination: '距G15沈海高速公路',
@@ -2680,8 +2569,7 @@ const store = new Vuex.Store({
             distance: '40',
           },
         ],
-        pdf:
-          'https://cdn.prologis.site/IMAGES/East%20China/Suzhou%20Xuguan/Prologis%20Suzhou%20Xuguan%20Logistics%20Center%20190220.pdf',
+        pdf: 'https://cdn.prologis.site/images/south_china/huizhou_huiyang/pdf.pdf',
       },
     ],
   },
@@ -2715,6 +2603,10 @@ const store = new Vuex.Store({
       state.closestCenter.city = closestCenterInfo.city;
       state.closestCenter.distance = closestCenterInfo.distance;
       state.closestCenter.centerName = closestCenterInfo.centerName;
+      state.closestCenter.address = closestCenterInfo.address;
+      state.closestCenter.phoneNumber = closestCenterInfo.phoneNumber;
+      state.closestCenter.area = closestCenterInfo.area;
+      state.closestCenter.avatar = closestCenterInfo.avatar;
       state.cityFilter = closestCenterInfo.city;
     },
     setSelectedCenterId(state, selectedCenterId) {

@@ -19,7 +19,7 @@
       <div class="swiper-wrapper">
         <swiper
           class="mySwiper"
-          indicator-dots="true"
+          :indicator-dots="swiperIndicatorDots"
           indicator-active-color="#ffffff"
         >
           <!-- images -->
@@ -35,7 +35,7 @@
             </swiper-item>
           </block>
           <!-- video -->
-          <block>
+          <block v-if="swiperVideo">
             <swiper-item>
               <div class="picture-placeholder">
                 <img src="../../../static/images/logo.png" alt="picture-placeholder">
@@ -133,7 +133,7 @@
       </div>
 
       <div v-if="pdf" class="button-wrapper">
-        <button @click="toWebView" class="exportPDF" hover-class="button-hover">
+        <button @click="downloadFile" class="exportPDF" hover-class="button-hover">
           <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
           <p>详细资料下载 (PDF)</p>
         </button>
@@ -186,6 +186,14 @@ export default {
       }
       return true;
     },
+    swiperIndicatorDots() {
+      const imageLength = store.getters.selectedCenter.swiper.images.length;
+      const hasVideo = store.getters.selectedCenter.swiper.video;
+      if (imageLength === 1 && hasVideo === '') {
+        return false;
+      }
+      return true;
+    },
     map() {
       return store.getters.selectedCenter.map;
     },
@@ -212,8 +220,8 @@ export default {
     },
     downloadFile() {
       wx.downloadFile({
-        // url: this.pdf,
-        url: 'https://calibre-ebook.com/downloads/demos/demo.docx',
+        url: this.pdf,
+        // url: 'https://cdn.prologis.site/images/east_china/hangzhou_renhe/prologis_hangzhou_renhe_logistics_center190220.pdf',
         success(res) {
           console.log(res);
           // const filePath = res.tempFilePath;
@@ -289,11 +297,6 @@ export default {
 
 <style scoped lang="scss">
 @import '../../global.scss';
-// .test {
-//   padding: 31PX;
-//   background-color: red;
-// }
-// Top navigation bar
 .top-navigation-bar {
   position: fixed;
   z-index: 100;

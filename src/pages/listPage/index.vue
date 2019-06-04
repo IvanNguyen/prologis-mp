@@ -6,7 +6,31 @@
 
     <view class="positionInfo-bar" :style="{ top: positionTopBar + 'PX'}">
       <view>
-        <positionInfoListPage></positionInfoListPage>
+        <div @click="showPopUp" >
+          <positionInfoListPage ></positionInfoListPage>
+        </div>
+        <div 
+          v-if="isShowGeneralIntroduction" class="generalIntroductionBar">
+          <generalIntroductionListPage
+            :centerId="closestCenter.id"
+            :centerName="closestCenter.centerName"
+            :centerAddress="closestCenter.address"
+            :centerPhoneNumber="closestCenter.phoneNumber"
+            :centerArea="closestCenter.area"
+            :centerDistance="closestCenter.distance"
+            :centerAvatar="closestCenter.avatar"
+          ></generalIntroductionListPage>
+          <div class="button-row">
+            <div @click="toRoutePage" class="button direction-button" hover-class="button-hover">
+              <img src="../../../static/images/direction-icon.png" alt="direction-icon"/>
+              <div class="text">路线</div>
+            </div>
+            <div @click="toDetailPage" class="button detail-button" hover-class="button-hover">
+              <div class="text">详细介绍</div>
+            </div>
+          </div>
+          <div class="popUpPlaceHolder" @click="closePopUp"></div>
+        </div>
         <div class="group-picker">
           <picker class="picker region-picker" mode="selector" @change="regionPickerChange" :value="regionIndex" :range="region">
             <div class="picker-content-wrapper">
@@ -58,6 +82,7 @@
 import topNavigation from '../../components/topNavigation';
 import positionInfoListPage from '../../components/positionInfoListPage';
 import generalIntroductionListPage from '../../components/generalIntroductionListPage';
+import navigateToDetailPage from '../../components/navigateToDetailPage';
 import bottomNavigationListPage from '../../components/bottomNavigationListPage';
 import store from '../../store/appstore';
 
@@ -67,6 +92,7 @@ export default {
     positionInfoListPage,
     generalIntroductionListPage,
     bottomNavigationListPage,
+    navigateToDetailPage,
   },
   data() {
     return {
@@ -81,9 +107,15 @@ export default {
     };
   },
   computed: {
+    isShowGeneralIntroduction() {
+      return store.state.isShowGeneralIntroduction;
+    },
+    closestCenter() {
+      return store.state.closestCenter;
+    },
     closestRegion() {
       const closestRegion = this.region
-        .findIndex(region => region === store.state.closestCenter.region);
+        .findIndex(region => region === this.closestCenter.region);
       return closestRegion;
     },
     regionSelected() {
@@ -105,7 +137,7 @@ export default {
     },
     closestCity() {
       const closestCity = this.cityInSelectedRegion
-        .findIndex(city => city === store.state.closestCenter.city);
+        .findIndex(city => city === this.closestCenter.city);
       return closestCity;
     },
     centers() {
@@ -119,14 +151,27 @@ export default {
     },
   },
   onLoad() {
+    console.log('listPage loaded');
     this.regionIndex = this.closestRegion;
     this.cityIndex = this.closestCity;
   },
   mounted() {
     console.log('mounted List Page');
-    console.log(this.centers);
   },
   methods: {
+    showPopUp() {
+      store.commit('showGeneralIntroduction');
+      store.commit('setSelectedCenterId', this.closestCenter.id);
+    },
+    closePopUp() {
+      store.commit('hideGeneralIntroduction');
+    },
+    toDetailPage() {
+      wx.navigateTo({ url: '/pages/detailPage/main' });
+    },
+    toRoutePage() {
+      wx.navigateTo({ url: '/pages/routePage/main' });
+    },
     regionPickerChange(event) {
       this.regionIndex = event.mp.detail.value;
       this.cityIndex = 0;
@@ -142,6 +187,10 @@ export default {
 
 <style scoped lang="scss">
 @import '../../global.scss';
+.popUpPlaceHolder {
+  width: 100%;
+  height: 100vh;
+}
 .top-navigation-bar {
     z-index: 10;
 }
@@ -153,6 +202,18 @@ export default {
   left: 0;
   right: 0;
   z-index: 10;
+}
+.generalIntroductionBar {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 215px;
+    /* height: 0; */
+    background: rgba(255,255,255,1);
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.20);
+    // overflow: hidden;
 }
 .group-picker {
   display: flex;
@@ -199,5 +260,37 @@ export default {
   left: 15px;
   right: 15px;
   z-index: 10;
+}
+//navigateToDetailPage
+.button-row {
+  display: flex;
+  margin-left: 15px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: auto;
+  color: $button-text-color;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 40px;
+  background-color: $theme-color;
+  border-radius: 50px;
+  margin: 0;
+  margin-top: 6px;
+  img {
+    width: 24px;
+    height: 24px;
+    padding-right: 10px;
+  }
+}
+.direction-button {
+  width: 109px;
+}
+.detail-button {
+  margin-left: 9px;
+  width: 227px;
 }
 </style>

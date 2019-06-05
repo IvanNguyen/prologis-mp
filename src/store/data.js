@@ -380,7 +380,6 @@ const centers = [
     avatar: 'https://cdn.prologis.site/images/east_china/Kunshan_lujia/icon_kunshan_lujia.jpg',
     swiper: {
       images: [
-        'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center.jpg',
         'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center_3.jpg',
         'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center_4.jpg',
         'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center_5.jpg',
@@ -1574,7 +1573,7 @@ const centers = [
       images: [
         'https://cdn.prologis.site/images/west_china/chengdu_airport/photo1.jpg',
         'https://cdn.prologis.site/images/west_china/chengdu_airport/photo2.jpg',
-        'https://cdn.prologis.site/images/west_china/chengdu_airport/photo3.jpg',
+        'https://cdn.prologis.site/images/west_china/chengdu_airport/photo3.JPG',
         'https://cdn.prologis.site/images/west_china/chengdu_airport/photo4.jpg',
       ],
       video: '',

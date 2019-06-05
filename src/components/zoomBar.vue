@@ -17,12 +17,8 @@
 </template>
 
 <script>
-// import store from "../store/appstore";
 
 export default {
-  data() {
-    return {};
-  },
   methods: {
   },
 };

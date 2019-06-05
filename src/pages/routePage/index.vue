@@ -82,38 +82,15 @@ export default {
     },
   },
   onLoad() {
-    console.log('RoutePageOnLoad');
     this.mapCtx = wx.createMapContext('myMap');
     this.showRoute();
     this.zoomToView();
   },
-  onShow() {
-    console.log('RoutePageOnShow');
-    // this.showRoute();
-  },
-  onReady() {
-    console.log('RoutePageOnReady');
-  },
-  beforeMount() {
-    console.log('RoutePageBeforeMount');
-  },
   mounted() {
-    console.log('RoutePageMounted');
-    console.log(this.polyline[0].points);
     this.reRender = 'true';
-  },
-  beforeUpdate() {
-    console.log('RoutedBeforeUpdate');
-    console.log(this.polyline[0].points);
-    // this.showRoute();
-  },
-  update() {
-    console.log('RouteUpdate');
-    // this.showRoute();
   },
   methods: {
     showRoute() {
-      console.log('showRouted');
       const that = this;
       qqmapsdk.direction({
         mode: 'driving',
@@ -129,8 +106,6 @@ export default {
           longitude: this.centerLongitude,
         },
         success(res) {
-          console.log('success');
-          console.log(res);
           const ret = res;
           const coors = ret.result.routes[0].polyline;
           const pl = [];
@@ -157,8 +132,11 @@ export default {
             longitude: this.centerLongitude,
           },
           {
+            // Shanghai coordinates
             latitude: 31.2304,
             longitude: 121.4737,
+            // latitude: this.userCoordinates.userLatitude,
+            // longitude: this.userCoordinates.userLongitude,
           },
         ],
       });

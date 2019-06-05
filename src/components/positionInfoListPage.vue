@@ -30,13 +30,6 @@
 import store from '../store/appstore';
 
 export default {
-  data() {
-    return {
-      // currentRegion: '华东区',
-      // closestCenter: '上海青浦物流中心',
-      // distance: 37,
-    };
-  },
   computed: {
     closestCenterRegion() {
       return store.state.closestCenter.region;
@@ -80,7 +73,6 @@ export default {
 .position-info__detail {
   flex-grow: 1;
   font-size: 13px;
-  // line-height: 23px;
   color: $button-text-color;
 }
 .position-info__content {
@@ -100,7 +92,6 @@ export default {
   text-overflow:ellipsis;
 }
 .text {
-  // display: inline-block !important;
   line-height:1.4;
   overflow:hidden;
   white-space:nowrap;

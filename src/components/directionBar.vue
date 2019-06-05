@@ -33,10 +33,6 @@
 import store from '../store/appstore';
 
 export default {
-  data() {
-    return {
-    };
-  },
   computed: {
     centerName() {
       return store.getters.selectedCenter.centerName;

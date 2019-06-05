@@ -29,13 +29,8 @@
 import store from '../store/appstore';
 
 export default {
-  data() {
-    return {
-    };
-  },
   methods: {
     toListpage() {
-      // wx.navigateTo({ url:`/pages/centerInfo/main?id=${centerId}`})
       store.commit('hideGeneralIntroduction');
       wx.navigateTo({ url: '/pages/listPage/main' });
     },
@@ -72,7 +67,6 @@ export default {
   font-size: 13px;
   font-weight: 400;
   line-height: 45px;
-  // box-shadow:2px 2px 0px 0px rgba(0,0,0,0.20);
 }
 .content-wrapper {
   display: flex;
@@ -81,7 +75,6 @@ export default {
   height: 100%;
 }
 .map-button {
-    // border-radius: 50px 0px 0px 50px;
     position: relative;
     cover-image {
       width: 18px;
@@ -93,7 +86,6 @@ export default {
   opacity: 0.3;
 }
 .list-button {
-    // border-radius: 0 50px 50px 0;
     cover-image {
       width: 18px;
       height: 12px;

@@ -101,7 +101,6 @@ export default {
   margin: 20px 0 16px 15px;
 }
 .center-info {
-  // margin-top: -6px;
   flex-grow: 1;
   font-size: 13px;
   font-weight: 300;

@@ -96,7 +96,6 @@ export default {
   height: 119px;
   position: absolute;
   z-index: 2;
-  // display: inline-block
 }
 .address-wrapper {
   display: flex;

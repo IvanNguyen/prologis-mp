@@ -30,10 +30,6 @@
 import store from '../store/appstore';
 
 export default {
-  data() {
-    return {
-    };
-  },
   computed: {
     closestRegion() {
       return store.state.closestCenter.region;

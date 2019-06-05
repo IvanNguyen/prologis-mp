@@ -63,37 +63,11 @@ const qqmapsdk = new QQMapWX({
 });
 
 export default {
-  created() {
-    console.log('HomePageCreated');
-  },
-  onLaunch() {
-    console.log('onLaunch');
-  },
   onLoad() {
-    console.log('onLoad');
     this.checkSystemInfo();
     this.mapCtx = wx.createMapContext('myMap');
     this.getLocation();
-    // this.findClosestCenter();
     this.getCenterLocation();
-  },
-  onShow() {
-    console.log('homePageShow');
-  },
-  onReady() {
-    console.log('ready');
-  },
-  beforeMount() {
-    console.log('beforeMount');
-  },
-  mounted() {
-    console.log('mounted');
-  },
-  beforeUpdate() {
-    console.log('beforeUpdate');
-  },
-  update() {
-    console.log('Update');
   },
   data() {
     return {
@@ -128,6 +102,9 @@ export default {
     zoomBar,
   },
   computed: {
+    userCoordinates() {
+      return store.state.userCoordinates;
+    },
     closestCenter() {
       return store.state.closestCenter;
     },
@@ -157,15 +134,10 @@ export default {
       });
     },
     getLocation() {
-      console.log('getLocation');
       const that = this;
       wx.getLocation({
         type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
         success() {
-          // wx.getSetting({
-          //   success() {
-          //   },
-          // });
           // const userCoordinates = {
           //   userLatitude: result.latitude,
           //   userLongitude: result.longitude,
@@ -181,9 +153,7 @@ export default {
     },
     findClosestCenter() {
       const that = this;
-      console.log('findClosestCenter');
       qqmapsdk.calculateDistance({
-        // from: event.mp.detail.value.start || '',
         from: {
           // Shanghai location
           latitude: 31.2304,
@@ -193,7 +163,6 @@ export default {
         },
         to: store.getters.allCenterLocation,
         success(res) {
-          // console.log(res);
           const result = res.result.elements;
           store.commit('caclulateDistance', result);
           const closestCenter = result.sort((a, b) => a.distance - b.distance);
@@ -225,7 +194,6 @@ export default {
       });
     },
     showClosestCenterAround(nearestCenter) {
-      console.log('showClosestCenterAround');
       this.mapCtx.includePoints({
         padding: [50, 80, 80, 80],
         points: [
@@ -237,6 +205,8 @@ export default {
             // Shanghai coordinates
             latitude: 31.2304,
             longitude: 121.4737,
+            // latitude: this.userCoordinates.userLatitude,
+            // longitude: this.userCoordinates.userLongitude,
           },
         ],
       });
@@ -249,7 +219,6 @@ export default {
         confirmColor: '#008000',
         cancelText: '拒绝',
         success(res) {
-          console.log(res);
           if (res.confirm) {
             wx.openSetting({
               success() {
@@ -278,7 +247,6 @@ export default {
       this.getCenterLocation();
       this.mapCtx.getScale({
         success(res) {
-          console.log(res);
           that.scale = res.scale + 1;
         },
         fail(error) {
@@ -298,9 +266,6 @@ export default {
         },
       });
     },
-    // showFakeLocation(coordinates) {
-    //   store.commit('showFakeLocation', coordinates);
-    // },
     mapTap() {
       store.commit('hideGeneralIntroduction');
     },
@@ -338,7 +303,6 @@ export default {
     left: 0;
     width: 100%;
     height: 215px;
-    /* height: 0; */
     background: rgba(255,255,255,1);
     box-shadow: 0 2px 12px 0 rgba(0,0,0,0.20);
     overflow: hidden;

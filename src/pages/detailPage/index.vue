@@ -199,6 +199,7 @@ export default {
       wx.navigateTo({ url: '/pages/routePage/main' });
     },
     downloadFile() {
+      wx.showLoading();
       wx.downloadFile({
         url: this.pdf,
         success(res) {
@@ -208,13 +209,16 @@ export default {
               filePath: pdfFilePath,
               // fileType: 'pdf',
               success() {
+                wx.hideLoading();
                 console.log('open PDF success');
               },
               fail(error) {
+                wx.hideLoading();
                 console.log(error);
               },
             });
           } else {
+            wx.hideLoading();
             wx.showModal({
               content: '下载失败',
               confirmText: '好',
@@ -227,6 +231,7 @@ export default {
           }
         },
         fail() {
+          wx.hideLoading();
           wx.showModal({
             content: '下载失败',
             confirmText: '好',

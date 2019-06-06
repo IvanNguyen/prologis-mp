@@ -24,8 +24,8 @@ const store = new Vuex.Store({
     cityFilter: '',
     selectedCenterId: '',
     statusBarHeight: 0,
-    currentLatitude: '',
-    currentLongitude: '',
+    mapLatitude: '',
+    mapLongitude: '',
     isShowGeneralIntroduction: false,
     isAndroid: false,
     markers: centers,
@@ -45,8 +45,8 @@ const store = new Vuex.Store({
       coordinates.userLongitude = userCoordinates.userLongitude;
     },
     setCenterLocation(state, centerLocationCoordinates) {
-      state.currentLongitude = centerLocationCoordinates.longitude;
-      state.currentLatitude = centerLocationCoordinates.latitude;
+      state.mapLongitude = centerLocationCoordinates.longitude;
+      state.mapLatitude = centerLocationCoordinates.latitude;
     },
     setClosestCenterInfo(state, closestCenterInfo) {
       const center = state.closestCenter;
@@ -68,15 +68,15 @@ const store = new Vuex.Store({
       wx.getLocation({
         type: 'wgs84',
         success(res) {
-          state.currentLatitude = res.latitude;
-          state.currentLongitude = res.longitude;
+          state.mapLatitude = res.latitude;
+          state.mapLongitude = res.longitude;
         },
       });
     },
     centerTheCentre(state, centerID) {
       const centerTapped = state.markers.find(marker => marker.id === +centerID);
-      state.currentLatitude = centerTapped.latitude;
-      state.currentLongitude = centerTapped.longitude;
+      state.mapLatitude = centerTapped.latitude;
+      state.mapLongitude = centerTapped.longitude;
     },
     showGeneralIntroduction(state) {
       state.isShowGeneralIntroduction = true;

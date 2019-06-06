@@ -17,7 +17,6 @@
         enable-zooms
         enable-scroll
         @tap="mapTap"
-        :circles="fakeGPSLocation"
       >
         <positionInfo></positionInfo>
 
@@ -80,17 +79,6 @@ export default {
           width: 6,
         },
       ],
-      fakeGPSLocation: [
-        {
-          // Shanghai coordinates
-          latitude: 31.2304,
-          longitude: 121.4737,
-          radius: 1000,
-          color: '#ff0000',
-          fillColor: '#b22222',
-          strokeWidth: 10,
-        },
-      ],
     };
   },
   components: {
@@ -112,10 +100,10 @@ export default {
       return store.state.markers;
     },
     latitude() {
-      return store.state.currentLatitude;
+      return store.state.mapLatitude;
     },
     longitude() {
-      return store.state.currentLongitude;
+      return store.state.mapLongitude;
     },
     isShowGeneralIntroduction() {
       return store.state.isShowGeneralIntroduction;
@@ -137,29 +125,25 @@ export default {
       const that = this;
       wx.getLocation({
         type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
-        success() {
-          // const userCoordinates = {
-          //   userLatitude: result.latitude,
-          //   userLongitude: result.longitude,
-          // };
-          // that.findClosestCenter(userCoordinates);
-          that.findClosestCenter();
-          // store.commit('setUserCoordinates', userCoordinates);
+        success(result) {
+          const userCoordinates = {
+            userLatitude: result.latitude,
+            userLongitude: result.longitude,
+          };
+          that.findClosestCenter(userCoordinates);
+          store.commit('setUserCoordinates', userCoordinates);
         },
         fail() {
           that.openConfirm();
         },
       });
     },
-    findClosestCenter() {
+    findClosestCenter(userCoordinates) {
       const that = this;
       qqmapsdk.calculateDistance({
         from: {
-          // Shanghai location
-          latitude: 31.2304,
-          longitude: 121.4737,
-          // latitude: userCoordinates.userLatitude,
-          // longitude: userCoordinates.userLongitude,
+          latitude: userCoordinates.userLatitude,
+          longitude: userCoordinates.userLongitude,
         },
         to: store.getters.allCenterLocation,
         success(res) {
@@ -202,11 +186,8 @@ export default {
             longitude: nearestCenter.longitude,
           },
           {
-            // Shanghai coordinates
-            latitude: 31.2304,
-            longitude: 121.4737,
-            // latitude: this.userCoordinates.userLatitude,
-            // longitude: this.userCoordinates.userLongitude,
+            latitude: this.userCoordinates.userLatitude,
+            longitude: this.userCoordinates.userLongitude,
           },
         ],
       });

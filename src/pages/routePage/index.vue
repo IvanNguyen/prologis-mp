@@ -16,7 +16,6 @@
         enable-zooms
         enable-scroll
         :include-points="includePoints"
-        :circles="fakeGPSLocation"
       >     
         <cover-view class="direction-bar">
           <directionBar></directionBar>
@@ -54,17 +53,6 @@ export default {
         },
       ],
       reRender: '',
-      fakeGPSLocation: [
-        {
-          // Shanghai coordinates
-          latitude: 31.2304,
-          longitude: 121.4737,
-          radius: 1000,
-          color: '#ff0000',
-          fillColor: '#b22222',
-          strokeWidth: 10,
-        },
-      ],
     };
   },
   computed: {
@@ -95,11 +83,8 @@ export default {
       qqmapsdk.direction({
         mode: 'driving',
         from: {
-          // Shanghai coordinates
-          latitude: 31.2304,
-          longitude: 121.4737,
-          // latitude: this.userCoordinates.userLatitude,
-          // longitude: this.userCoordinates.userLongitude,
+          latitude: this.userCoordinates.userLatitude,
+          longitude: this.userCoordinates.userLongitude,
         },
         to: {
           latitude: this.centerLatitude,
@@ -132,11 +117,8 @@ export default {
             longitude: this.centerLongitude,
           },
           {
-            // Shanghai coordinates
-            latitude: 31.2304,
-            longitude: 121.4737,
-            // latitude: this.userCoordinates.userLatitude,
-            // longitude: this.userCoordinates.userLongitude,
+            latitude: this.userCoordinates.userLatitude,
+            longitude: this.userCoordinates.userLongitude,
           },
         ],
       });

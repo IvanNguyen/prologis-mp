@@ -34,18 +34,11 @@ button:after {
     border: none;
 }
 .button-hover {
-    // color: $theme-color !important;
     background-color: rgba(225, 225, 225,  0.7) !important;
 }
 .zoom-bar-hover {
     background-color: white !important;
 }
-// .androidLineHeight {
-//     line-height: 1.2 !important;
-// }
-// .iosLineHeight {
-//     line-height: 1.8 !important;
-// }
 .lh-14 {
     line-height: 1.4 !important;
 }
@@ -58,9 +51,6 @@ cover-view {
 cover-image {
     display: inline-block;
 }
-// view {
-//     font-family: 'Quicksand', sans-serif;
-// }
 .top-navigation-bar {
     position: fixed;
     top: 0;

@@ -283,10 +283,11 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 215px;
+    // height: 215px;
     background: rgba(255,255,255,1);
     box-shadow: 0 2px 12px 0 rgba(0,0,0,0.20);
     overflow: hidden;
+    padding-bottom: 20px;
 }
 .bottomBar {
   position: fixed;

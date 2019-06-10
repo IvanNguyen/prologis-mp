@@ -85,6 +85,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/shanghai_qingpu/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shanghai_qingpu_distribution_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shanghai_qingpu_distribution_center2.jpg',
+    ],
   },
   {
     id: 2,
@@ -163,6 +167,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/shanghai_jiuting/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shanghai_jiuting_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shanghai_jiuting_logistics_center2.jpg',
+    ],
   },
   {
     id: 3,
@@ -218,6 +226,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/shanghai_jinshan/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shanghai_jinshan_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shanghai_jinshan_logistics_center2.jpg',
+    ],
   },
   {
     id: 4,
@@ -287,6 +299,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/suzhou_jinchang/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_suzhou_jinchang_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_suzhou_jinchang_logistics_center2.jpg',
+    ],
   },
   {
     id: 5,
@@ -357,6 +373,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/suzhou_xuguan/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_suzhou_xuguan_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_suzhou_xuguan_logistics_center2.jpg',
+    ],
   },
   {
     id: 6,
@@ -429,6 +449,10 @@ const centers = [
     ],
     pdf:
       'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center190220.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_kunshan_lujia_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_kunshan_lujia_logistics_center2.jpg',
+    ],
   },
   {
     id: 7,
@@ -496,6 +520,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/wuxi_meicun/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_wuxi_meicun_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_wuxi_meicun_logistics_center2.jpg',
+    ],
   },
   {
     id: 8,
@@ -564,6 +592,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/nanjing_airport/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_nanjing_airport_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_nanjing_airport_logistics_center2.jpg',
+    ],
   },
   {
     id: 9,
@@ -632,6 +664,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/nanjing_liuhe/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_nanjing_liuhe_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_nanjing_liuhe_logistics_center2.jpg',
+    ],
   },
   {
     id: 10,
@@ -711,6 +747,10 @@ const centers = [
     ],
     pdf:
       'https://cdn.prologis.site/images/east_china/hangzhou_renhe/prologis_hangzhou_renhe_logistics_center190220.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_hangzhou_renhe_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_hangzhou_renhe_logistics_center2.jpg',
+    ],
   },
   {
     id: 11,
@@ -779,6 +819,10 @@ const centers = [
     ],
     pdf:
       'https://cdn.prologis.site/images/east_china/huzhou_lianshi/huzhou_lianshi_logistics_center190214.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_huzhou_lianshi_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_huzhou_lianshi_logistics_center2.jpg',
+    ],
   },
   {
     id: 12,
@@ -845,6 +889,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center_190220.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_jiaxing_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_jiaxing_logistics_center2.jpg',
+    ],
   },
   {
     id: 13,
@@ -896,6 +944,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/wuhan_jiangxia/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_wuhan_jiangxia_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_wuhan_jiangxia_logistics_center2.jpg',
+    ],
   },
   {
     id: 14,
@@ -957,6 +1009,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/wuhan_gedian/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_gedian_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_gedian_logistics_center2.jpg',
+    ],
   },
   {
     id: 15,
@@ -1014,6 +1070,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/east_china/wuhan_caidian/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_wuhan_caidian_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_wuhan_caidian_logistics_center2.jpg',
+    ],
   },
   // North China
   {
@@ -1089,6 +1149,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_beijing_capital_airport_logistics_centerII_1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_beijing_capital_airport_logistics_centerII_2.jpg',
+    ],
   },
   {
     id: 17,
@@ -1155,6 +1219,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologisbeijingcapitalairportlogistics_centerI_1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologisbeijingcapitalairportlogistics_centerI_2.jpg',
+    ],
   },
   {
     id: 18,
@@ -1214,6 +1282,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/north_china/tianjin_ninghe/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_tianjin_ninghe_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_tianjin_ninghe_logistics_center2.jpg',
+    ],
   },
   {
     id: 19,
@@ -1276,6 +1348,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/north_china/tianjin_jingbin/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_tianjin_jingbin_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_tianjin_jingbin_logistics_center2.jpg',
+    ],
   },
   // Has no PDF file
   {
@@ -1372,6 +1448,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/north_china/shenyang_hunan/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shenyang_hunnan_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shenyang_hunnan_logistics_center2.jpg',
+    ],
   },
   {
     id: 22,
@@ -1429,6 +1509,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/north_china/shenyang_shenxi/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shenyang_shenxi_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_shenyang_shenxi_logistics_center2.jpg',
+    ],
   },
   {
     id: 23,
@@ -1490,6 +1574,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/north_china/jinan_airport/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_jinan_airport_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_jinan_airport_logistics_center2.jpg',
+    ],
   },
   {
     id: 24,
@@ -1547,6 +1635,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/north_china/jinan_west/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_jinan_west_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_jinan_west_logistics_center2.jpg',
+    ],
   },
   // West China
   {
@@ -1614,6 +1706,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/west_china/chengdu_airport/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chengdu_airport_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chengdu_airport_logistics_center2.jpg',
+    ],
   },
   {
     id: 26,
@@ -1677,6 +1773,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/west_china/chengdu_longquan/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chengdu_longquan_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chengdu_longquan_logistics_center2.jpg',
+    ],
   },
   {
     id: 27,
@@ -1761,6 +1861,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/west_china/chengdu_xindu/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chengdu_xindu_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chengdu_xindu_logistics_center2.jpg',
+    ],
   },
   {
     id: 28,
@@ -1834,6 +1938,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/west_china/chengdu_qingbaijiang/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chengdu_qingbaijiang_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chengdu_qingbaijiang_logistics_center2.jpg',
+    ],
   },
   {
     id: 29,
@@ -1902,6 +2010,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chongqing_liangjiang_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chongqing_liangjiang_logistics_center2.jpg',
+    ],
   },
   {
     id: 30,
@@ -1969,6 +2081,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/west_china/chongqing_airport/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chongqing_airport_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chongqing_airport_logistics_center2.jpg',
+    ],
   },
   {
     id: 31,
@@ -2033,6 +2149,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/west_china/chongqing_west/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chongqing_west_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_chongqing_west_logistics_center2.jpg',
+    ],
   },
   {
     id: 32,
@@ -2097,6 +2217,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/west_china/xi_an_fengxi/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_xi-an_fengxi_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_xi-an_fengxi_logistics_center2.jpg',
+    ],
   },
   {
     id: 33,
@@ -2161,6 +2285,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/west_china/xi_an_itl/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_xi-an_itl_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_xi-an_itl_logistics_center2.jpg',
+    ],
   },
   // South China
   {
@@ -2227,6 +2355,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_guangzhou_development_zone_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_guangzhou_development_zone_logistics_center2.jpg',
+    ],
   },
   {
     id: 35,
@@ -2282,6 +2414,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/south_china/foshan_datang/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_foshan_datang_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_foshan_datang_logistics_center2.jpg',
+    ],
   },
   {
     id: 36,
@@ -2342,6 +2478,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/south_china/foshan_gaoming/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_foshan_gaoming_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_foshan_gaoming_logistics_center2.jpg',
+    ],
   },
   {
     id: 37,
@@ -2405,6 +2545,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/south_china/dongguan_shipai/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_dongguan_shipai_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_dongguan_shipai_logistics_center2.jpg',
+    ],
   },
   {
     id: 38,
@@ -2467,6 +2611,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/south_china/dongguan_hongmei/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_dongguan_hongmei_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_dongguan_hongmei_logistics_center2.jpg',
+    ],
   },
   {
     id: 39,
@@ -2525,6 +2673,10 @@ const centers = [
       },
     ],
     pdf: 'https://cdn.prologis.site/images/south_china/huizhou_huiyang/pdf.pdf',
+    imagesOfPDF: [
+      'https://cdn.prologis.site/Image_of_pdf/prologis_huizhou_huiyang_logistics_center1.jpg',
+      'https://cdn.prologis.site/Image_of_pdf/prologis_huizhou_huiyang_logistics_center2.jpg',
+    ],
   },
 ];
 export default centers;

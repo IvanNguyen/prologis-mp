@@ -119,11 +119,22 @@
         </div> 
       </div>
 
-      <div v-if="pdf" class="button-wrapper">
-        <button @click="downloadFile" class="exportPDF" hover-class="button-hover">
-          <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
-          <p>详细资料下载 (PDF)</p>
-        </button>
+      <div v-if="!isAndroid">
+        <div v-if="pdf" class="button-wrapper">
+          <button @click="downloadFile" class="exportPDF" hover-class="button-hover">
+            <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
+            <p>详细资料下载 (PDF)</p>
+          </button>
+        </div>
+      </div>
+
+      <div v-else>
+        <div v-if="pdf" class="button-wrapper">
+          <button @click="previewPDF" class="exportPDF" hover-class="button-hover">
+            <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
+            <p>详细资料下载 (PDF)</p>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -145,6 +156,9 @@ export default {
     };
   },
   computed: {
+    isAndroid() {
+      return store.state.isAndroid;
+    },
     positionPageBody() {
       return store.state.statusBarHeight + 42;
     },
@@ -189,6 +203,9 @@ export default {
     },
     pdf() {
       return store.getters.selectedCenter.pdf;
+    },
+    imagesOfPDF() {
+      return store.getters.selectedCenter.imagesOfPDF;
     },
   },
   methods: {
@@ -248,6 +265,11 @@ export default {
         urls,
       });
     },
+    previewPDF() {
+      wx.previewImage({
+        urls: this.imagesOfPDF,
+      });
+    },
   },
 };
 </script>
@@ -255,4 +277,3 @@ export default {
 <style scoped lang="scss">
 @import './style.scss';
 </style>
-

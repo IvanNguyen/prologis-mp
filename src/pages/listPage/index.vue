@@ -183,4 +183,17 @@ export default {
 
 <style scoped lang="scss">
 @import './style.scss';
+.generalIntroductionBar {
+  height: 100%;
+}
+.button-row {
+  justify-content: center;
+  margin-left: 0;
+  background: white;
+  padding: 12px 0;
+  margin-top: -6px;
+}
+.button {
+  margin-top: 0
+}
 </style>

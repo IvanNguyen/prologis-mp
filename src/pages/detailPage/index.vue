@@ -21,7 +21,7 @@
           >
             <swiper-item>
               <div class="picture-placeholder">
-                <img src="../../../static/images/logo.png" alt="picture-placeholder">
+                <img src="../../../static/images/logo-no-background.png" alt="picture-placeholder">
               </div>
               <img :src="image" alt="swiper-item">
             </swiper-item>
@@ -30,7 +30,7 @@
           <block v-if="swiperVideo">
             <swiper-item>
               <div class="picture-placeholder">
-                <img src="../../../static/images/logo.png" alt="picture-placeholder">
+                <img src="../../../static/images/logo-no-background.png" alt="picture-placeholder">
               </div>
               <video
               id="myVideo"
@@ -87,7 +87,7 @@
           >
             <swiper-item>
               <div class="picture-placeholder">
-                <img src="../../../static/images/logo.png" alt="picture-placeholder">
+                <img src="../../../static/images/logo-no-background.png" alt="picture-placeholder">
               </div>
               <img 
                 @click="previewImage" 
@@ -104,7 +104,7 @@
         <p class="content-title">周边地图与交通设施</p>
         <div class="map-wrapper">
           <div class="picture-placeholder">
-            <img src="../../../static/images/logo.png" alt="picture-placeholder">
+            <img src="../../../static/images/logo-no-background.png" alt="picture-placeholder">
           </div>
           <img @click="previewImage" class="content-picture bit-map" :src="map" alt="bitmap">
         </div>

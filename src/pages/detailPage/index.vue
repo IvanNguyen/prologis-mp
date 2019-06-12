@@ -119,16 +119,16 @@
         </div> 
       </div>
 
-      <div v-if="!isAndroid">
+      <!-- <div>
         <div v-if="pdf" class="button-wrapper">
           <button @click="downloadFile" class="exportPDF" hover-class="button-hover">
             <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
             <p>详细资料下载 (PDF)</p>
           </button>
         </div>
-      </div>
+      </div> -->
 
-      <div v-else>
+      <div>
         <div v-if="pdf" class="button-wrapper">
           <button @click="previewPDF" class="exportPDF" hover-class="button-hover">
             <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
@@ -156,9 +156,9 @@ export default {
     };
   },
   computed: {
-    isAndroid() {
-      return store.state.isAndroid;
-    },
+    // isAndroid() {
+    //   return store.state.isAndroid;
+    // },
     positionPageBody() {
       return store.state.statusBarHeight + 42;
     },

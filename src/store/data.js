@@ -41,7 +41,7 @@ const centers = [
       'https://cdn.prologis.site/images/east_china/shanghai_qingpu/1F.jpg',
       'https://cdn.prologis.site/images/east_china/shanghai_qingpu/2f.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/east_china/shanghai_qingpu/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/shanghai_qingpu_distribution_center.jpg',
     accessibilities: [
       {
         destination: '距G1501高速公路',
@@ -127,7 +127,7 @@ const centers = [
         '地理位置优越，距上海市中心仅20公里，距上海虹桥机场仅10公里，通往华东地区各个港口均极为便捷。此外该园区距G50高速仅4公里，距G92高速仅5公里，距G15和S20高速仅6公里。',
     },
     plans: ['https://cdn.prologis.site/images/east_china/shanghai_jiuting/if.jpg'],
-    map: 'https://cdn.prologis.site/images/east_china/shanghai_jiuting/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/shanghai_jiuting_logistics_center.jpg',
     accessibilities: [
       {
         destination: '至G50高速公路',
@@ -210,7 +210,7 @@ const centers = [
         '该物业坐落于长江三角洲的核心区域，距上海市中心仅50公里，距G15高速仅1公里。此外距离浙江和江苏各为45分钟车程，是城市配送和区域配送的理想选择。',
     },
     plans: ['https://cdn.prologis.site/images/east_china/shanghai_jinshan/1f.jpg'],
-    map: 'https://cdn.prologis.site/images/east_china/shanghai_jinshan/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/shanghai_jinshan_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距上海市区',
@@ -271,7 +271,7 @@ const centers = [
       'https://cdn.prologis.site/images/east_china/suzhou_jinchang/1F.jpg',
       'https://cdn.prologis.site/images/east_china/suzhou_jinchang/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/east_china/suzhou_jinchang/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/suzhou_jinchang_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距苏州市区',
@@ -341,7 +341,7 @@ const centers = [
         '坐落于华东地区的核心区域，距苏州市中心仅15公里车程，靠近G42沪蓉高速和G312国道，距上海市和浙江省仅各1小时车程。',
     },
     plans: ['https://cdn.prologis.site/images/east_china/suzhou_xuguan/1f.jpg'],
-    map: 'https://cdn.prologis.site/images/east_china/suzhou_xuguan/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/suzhou_xuguan_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距苏州市区',
@@ -415,8 +415,7 @@ const centers = [
         '该物业坐落于长江三角洲内陆地区的黄金交通枢纽，是中国沿海和长江经济开发区物流运营的理想选择。',
     },
     plans: ['https://cdn.prologis.site/images/east_china/Kunshan_lujia/1f.jpg'],
-    map:
-      'https://cdn.prologis.site/images/east_china/Kunshan_lujia/kunshan_lujia_logistics_center.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/kunshan_lujia_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距G2京沪高速公路',
@@ -492,7 +491,7 @@ const centers = [
       'https://cdn.prologis.site/images/east_china/wuxi_meicun/1F.jpg',
       'https://cdn.prologis.site/images/east_china/wuxi_meicun/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/east_china/wuxi_meicun/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/wuxi_meicun_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距无锡市区',
@@ -563,8 +562,7 @@ const centers = [
         '该中心地理位置优越，距将军大道0.5公里，距连接南京市中心的S55南京机场快线和S123省道各4公里。同时，该物业距南京市中心仅45分钟车程，距南京禄口机场也仅20分钟车程，是城市配送的最佳选择。',
     },
     plans: ['https://cdn.prologis.site/images/east_china/nanjing_airport/1f.jpg'],
-    map:
-      'https://cdn.prologis.site/images/east_china/nanjing_airport/nanjing_airport-logistics-center.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/nanjing_airport_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距南京市区',
@@ -632,7 +630,7 @@ const centers = [
       'https://cdn.prologis.site/images/east_china/nanjing_liuhe/2f.jpg',
       'https://cdn.prologis.site/images/east_china/nanjing_liuhe/if.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/east_china/nanjing_liuhe/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/nanjing_liuhe_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距地铁S8号线长芦地铁站',
@@ -705,8 +703,7 @@ const centers = [
         '距杭州市中心仅15公里，距G23高速仅2公里，距杭州仁和先进制造业基地的S13/S32申嘉湖高速公路也仅7公里，是城市配送和区域配送的最佳选择。',
     },
     plans: ['https://cdn.prologis.site/images/east_china/hangzhou_renhe/1F.jpg'],
-    map:
-      'https://cdn.prologis.site/images/east_china/hangzhou_renhe/hangzhou_renhe_logistics_center.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/hangzhou_renhe_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距杭州市区',
@@ -789,8 +786,7 @@ const centers = [
       'https://cdn.prologis.site/images/east_china/huzhou_lianshi/1F.jpg',
       'https://cdn.prologis.site/images/east_china/huzhou_lianshi/2F.jpg',
     ],
-    map:
-      'https://cdn.prologis.site/images/east_china/huzhou_lianshi/huzhou_lianshi_logistics_center.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/huzhou_lianshi_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距申嘉湖高速',
@@ -861,7 +857,7 @@ const centers = [
         '该中心可直通市内主要高速公路，距G320高速仅3公里，距沪杭高速和乍嘉苏高速各为4公里。',
     },
     plans: ['https://cdn.prologis.site/images/east_china/Jiaxing/1f.jpg'],
-    map: 'https://cdn.prologis.site/images/east_china/Jiaxing/jiaxing_logistics_center.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/jiaxing_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距杭州湾环线高速及乍嘉苏高速',
@@ -928,7 +924,7 @@ const centers = [
       'https://cdn.prologis.site/images/east_china/wuhan_jiangxia/1F.jpg',
       'https://cdn.prologis.site/images/east_china/wuhan_jiangxia/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/east_china/wuhan_jiangxia/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/wuhan_jiangxia_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距武汉市中心',
@@ -989,7 +985,7 @@ const centers = [
         '该物流中心距武汉东部仅30分钟车程，可经过汉鄂高速公路（S7）和高新路便捷通达武汉。',
     },
     plans: ['https://cdn.prologis.site/images/east_china/wuhan_gedian/1f.jpg'],
-    map: 'https://cdn.prologis.site/images/east_china/wuhan_gedian/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/gedian_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距武汉市区',
@@ -1050,7 +1046,7 @@ const centers = [
       'https://cdn.prologis.site/images/east_china/wuhan_caidian/1f.jpg',
       'https://cdn.prologis.site/images/east_china/wuhan_caidian/2f.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/east_china/wuhan_caidian/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/wuhan_caidian_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距离沪渝高速(G50)永安出口',
@@ -1117,7 +1113,8 @@ const centers = [
       'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/2F.jpg',
       'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/3F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/north_china/beijing_capital-airport_2/map.jpg',
+    map:
+      'https://cdn.prologis.site/updated_image_of_map/beijing_capital_airport_logistics_centerII.jpg',
     accessibilities: [
       {
         destination: '距6环路东出口',
@@ -1187,7 +1184,8 @@ const centers = [
       'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/1F.jpg',
       'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/north_china/beijing_capital_airport_1/map.jpg',
+    map:
+      'https://cdn.prologis.site/updated_image_of_map/beijing_capital_airport_logistics_centerI.jpg',
     accessibilities: [
       {
         destination: '距6环路东出口',
@@ -1262,7 +1260,7 @@ const centers = [
         '该物流中心位于天津未来科技城的现代化工业区内，距天津仅10公里，距天津空港经济开发区8公里，距天津经济技术开发区35公里。',
     },
     plans: ['https://cdn.prologis.site/images/north_china/tianjin_ninghe/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/north_china/tianjin_ninghe/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/tianjin_ninghe_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距离北京市中心',
@@ -1324,7 +1322,7 @@ const centers = [
         '该物流中心毗邻廊坊经济开发区和天津京滨工业园，距北京市区仅30公里，距北京首都机场65公里，距天津滨海国际机场75公里，是城市配送和区域配送的理想选择。',
     },
     plans: ['https://cdn.prologis.site/images/north_china/tianjin_jingbin/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/north_china/tianjin_jingbin/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/tianjin_jingbin_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距北京市区',
@@ -1386,7 +1384,7 @@ const centers = [
         '其地理位置优越，位于天津港自由贸易区，毗邻天津港，与北京和河北省仅一步之遥，是华北地区极为重要的集装箱港口和配送枢纽。',
     },
     plans: [],
-    map: 'https://cdn.prologis.site/images/north_china/port_of_tianjin/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/tianjin_bonded_logistics_center.jpg',
     accessibilities: [],
     pdf: '',
   },
@@ -1424,7 +1422,7 @@ const centers = [
         '地理位置优越，毗邻沈阳环城高速，距沈阳市中心仅10公里，距沈阳机场20公里，是电子商务配送的极佳选择。',
     },
     plans: ['https://cdn.prologis.site/images/north_china/shenyang_hunan/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/north_china/shenyang_hunan/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/shenyang_hunnan_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距离沈阳绕城高速(三环)',
@@ -1485,7 +1483,7 @@ const centers = [
         '该项目地理位置优越，处于西四环路与京哈高速公路交汇处（G1），交通相当便利，是绝佳的区域和城市配送选择。同时距离沈阳市中心仅三公里，距中德装备制造工业园八公里。',
     },
     plans: ['https://cdn.prologis.site/images/north_china/shenyang_shenxi/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/north_china/shenyang_shenxi/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/shenyang_shenxi_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距离沈阳绕城高速(三环)',
@@ -1546,7 +1544,7 @@ const centers = [
         '该物流中心位于济南高新区国际物流发展中心，紧邻青银高速(G20)、济广高速(G35)与济南绕城高速(G2001)，通往济南国际机场和济南市区仅10至15分钟车程，可辐射至整个山东半岛。所处经济园区为区域性物流中心，周边区域产业基础良好，区内吸引了跨境电商、保税加工制造、高端装备制造、电商物流等企业入驻。',
     },
     plans: ['https://cdn.prologis.site/images/north_china/jinan_airport/f1.jpg'],
-    map: 'https://cdn.prologis.site/images/north_china/jinan_airport/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/jinan_airport_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距离机场路',
@@ -1611,7 +1609,7 @@ const centers = [
         '该物流中心通往济南市区仅30分钟车程，距京台高速(G3)、青银高速(G20)与济南绕城高速(G2001)仅10分钟车程。周边拥有完善交通网络，可辐射至河北及河南大部分城市。所处园区聚焦新能源汽车和高端装备制造产业，拥有良好的周边区域产业基础和仓储物流企业发展环境。',
     },
     plans: ['https://cdn.prologis.site/images/north_china/jinan_west/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/north_china/jinan_west/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/jinan_west_logistics_center.jpg',
     accessibilities: [
       {
         destination: '距离G308国道(齐安大道)',
@@ -1678,7 +1676,7 @@ const centers = [
         '该物业周边交通便捷，距成都市区和新城市中心均45分钟车程，是城市配送和区域配送的理想选择。',
     },
     plans: ['https://cdn.prologis.site/images/west_china/chengdu_airport/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/west_china/chengdu_airport/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_chengdu_airport.jpg',
     accessibilities: [
       {
         destination: '距G5(京昆)、G93(成渝环线)高速公路',
@@ -1753,7 +1751,7 @@ const centers = [
       'https://cdn.prologis.site/images/west_china/chengdu_longquan/1F.jpg',
       'https://cdn.prologis.site/images/west_china/chengdu_longquan/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/west_china/chengdu_longquan/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_chengdu_longquan_lc.jpg',
     accessibilities: [
       {
         destination: '距成都市区',
@@ -1821,7 +1819,7 @@ const centers = [
       'https://cdn.prologis.site/images/west_china/chengdu_xindu/1F.jpg',
       'https://cdn.prologis.site/images/west_china/chengdu_xindu/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/west_china/chengdu_xindu/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_chengdu_xindu_lc.jpg',
     accessibilities: [
       {
         destination: '距成都市区',
@@ -1898,7 +1896,7 @@ const centers = [
         '该物流中心毗邻成都青白江路，距货运铁路仅10公里，连接成都周边公路网络，距市中心仅30分钟车程，也可快速通往成都（新都）公路货运中心和成都（青白江）铁路中心，地理位置优越，是城市配送和区域配送的理想选择。',
     },
     plans: ['https://cdn.prologis.site/images/west_china/chengdu_qingbaijiang/iF.jpg'],
-    map: 'https://cdn.prologis.site/images/west_china/chengdu_qingbaijiang/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_chengdu_qingbaijiang_lc.jpg',
     accessibilities: [
       {
         destination: '距G4201(成都第一绕城高速)',
@@ -1982,7 +1980,7 @@ const centers = [
         '其所处位置交通便利，位于重庆环路入口处，临近沪渝高速公路，利于客户的品牌展示',
     },
     plans: ['https://cdn.prologis.site/images/west_china/chongqing_liangjiang/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_chongqing_liangjiang_lc.jpg',
     accessibilities: [
       {
         destination: '距重庆市区',
@@ -2053,7 +2051,7 @@ const centers = [
         '该物流中心距重庆市中心 25公里，距中国最重要的空港之一重庆江北国际机场10公里，临近重庆环路和包茂高速公路，可便捷通往重庆各个区域，地理位置优越，是城市配送和区域配送的理想选择。',
     },
     plans: ['https://cdn.prologis.site/images/west_china/chongqing_airport/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/west_china/chongqing_airport/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_chongqing_airport_lc.jpg',
     accessibilities: [
       {
         destination: '距重庆市区',
@@ -2121,7 +2119,7 @@ const centers = [
       'https://cdn.prologis.site/images/west_china/chongqing_west/1F.jpg',
       'https://cdn.prologis.site/images/west_china/chongqing_west/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/west_china/chongqing_west/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_chongqing_west_lc.jpg',
     accessibilities: [
       {
         destination: '距离轻轨13号线(规划)',
@@ -2189,7 +2187,7 @@ const centers = [
       'https://cdn.prologis.site/images/west_china/xi_an_fengxi/1F.jpg',
       'https://cdn.prologis.site/images/west_china/xi_an_fengxi/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/west_china/xi_an_fengxi/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_xi_an_fengxi.jpg',
     accessibilities: [
       {
         destination: '距离G30(南线)咸阳南出口',
@@ -2257,7 +2255,7 @@ const centers = [
       'https://cdn.prologis.site/images/west_china/xi_an_itl/1F.jpg',
       'https://cdn.prologis.site/images/west_china/xi_an_itl/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/west_china/xi_an_itl/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_xi_an_itl.jpg',
     accessibilities: [
       {
         destination: '距离G5港务区出口',
@@ -2331,7 +2329,7 @@ const centers = [
       'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/2F.jpg',
       'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/3F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_guangzhou_development_zone.jpg',
     accessibilities: [
       {
         destination: '距广深高速公路',
@@ -2394,7 +2392,7 @@ const centers = [
         '该物业距佛山市三环公路仅两公里，距乐平工业园和花都日产汽车工业园等市级产业园均15分钟车程，距大众工业园20分钟车程，距佛山市区和广州市区均50分钟车程，是电子商务客户、零售商和制造业企业区域配送的理想选择。',
     },
     plans: ['https://cdn.prologis.site/images/south_china/foshan_datang/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/south_china/foshan_datang/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_foshan_datang_lc.jpg',
     accessibilities: [
       {
         destination: '距珠三环高速公路',
@@ -2454,7 +2452,7 @@ const centers = [
       'https://cdn.prologis.site/images/south_china/foshan_gaoming/1F.jpg',
       'https://cdn.prologis.site/images/south_china/foshan_gaoming/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/south_china/foshan_gaoming/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_foshan_gaoming.jpg',
     accessibilities: [
       {
         destination: '距S5广明高速公路',
@@ -2521,7 +2519,7 @@ const centers = [
         '该物流中心是理想的城市配送点，距东莞市中心仅20分钟车程，距深圳市和东莞市中心各90分钟车程。',
     },
     plans: ['https://cdn.prologis.site/images/south_china/dongguan_shipai/1F.jpg'],
-    map: 'https://cdn.prologis.site/images/south_china/dongguan_shipai/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_dongguan_shipai_lc.jpg',
     accessibilities: [
       {
         destination: '距离石排镇中心区域约',
@@ -2591,7 +2589,7 @@ const centers = [
       'https://cdn.prologis.site/images/south_china/dongguan_hongmei/1F.jpg',
       'https://cdn.prologis.site/images/south_china/dongguan_hongmei/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/south_china/dongguan_hongmei/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_dongguan_hongmei_lc.jpg',
     accessibilities: [
       {
         destination: '距广深沿江高速',
@@ -2657,7 +2655,7 @@ const centers = [
       'https://cdn.prologis.site/images/south_china/huizhou_huiyang/1F.jpg',
       'https://cdn.prologis.site/images/south_china/huizhou_huiyang/2F.jpg',
     ],
-    map: 'https://cdn.prologis.site/images/south_china/huizhou_huiyang/map.jpg',
+    map: 'https://cdn.prologis.site/updated_image_of_map/prologis_huizhou_huiyang.jpg',
     accessibilities: [
       {
         destination: '距G15沈海高速公路',

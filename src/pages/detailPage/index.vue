@@ -75,7 +75,7 @@
       </div>
 
       <div class="content-wrapper gray-bg">
-        <p class="content-title">中心平面图</p>
+        <p class="content-title">项目平面图</p>
         <swiper
           id="plans-swiper"
           :indicator-dots="plansIndicatorDots"

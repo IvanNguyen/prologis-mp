@@ -19,7 +19,7 @@
 
         <cover-view class="phone-wrapper">
           <cover-view class="text">电话</cover-view>
-          <cover-view @click="makeCall" class="text center-info__content">({{centerPhoneNumber.areaCode}}) {{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}} </cover-view>
+          <cover-view @click="makeCall" class="text center-info__content">{{centerPhoneNumber.areaCode}}-{{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}} </cover-view>
         </cover-view>
        
         <cover-view class="overview-wrapper">

@@ -19,7 +19,7 @@
 
         <view class="phone-wrapper">
           <view class="text">电话</view>
-          <view @click.stop="makeCall" class="text center-info__content">({{centerPhoneNumber.areaCode}}) {{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}}</view>
+          <view @click.stop="makeCall" class="text center-info__content">{{centerPhoneNumber.areaCode}}-{{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}}</view>
         </view> 
 
         <view class="overview-wrapper">

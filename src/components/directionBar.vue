@@ -10,7 +10,7 @@
           </cover-view>
           <cover-view class="d-flex">
             <cover-view class="text">电话</cover-view>
-            <cover-view @click="makeCall" class="content">({{centerPhoneNumber.areaCode}}) {{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}}</cover-view>
+            <cover-view @click="makeCall" class="content">{{centerPhoneNumber.areaCode}}-{{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}}</cover-view>
           </cover-view>
         </cover-view>
       </cover-view>

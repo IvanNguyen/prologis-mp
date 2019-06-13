@@ -132,7 +132,7 @@
         <div v-if="pdf" class="button-wrapper">
           <button @click="previewPDF" class="exportPDF" hover-class="button-hover">
             <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
-            <p>详细资料下载 (PDF)</p>
+            <p>租赁单页下载 (JPG)</p>
           </button>
         </div>
       </div>

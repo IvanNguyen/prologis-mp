@@ -14,18 +14,6 @@
           :indicator-dots="swiperIndicatorDots"
           indicator-active-color="#ffffff"
         >
-          <!-- images -->
-          <block
-            :key="index"
-            v-for="(image, index) in swiperImages"
-          >
-            <swiper-item>
-              <div class="picture-placeholder">
-                <img src="../../../static/images/logo-no-background.png" alt="picture-placeholder">
-              </div>
-              <img :src="image" alt="swiper-item">
-            </swiper-item>
-          </block>
           <!-- video -->
           <block v-if="swiperVideo">
             <swiper-item>
@@ -42,6 +30,18 @@
               play-btn-position='center'
               >
               </video>
+            </swiper-item>
+          </block>
+          <!-- images -->
+          <block
+            :key="index"
+            v-for="(image, index) in swiperImages"
+          >
+            <swiper-item>
+              <div class="picture-placeholder">
+                <img src="../../../static/images/logo-no-background.png" alt="picture-placeholder">
+              </div>
+              <img :src="image" alt="swiper-item">
             </swiper-item>
           </block>
         </swiper>
@@ -131,7 +131,7 @@
       <div>
         <div v-if="pdf" class="button-wrapper">
           <button @click="previewPDF" class="exportPDF" hover-class="button-hover">
-            <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
+            <img src="../../../static/images/IMG-icon.png" alt="PDF-icon">
             <p>租赁单页下载 (JPG)</p>
           </button>
         </div>
@@ -266,8 +266,19 @@ export default {
       });
     },
     previewPDF() {
-      wx.previewImage({
-        urls: this.imagesOfPDF,
+      const that = this;
+      wx.showModal({
+        content: 'Please notice that there are two images, slide to the left to see 2nd image',
+        confirmText: 'OK',
+        confirmColor: '#008000',
+        showCancel: false,
+        success(res) {
+          if (res.confirm) {
+            wx.previewImage({
+              urls: that.imagesOfPDF,
+            });
+          }
+        },
       });
     },
   },

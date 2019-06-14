@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/loadingPage/main",
     "pages/homePage/main",
     "pages/webView/main",
     "pages/detailPage/main",

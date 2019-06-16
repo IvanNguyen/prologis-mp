@@ -16,13 +16,13 @@
         enable-zooms
         enable-scroll
         :include-points="includePoints"
-      >     
+      >
         <cover-view class="direction-bar">
           <directionBar></directionBar>
         </cover-view>
       </map>
     </view>
-    
+
   </view>
 </template>
 

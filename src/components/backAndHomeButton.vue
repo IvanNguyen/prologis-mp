@@ -18,7 +18,7 @@
       </view>
     </view>
   </view>
-</template> 
+</template>
 
 <script>
 
@@ -35,13 +35,10 @@ export default {
       wx.navigateBack({ delta: 1 });
     },
     toHomePage() {
-      // const a = getCurrentPages();
-      // console.log(a);
       store.commit('hideGeneralIntroduction');
-      wx.navigateBack({ delta: 3 });
-      wx.redirectTo({
-        url: '/pages/homePage/main',
-      });
+      /*eslint-disable */
+      const delta = getCurrentPages().length - 2;
+      wx.navigateBack({ delta: delta });
     },
   },
 };

@@ -52,14 +52,14 @@
           <div class="d-flex f-grow-1">
             <p class="region content-title align-left">{{centerRegion}}</p>
             <span class="centerName content-title">{{centerName}}</span>
-          </div>  
+          </div>
           <button @click="toRoutePage" class="direction-button">
             <img src="../../../static/images/direction-icon.png" alt="direction-icon">
             <span>路线</span>
           </button>
         </div>
         <div class="content">
-          <div 
+          <div
             v-for="(overView, index) in description.overView"
             :key="index"
           >
@@ -89,9 +89,9 @@
               <div class="picture-placeholder">
                 <img src="../../../static/images/logo-no-background.png" alt="picture-placeholder">
               </div>
-              <img 
-                @click="previewImage" 
-                :id="plan" 
+              <img
+                @click="previewImage"
+                :id="plan"
                 :src="plan"
                 :demo="demo"
                 alt="swiper-item">
@@ -116,7 +116,7 @@
           class="col content"
         >
           <p>{{accessibility.destination}}：<span>{{accessibility.distance}}公里</span></p>
-        </div> 
+        </div>
       </div>
 
       <!-- <div>
@@ -128,14 +128,24 @@
         </div>
       </div> -->
 
-      <div>
+      <!-- <div>
         <div v-if="pdf" class="button-wrapper">
           <button @click="previewPDF" class="exportPDF" hover-class="button-hover">
             <img src="../../../static/images/IMG-icon.png" alt="PDF-icon">
             <p>租赁单页下载 (JPG)</p>
           </button>
         </div>
+      </div> -->
+
+      <div>
+        <div v-if="pdf" class="button-wrapper">
+          <button @click="toWebView" class="exportPDF" hover-class="button-hover">
+            <img src="../../../static/images/IMG-icon.png" alt="PDF-icon">
+            <p>租赁单页下载 (JPG)</p>
+          </button>
+        </div>
       </div>
+
     </div>
 
   </div>
@@ -156,9 +166,6 @@ export default {
     };
   },
   computed: {
-    // isAndroid() {
-    //   return store.state.isAndroid;
-    // },
     positionPageBody() {
       return store.state.statusBarHeight + 42;
     },

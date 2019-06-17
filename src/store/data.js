@@ -1970,7 +1970,7 @@ const centers = [
         'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo5.jpg',
         'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo6.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologischongqingliangjianglogisticscenter.mp4',
+      video: 'https://cdn.prologis.site/Videos/prologischongqingliangjianglogisticscenter-new.mp4',
     },
     description: {
       overView: [

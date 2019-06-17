@@ -35,12 +35,11 @@ export default {
   methods: {
   },
   onShow() {
-    console.log('loadingPage showed');
     setTimeout(
       () => {
         wx.navigateTo({ url: '/pages/homePage/main' });
       },
-      1000,
+      2000,
     );
   },
 };

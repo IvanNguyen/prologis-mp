@@ -23,9 +23,8 @@
               <video
               id="myVideo"
               :src="swiperVideo"
-              controls=true
-              initial-time=1
-              poster
+              controls
+              :poster="poster"
               object-fit='cover'
               play-btn-position='center'
               >
@@ -174,6 +173,9 @@ export default {
     },
     swiperVideo() {
       return store.getters.selectedCenter.swiper.video;
+    },
+    poster() {
+      return this.swiperImages[this.swiperImages.length - 1];
     },
     centerRegion() {
       return store.getters.selectedCenter.region;

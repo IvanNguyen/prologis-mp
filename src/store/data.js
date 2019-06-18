@@ -1806,7 +1806,7 @@ const centers = [
         'https://cdn.prologis.site/images/west_china/chengdu_xindu/photo6.jpg',
         'https://cdn.prologis.site/images/west_china/chengdu_xindu/photo7.jpg',
       ],
-      video: '',
+      video: 'https://cdn.prologis.site/Videos/prologis_chengdu_xindu.mp4',
     },
     description: {
       overView: [

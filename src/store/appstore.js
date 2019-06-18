@@ -28,6 +28,7 @@ const store = new Vuex.Store({
     mapLongitude: '',
     isShowGeneralIntroduction: false,
     isAndroid: false,
+    currentItemOfSlider: 0,
     markers: centers,
   },
   mutations: {
@@ -95,6 +96,13 @@ const store = new Vuex.Store({
     },
     setCityFilter(state, cityFilter) {
       state.cityFilter = cityFilter;
+    },
+    nextSliderItem(state) {
+      state.currentItemOfSlider = 0;
+      state.currentItemOfSlider = 1;
+    },
+    setCerrentItemOfSlider(state) {
+      state.currentItemOfSlider = 0;
     },
   },
   getters: {

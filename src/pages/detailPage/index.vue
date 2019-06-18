@@ -13,24 +13,25 @@
           class="mySwiper"
           :indicator-dots="swiperIndicatorDots"
           indicator-active-color="#ffffff"
+          :current="currentItemOfSlider"
         >
           <!-- video -->
           <block v-if="swiperVideo">
             <swiper-item>
-              <div class="picture-placeholder">
-                <img src="../../../static/images/logo-no-background.png" alt="picture-placeholder">
-              </div>
               <video
-              id="myVideo"
-              :src="swiperVideo"
-              controls
-              :poster="poster"
-              object-fit='cover'
-              play-btn-position='center'
-              >
+                id="myVideo"
+                :src="swiperVideo"
+                controls
+                :poster="poster"
+                object-fit='cover'
+                play-btn-position='center'
+              >          
+                <cover-view class="poster" @click="goToNextItem">
+                  <cover-image v-if="isAndroid" class="image-poster" src="../../static/images/right-arrow.png" alt="right-arrow"></cover-image>
+                </cover-view>
               </video>
             </swiper-item>
-          </block>
+          </block>  
           <!-- images -->
           <block
             :key="index"
@@ -162,9 +163,13 @@ export default {
   data() {
     return {
       isDetailPageOrRoutePage: true,
+      current: 0,
     };
   },
   computed: {
+    isAndroid() {
+      return store.state.isAndroid;
+    },
     positionPageBody() {
       return store.state.statusBarHeight + 42;
     },
@@ -204,6 +209,9 @@ export default {
       }
       return true;
     },
+    currentItemOfSlider() {
+      return store.state.currentItemOfSlider;
+    },
     map() {
       return store.getters.selectedCenter.map;
     },
@@ -223,6 +231,9 @@ export default {
     },
     toRoutePage() {
       wx.navigateTo({ url: '/pages/routePage/main' });
+    },
+    goToNextItem() {
+      store.commit('nextSliderItem');
     },
     downloadFile() {
       wx.showLoading();
@@ -296,4 +307,16 @@ export default {
 
 <style scoped lang="scss">
 @import './style.scss';
+.poster {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+}
+.image-poster {
+  width: 100%;
+  height: 100%;
+}
 </style>

@@ -32,9 +32,11 @@ export default {
   },
   methods: {
     goBack() {
+      store.commit('setCerrentItemOfSlider');
       wx.navigateBack({ delta: 1 });
     },
     toHomePage() {
+      store.commit('setCerrentItemOfSlider');
       store.commit('hideGeneralIntroduction');
       /*eslint-disable */
       const delta = getCurrentPages().length - 2;

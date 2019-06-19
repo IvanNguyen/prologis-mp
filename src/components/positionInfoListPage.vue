@@ -87,7 +87,7 @@ export default {
 }
 .address {
   white-space: nowrap;
-  max-width: 40%; // 36%
+  max-width: 40%;
   overflow: hidden;
   text-overflow:ellipsis;
 }

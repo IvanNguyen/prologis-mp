@@ -27,16 +27,16 @@ export default {
 <style scoped lang="scss">
 @import "../global.scss";
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 33px;
-    height: 33px;
-    background: rgba(225, 225, 225, 0.66);
-    cover-image {
-        width: 14px;
-        height: 14px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  background: rgba(225, 225, 225, 0.66);
+  cover-image {
+    width: 14px;
+    height: 14px;
+  }
 }
 .zoom-out-icon {
   cover-image {
@@ -51,16 +51,16 @@ export default {
     margin-bottom: 10px;
 }
 .zoom-wrapper {
-    position: relative;
-    background: rgba(225, 225, 225, 0.66);
-    .horizontal-line {
-        position: absolute;
-        top: 50%;
-        left: 5px;
-        display: block;
-        height: 1px;
-        width: 23px;
-        background-color: #EDEDED;
-    }
+  position: relative;
+  background: rgba(225, 225, 225, 0.66);
+  .horizontal-line {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    display: block;
+    height: 1px;
+    width: 23px;
+    background-color: #EDEDED;
+  }
 }
 </style>

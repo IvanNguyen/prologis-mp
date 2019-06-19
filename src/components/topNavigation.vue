@@ -54,10 +54,10 @@ export default {
   background-color: #23B2A9
 }
 .page-title {
-    color: $button-text-color;
-    font-size: 18PX;
-    line-height: 23PX;
-    font-weight: 400;
+  color: $button-text-color;
+  font-size: 18PX;
+  line-height: 23PX;
+  font-weight: 400;
 }
 .back-and-home-button {
   position: absolute;
@@ -71,7 +71,7 @@ export default {
   bottom: 7px;
 }
 img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 </style>

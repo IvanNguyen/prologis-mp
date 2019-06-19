@@ -76,23 +76,23 @@ export default {
   height: 100%;
 }
 .map-button {
-    position: relative;
-    img {
-      width: 18px;
-      height: 16px;
-      vertical-align: sub;
-    }
+  position: relative;
+  img {
+    width: 18px;
+    height: 16px;
+    vertical-align: sub;
+  }
 }
 .disabled {
   opacity: 0.3;
 }
 .list-button {
-    img {
-      width: 18px;
-      height: 12px;
-      margin-bottom: 1px;
-      vertical-align: sub;
-    }
+  img {
+    width: 18px;
+    height: 12px;
+    margin-bottom: 1px;
+    vertical-align: sub;
+  }
 }
 .text {
   display: inline-block;

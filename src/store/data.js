@@ -258,7 +258,7 @@ const centers = [
         'https://cdn.prologis.site/images/east_china/suzhou_jinchang/photo3.jpg',
         'https://cdn.prologis.site/images/east_china/suzhou_jinchang/photo4.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/suzhoujinchang.mp4',
+      video: 'https://cdn.prologis.site/Videos/suzhoujinchang-news.mp4',
     },
     description: {
       overView: [
@@ -331,7 +331,7 @@ const centers = [
         'https://cdn.prologis.site/images/east_china/suzhou_xuguan/photo3.jpg',
         'https://cdn.prologis.site/images/east_china/suzhou_xuguan/photo4.JPG',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologissuzhouxuguanlogisticscenter.mp4',
+      video: 'https://cdn.prologis.site/Videos/prologissuzhouxuguanlogisticscenter_news.mp4',
     },
     description: {
       overView: [
@@ -479,7 +479,7 @@ const centers = [
         'https://cdn.prologis.site/images/east_china/wuxi_meicun/photo2.jpg',
         'https://cdn.prologis.site/images/east_china/wuxi_meicun/photo3.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologiswuximeicunlogisticscenter.mp4',
+      video: 'https://cdn.prologis.site/Videos/prologiswuximeicunlogisticscenter_news.mp4',
     },
     description: {
       overView: [
@@ -1250,7 +1250,7 @@ const centers = [
         'https://cdn.prologis.site/images/north_china/tianjin_ninghe/photo4.jpg',
         'https://cdn.prologis.site/images/north_china/tianjin_ninghe/photo5.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologistianjinninghelogisticscenter.mp4',
+      video: 'https://cdn.prologis.site/Videos/prologistianjinninghelogisticscenter_news.mp4',
     },
     description: {
       overView: [
@@ -1738,7 +1738,7 @@ const centers = [
         'https://cdn.prologis.site/images/west_china/chengdu_longquan/photo5.jpg',
         'https://cdn.prologis.site/images/west_china/chengdu_longquan/photo6.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologischengdulongquanlogisticscenter.mp4',
+      video: 'https://cdn.prologis.site/Videos/prologischengdulongquanlogisticscenter_news.mp4',
     },
     description: {
       overView: [
@@ -1970,7 +1970,7 @@ const centers = [
         'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo5.jpg',
         'https://cdn.prologis.site/images/west_china/chongqing_liangjiang/photo6.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologischongqingliangjianglogisticscenter-new.mp4',
+      video: 'https://cdn.prologis.site/Videos/prologischongqingliangjianglogisticscenter.mp4',
     },
     description: {
       overView: [
@@ -2041,7 +2041,7 @@ const centers = [
         'https://cdn.prologis.site/images/west_china/chongqing_airport/photo4.jpg',
         'https://cdn.prologis.site/images/west_china/chongqing_airport/photo5.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologischongqingairportlogisticscenter.mp4',
+      video: 'https://cdn.prologis.site/Videos/prologischongqingairportlogisticscenter_news.mp4',
     },
     description: {
       overView: [
@@ -2317,7 +2317,8 @@ const centers = [
         'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/photo4.jpg',
         'https://cdn.prologis.site/images/south_china/guangzhou_development_zone/photo5.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologisguangzhoudevelopmentzonelogisticscenter.mp4',
+      video:
+        'https://cdn.prologis.site/Videos/prologisguangzhoudevelopmentzonelogisticscenter_news.mp4',
     },
     description: {
       overView: ['该现代化物流中心由两栋三层建筑和一栋两层建筑组成，可租赁面积128,000平方米。'],
@@ -2508,7 +2509,7 @@ const centers = [
         'https://cdn.prologis.site/images/south_china/dongguan_shipai/photo3.jpg',
         'https://cdn.prologis.site/images/south_china/dongguan_shipai/photo4.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologisdongguanshipailogisticscenter.mp4',
+      video: 'https://cdn.prologis.site/Videos/prologisdongguanshipailogisticscenter_news.mp4',
     },
     description: {
       overView: [
@@ -2576,7 +2577,7 @@ const centers = [
         'https://cdn.prologis.site/images/south_china/dongguan_hongmei/photo4.jpg',
         'https://cdn.prologis.site/images/south_china/dongguan_hongmei/photo5.jpg',
       ],
-      video: 'https://cdn.prologis.site/Videos/prologisdongguanhongmeihogisticscenter.mp4',
+      video: 'https://cdn.prologis.site/Videos/prologisdongguanhongmeihogisticscenter_news.mp4',
     },
     description: {
       overView: [
@@ -2677,7 +2678,9 @@ const centers = [
     ],
   },
 ].map(value => {
-  value.swiper.images = value.swiper.images.map(image => `${image}?x-oss-process=image/quality,q_85`);
+  value.swiper.images = value.swiper.images.map(
+    image => `${image}?x-oss-process=image/quality,q_85`,
+  );
   value.avatar = `${value.avatar}?x-oss-process=image/quality,q_85`;
   return value;
 });

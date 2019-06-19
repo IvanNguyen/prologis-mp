@@ -86,10 +86,10 @@ export default {
   opacity: 0.3;
 }
 .list-button {
-    cover-image {
-      width: 18px;
-      height: 12px;
-    }
+  cover-image {
+    width: 18px;
+    height: 12px;
+  }
 }
 .text {
   display: inline-block;

@@ -119,24 +119,6 @@
         </div>
       </div>
 
-      <!-- <div>
-        <div v-if="pdf" class="button-wrapper">
-          <button @click="downloadFile" class="exportPDF" hover-class="button-hover">
-            <img src="../../../static/images/PDF-icon.png" alt="PDF-icon">
-            <p>详细资料下载 (PDF)</p>
-          </button>
-        </div>
-      </div> -->
-
-      <!-- <div>
-        <div v-if="pdf" class="button-wrapper">
-          <button @click="previewPDF" class="exportPDF" hover-class="button-hover">
-            <img src="../../../static/images/IMG-icon.png" alt="PDF-icon">
-            <p>租赁单页下载 (JPG)</p>
-          </button>
-        </div>
-      </div> -->
-
       <div>
         <div v-if="pdf" class="button-wrapper">
           <button @click="toWebView" class="exportPDF" hover-class="button-hover">
@@ -235,70 +217,11 @@ export default {
     goToNextItem() {
       store.commit('nextSliderItem');
     },
-    downloadFile() {
-      wx.showLoading();
-      wx.downloadFile({
-        url: this.pdf,
-        success(res) {
-          const pdfFilePath = res.tempFilePath;
-          if (res.statusCode === 200) {
-            wx.openDocument({
-              filePath: pdfFilePath,
-              // fileType: 'pdf',
-              success() {
-                wx.hideLoading();
-                console.log('open PDF success');
-              },
-              fail(error) {
-                wx.hideLoading();
-                console.log(error);
-              },
-            });
-          } else {
-            wx.hideLoading();
-            wx.showModal({
-              content: '下载失败',
-              confirmText: '好',
-              confirmColor: '#008000',
-              showCancel: false,
-              fail(err) {
-                console.log(err);
-              },
-            });
-          }
-        },
-        fail() {
-          wx.hideLoading();
-          wx.showModal({
-            content: '下载失败',
-            confirmText: '好',
-            confirmColor: '#008000',
-            showCancel: false,
-          });
-        },
-      });
-    },
     previewImage(e) {
       const urls = e.currentTarget.dataset.eventid === '2' ? [this.map] : this.plans;
       wx.previewImage({
         current: e.currentTarget.id,
         urls,
-      });
-    },
-    previewPDF() {
-      const that = this;
-      wx.showModal({
-        content: 'Please notice that there are two images, slide to the left to see 2nd image',
-        confirmText: 'OK',
-        confirmColor: '#008000',
-        showCancel: false,
-        success(res) {
-          if (res.confirm) {
-            wx.previewImage({
-              urls: that.imagesOfPDF,
-            });
-          }
-        },
       });
     },
   },

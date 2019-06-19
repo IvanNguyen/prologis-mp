@@ -72,14 +72,14 @@ export default {
 }
 .back-button {
   img {
-    width: 9PX;
-    height: 13PX;
+  width: 9PX;
+  height: 13PX;
   }
 }
 .home-button {
   img {
-    width: 16PX;
-    height: 14PX;
+  width: 16PX;
+  height: 14PX;
   }
 }
 .icon-wrapper {

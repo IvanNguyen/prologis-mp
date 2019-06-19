@@ -27,7 +27,7 @@
                 play-btn-position='center'
               >          
                 <cover-view class="poster" @click="goToNextItem">
-                  <cover-image v-if="isAndroid" class="image-poster" src="../../static/images/right-arrow.png" alt="right-arrow"></cover-image>
+                  <cover-image v-if="isAndroid" class="image-poster" src="../../static/images/arrow-right.png" alt="arrow-right"></cover-image>
                 </cover-view>
               </video>
             </swiper-item>
@@ -312,8 +312,8 @@ export default {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 35px;
-  height: 35px;
+  width: 15px;
+  height: 25px;
 }
 .image-poster {
   width: 100%;

@@ -2676,5 +2676,10 @@ const centers = [
       'https://cdn.prologis.site/Image_of_pdf/prologis_huizhou_huiyang_logistics_center2.jpg',
     ],
   },
-];
+].map(value => {
+  value.swiper.images = value.swiper.images.map(image => `${image}?x-oss-process=image/quality,q_85`);
+  value.avatar = `${value.avatar}?x-oss-process=image/quality,q_85`;
+  return value;
+});
+
 export default centers;

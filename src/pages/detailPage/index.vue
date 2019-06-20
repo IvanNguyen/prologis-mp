@@ -218,7 +218,7 @@ export default {
       store.commit('nextSliderItem');
     },
     previewImage(e) {
-      const urls = e.currentTarget.dataset.eventid === '2' ? [this.map] : this.plans;
+      const urls = e.currentTarget.dataset.eventid === '3' ? [this.map] : this.plans;
       wx.previewImage({
         current: e.currentTarget.id,
         urls,

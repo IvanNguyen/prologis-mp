@@ -2222,8 +2222,8 @@ const centers = [
   },
   {
     id: 33,
-    latitude: 34.384188,
-    longitude: 109.103342,
+    latitude: 34.378101,
+    longitude: 109.095869,
     iconPath: '/static/images/location.png',
     width: 29,
     height: 37,
@@ -2291,8 +2291,8 @@ const centers = [
   // South China
   {
     id: 34,
-    latitude: 23.147414,
-    longitude: 113.490087,
+    latitude: 23.141639,
+    longitude: 113.484068,
     iconPath: '/static/images/location.png',
     width: 29,
     height: 37,
@@ -2420,8 +2420,8 @@ const centers = [
   },
   {
     id: 36,
-    latitude: 22.769455,
-    longitude: 112.53794,
+    latitude: 22.763242,
+    longitude: 112.532015,
     iconPath: '/static/images/location.png',
     width: 29,
     height: 37,
@@ -2484,8 +2484,8 @@ const centers = [
   },
   {
     id: 37,
-    latitude: 23.093242,
-    longitude: 113.994287,
+    latitude: 23.08695,
+    longitude: 113.988031,
     iconPath: '/static/images/location.png',
     width: 29,
     height: 37,
@@ -2650,7 +2650,7 @@ const centers = [
         '该试验开发项目获得了中国首个美国LEED绿色建筑认证。项目一期包括四座仓储建筑。其地理位置优越，距深圳和惠州的交界仅2公里，可承接深圳无法满足的配送需求。',
       ],
       accessibilities:
-        '距G15高速仅3公里，距惠阳市中心10分钟车程，距深圳市中心40分钟车程，距广东市中心也仅有90分钟车程，是区域配送和制造业仓储的理想选择。',
+        '距G15高速仅3公里，距惠阳市中心10分钟车程，距深圳市中心40分钟车程，距广州市中心也仅有90分钟车程，是区域配送和制造业仓储的理想选择。',
     },
     plans: [
       'https://cdn.prologis.site/images/south_china/huizhou_huiyang/1F.jpg',

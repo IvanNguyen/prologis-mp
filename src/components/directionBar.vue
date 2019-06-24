@@ -2,15 +2,15 @@
   <cover-view>
     <cover-view class="wrapper">
       <cover-view class="center-info">
-        <cover-view class="center-name">{{centerName}}</cover-view>
+        <cover-view class="center-name">{{selectedCenter.centerName}}</cover-view>
         <cover-view class="content-wrapper lh-18">
           <cover-view class="d-flex">
             <cover-view class="text">地址</cover-view>
-            <cover-view class="content">{{centerAddress}}</cover-view>
+            <cover-view class="content">{{selectedCenter.address}}</cover-view>
           </cover-view>
           <cover-view class="d-flex">
             <cover-view class="text">电话</cover-view>
-            <cover-view @click="makeCall" class="content">{{centerPhoneNumber.areaCode}}-{{centerPhoneNumber.part1}}-{{centerPhoneNumber.part2}}</cover-view>
+            <cover-view @click="makeCall" class="content">{{selectedCenter.phoneNumber.areaCode}}-{{selectedCenter.phoneNumber.part1}}-{{selectedCenter.phoneNumber.part2}}</cover-view>
           </cover-view>
         </cover-view>
       </cover-view>
@@ -34,20 +34,8 @@ import store from '../store/appstore';
 
 export default {
   computed: {
-    centerName() {
-      return store.getters.selectedCenter.centerName;
-    },
-    centerAddress() {
-      return store.getters.selectedCenter.address;
-    },
-    centerPhoneNumber() {
-      return store.getters.selectedCenter.phoneNumber;
-    },
-    centerLongitude() {
-      return store.getters.selectedCenter.longitude;
-    },
-    centerLatitude() {
-      return store.getters.selectedCenter.latitude;
+    selectedCenter() {
+      return store.getters.selectedCenter;
     },
     isAndroid() {
       return store.state.isAndroid;
@@ -56,14 +44,14 @@ export default {
   methods: {
     openMap() {
       wx.openLocation({
-        latitude: this.centerLatitude,
-        longitude: this.centerLongitude,
+        latitude: this.selectedCenter.latitude,
+        longitude: this.selectedCenter.longitude,
         scale: 12,
       });
     },
     makeCall() {
       wx.makePhoneCall({
-        phoneNumber: this.centerPhoneNumber.phoneNumber,
+        phoneNumber: this.selectedCenter.phoneNumber.phoneNumber,
       });
     },
   },

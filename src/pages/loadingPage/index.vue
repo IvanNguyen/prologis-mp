@@ -21,16 +21,6 @@
 
 <script>
 export default {
-  components: {
-  },
-  data() {
-    return {
-    };
-  },
-  computed: {
-  },
-  methods: {
-  },
   onShow() {
     setTimeout(
       () => {

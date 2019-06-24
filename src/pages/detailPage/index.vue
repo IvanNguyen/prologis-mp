@@ -16,11 +16,11 @@
           :current="currentItemOfSlider"
         >
           <!-- video -->
-          <block v-if="swiperVideo">
+          <block v-if="selectedCenter.swiper.video">
             <swiper-item>
               <video
                 id="myVideo"
-                :src="swiperVideo"
+                :src="selectedCenter.swiper.video"
                 controls
                 :poster="poster"
                 object-fit='cover'
@@ -35,7 +35,7 @@
           <!-- images -->
           <block
             :key="index"
-            v-for="(image, index) in swiperImages"
+            v-for="(image, index) in selectedCenter.swiper.images"
           >
             <swiper-item>
               <div class="picture-placeholder">
@@ -51,8 +51,8 @@
       <div class="content-wrapper">
         <div class="description-title">
           <div class="d-flex f-grow-1">
-            <p class="region content-title align-left">{{centerRegion}}</p>
-            <span class="centerName content-title">{{centerName}}</span>
+            <p class="region content-title align-left">{{selectedCenter.region}}</p>
+            <span class="centerName content-title">{{selectedCenter.centerName}}</span>
           </div>
           <button @click="toRoutePage" class="direction-button">
             <img src="../../../static/images/direction-icon.png" alt="direction-icon">
@@ -61,7 +61,7 @@
         </div>
         <div class="content">
           <div
-            v-for="(overView, index) in description.overView"
+            v-for="(overView, index) in selectedCenter.description.overView"
             :key="index"
           >
             <p>
@@ -70,7 +70,7 @@
             <p class="break-line">break-line</p>
           </div>
           <p>
-            {{description.accessibilities}}
+            {{selectedCenter.description.accessibilities}}
           </p>
         </div>
       </div>
@@ -84,7 +84,7 @@
         >
           <block
             :key="index"
-            v-for="(plan, index) in plans"
+            v-for="(plan, index) in selectedCenter.plans"
           >
             <swiper-item>
               <div class="picture-placeholder">
@@ -107,13 +107,13 @@
           <div class="picture-placeholder">
             <img src="../../../static/images/logo-no-background.png" alt="picture-placeholder">
           </div>
-          <img @click="previewImage" class="content-picture bit-map" :src="map" alt="bitmap">
+          <img @click="previewImage" class="content-picture bit-map" :src="selectedCenter.map" alt="bitmap">
         </div>
       </div>
       <div class="row">
         <div
           :key="index"
-          v-for="(accessibility, index) in accessibilities"
+          v-for="(accessibility, index) in selectedCenter.accessibilities"
           class="col content"
         >
           <p>{{accessibility.destination}}：<span>{{accessibility.distance}}公里</span></p>
@@ -121,7 +121,7 @@
       </div>
 
       <div>
-        <div v-if="pdf" class="button-wrapper">
+        <div v-if="selectedCenter.pdf" class="button-wrapper">
           <button @click="toWebView" class="exportPDF" hover-class="button-hover">
             <img src="../../../static/images/IMG-icon.png" alt="PDF-icon">
             <p>租赁单页下载 (JPG)</p>
@@ -164,26 +164,11 @@ export default {
     positionPageBody() {
       return store.state.statusBarHeight + 42;
     },
-    swiperImages() {
-      return store.getters.selectedCenter.swiper.images;
-    },
-    swiperVideo() {
-      return store.getters.selectedCenter.swiper.video;
+    selectedCenter() {
+      return store.getters.selectedCenter;
     },
     poster() {
-      return this.swiperImages[this.swiperImages.length - 1];
-    },
-    centerRegion() {
-      return store.getters.selectedCenter.region;
-    },
-    centerName() {
-      return store.getters.selectedCenter.centerName;
-    },
-    description() {
-      return store.getters.selectedCenter.description;
-    },
-    plans() {
-      return store.getters.selectedCenter.plans;
+      return this.selectedCenter.swiper.images[this.selectedCenter.swiper.images.length - 1];
     },
     plansIndicatorDots() {
       const plansLength = store.getters.selectedCenter.plans.length;
@@ -203,18 +188,6 @@ export default {
     currentItemOfSlider() {
       return store.state.currentItemOfSlider;
     },
-    map() {
-      return store.getters.selectedCenter.map;
-    },
-    accessibilities() {
-      return store.getters.selectedCenter.accessibilities;
-    },
-    pdf() {
-      return store.getters.selectedCenter.pdf;
-    },
-    imagesOfPDF() {
-      return store.getters.selectedCenter.imagesOfPDF;
-    },
   },
   methods: {
     toWebView() {
@@ -227,8 +200,7 @@ export default {
       store.commit('nextSliderItem');
     },
     previewImage(e) {
-      console.log(e);
-      const urls = e.currentTarget.dataset.eventid === '3' ? [this.map] : this.plans;
+      const urls = e.currentTarget.dataset.eventid === '3' ? [this.selectedCenter.map] : this.selectedCenter.plans;
       wx.previewImage({
         current: e.currentTarget.id,
         urls,

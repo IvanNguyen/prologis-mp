@@ -25,12 +25,14 @@
 <script>
 
 import store from '../../store/appstore';
+import { SHARE_MESSAGE } from '../../utils/constants';
 
 export default {
-  components: {
-  },
-  data() {
+  onShareAppMessage() {
     return {
+      title: SHARE_MESSAGE,
+      path: '/pages/loadingPage/main',
+      imageUrl: '../../static/images/share-img.png',
     };
   },
   computed: {

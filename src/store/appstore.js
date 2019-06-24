@@ -22,7 +22,7 @@ const store = new Vuex.Store({
       distance: '',
     },
     cityFilter: '',
-    selectedCenterId: '',
+    selectedCenterId: 1,
     statusBarHeight: 0,
     mapLatitude: '',
     mapLongitude: '',

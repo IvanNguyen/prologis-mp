@@ -45,6 +45,7 @@
             </swiper-item>
           </block>
         </swiper>
+        
       </div>
 
       <div class="content-wrapper">
@@ -137,8 +138,16 @@
 
 import store from '../../store/appstore';
 import topNavigation from '../../components/topNavigation';
+import { SHARE_MESSAGE } from '../../utils/constants';
 
 export default {
+  onShareAppMessage() {
+    return {
+      title: SHARE_MESSAGE,
+      path: '/pages/loadingPage/main',
+      imageUrl: '../../static/images/share-img.png',
+    };
+  },
   components: {
     topNavigation,
   },
@@ -218,6 +227,7 @@ export default {
       store.commit('nextSliderItem');
     },
     previewImage(e) {
+      console.log(e);
       const urls = e.currentTarget.dataset.eventid === '3' ? [this.map] : this.plans;
       wx.previewImage({
         current: e.currentTarget.id,

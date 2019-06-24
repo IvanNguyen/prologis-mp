@@ -56,12 +56,20 @@ import navigateToDetailPage from '../../components/navigateToDetailPage';
 import zoomBar from '../../components/zoomBar';
 import store from '../../store/appstore';
 import QQMapWX from '../../qqmap-wx-jssdk';
+import { SHARE_MESSAGE } from '../../utils/constants';
 
 const qqmapsdk = new QQMapWX({
   key: 'JJIBZ-24HEQ-52F5X-GSIEZ-ELWB3-FXFGN',
 });
 
 export default {
+  onShareAppMessage() {
+    return {
+      title: SHARE_MESSAGE,
+      path: '/pages/loadingPage/main',
+      imageUrl: '../../static/images/share-img.png',
+    };
+  },
   onLoad() {
     this.checkSystemInfo();
     this.mapCtx = wx.createMapContext('myMap');
@@ -113,6 +121,73 @@ export default {
     },
   },
   methods: {
+    autoUpdate() {
+      console.log('autoUpdate');
+      const self = this;
+      // Get the applet update mechanism compatible with
+      if (wx.canIUse('getUpdateManager')) {
+        const updateManager = wx.getUpdateManager();
+        // 1. Check if the applet has a new version released
+        updateManager.onCheckForUpdate((res) => {
+          // Request callback for new version information
+          if (res.hasUpdate) {
+            // detect new Version, need to be updated, give the prompt
+            wx.showModal({
+              title: 'update prompt',
+              content: 'A new version has been detected, is the new version downloaded and the applet restarted? ',
+              success(result) {
+                if (result.confirm) {
+                  // 2. The user determines to download the update applet,
+                  // the applet download and update silently for
+                  self.downLoadAndUpdate(updateManager);
+                } else if (res.cancel) {
+                  // User clicks the cancel button to process.
+                  // If forced update is required, it will give a double popup.
+                  // If not, the code here can delete
+                  wx.showModal({
+                    title: 'Warm Tips',
+                    content: 'This version update involves adding new features, the old version can not be accessed normally',
+                    showCancel: false, // hide the cancel button
+                    confirmText: 'OK update', // only keep the OK update button
+                    success(value) {
+                      if (value.confirm) {
+                        // Download the new version and reapply
+                        self.downLoadAndUpdate(updateManager);
+                      }
+                    },
+                  });
+                }
+              },
+            });
+          }
+        });
+      } else {
+        // If you want users to experience your applet
+        // on the latest version of the client, you can do this
+        wx.showModal({
+          title: 'Prompt',
+          content: 'The current WeChat version is too low to use this feature. Please upgrade to the latest WeChat version and try again.',
+        });
+      }
+    },
+    downLoadAndUpdate(updateManager) {
+      console.log('downLoadAndupdate');
+      wx.showLoading();
+      // Silently download the update applet new version
+      updateManager.onUpdateReady(() => {
+        wx.hideLoading();
+        // The new version has been downloaded,
+        // call applyUpdate to apply the new version and restart
+        updateManager.applyUpdate();
+      });
+      updateManager.onUpdateFailed(() => {
+        // new version download failed
+        wx.showModal({
+          title: 'There has been a new version of Prologis',
+          content: 'The new version is online~, please delete the current applet, re-search open Prologis',
+        });
+      });
+    },
     checkSystemInfo() {
       wx.getSystemInfo({
         success(res) {

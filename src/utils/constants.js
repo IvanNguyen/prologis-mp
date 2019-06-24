@@ -1,3 +1,1 @@
-const LARAVEL_DOMAIN = 'https://xxxx';
-
-export const API_DOMAIN = `${LARAVEL_DOMAIN}/api/v1`;
+export const SHARE_MESSAGE = '安博Prologis - 引领未来';

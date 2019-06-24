@@ -32,12 +32,20 @@ import store from '../../store/appstore';
 import topNavigation from '../../components/topNavigation';
 import directionBar from '../../components/directionBar';
 import QQMapWX from '../../qqmap-wx-jssdk';
+import { SHARE_MESSAGE } from '../../utils/constants';
 
 const qqmapsdk = new QQMapWX({
   key: 'JJIBZ-24HEQ-52F5X-GSIEZ-ELWB3-FXFGN',
 });
 
 export default {
+  onShareAppMessage() {
+    return {
+      title: SHARE_MESSAGE,
+      path: '/pages/loadingPage/main',
+      imageUrl: '../../static/images/share-img.png',
+    };
+  },
   components: {
     topNavigation,
     directionBar,

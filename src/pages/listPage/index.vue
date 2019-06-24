@@ -85,8 +85,16 @@ import generalIntroductionListPage from '../../components/generalIntroductionLis
 import navigateToDetailPage from '../../components/navigateToDetailPage';
 import bottomNavigationListPage from '../../components/bottomNavigationListPage';
 import store from '../../store/appstore';
+import { SHARE_MESSAGE } from '../../utils/constants';
 
 export default {
+  onShareAppMessage() {
+    return {
+      title: SHARE_MESSAGE,
+      path: '/pages/loadingPage/main',
+      imageUrl: '../../static/images/share-img.png',
+    };
+  },
   components: {
     topNavigation,
     positionInfoListPage,

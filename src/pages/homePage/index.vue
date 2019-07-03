@@ -255,7 +255,7 @@ export default {
           store.commit('setSelectedCenterId', closestCenterInfo.id);
         },
         fail(error) {
-          console.error(error);
+          console.log(error);
         },
       });
     },
